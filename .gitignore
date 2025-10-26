@@ -11,15 +11,7 @@ dist/
 build/
 
 # Data files (too large for git)
-data/*.csv
-data/*.pkl
-data/tensors/
-*.png
-*.jpg
-
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
+data/
 
 # IDE
 .vscode/
@@ -31,21 +23,8 @@ data/tensors/
 .DS_Store
 Thumbs.db
 
-# Paper drafts (keep separate)
-paper/
-outputs/
-
-# Session logs (internal)
-claude-checklists/
-ANALYSIS_SUMMARY.md
-DATA_QUALITY_ASSESSMENT.md
-QUICK_REFERENCE.md
-CHUNKING_IMPLEMENTATION.md
-QUICK_START_365D.md
-IMPLEMENTATION_SUMMARY.txt
-README_CHUNKING.md
-FILES_MODIFIED.txt
-docs/
+# Internal (drafts, sessions, paper, analysis outputs)
+_internal/
 
 # Tests
 test_*.py
