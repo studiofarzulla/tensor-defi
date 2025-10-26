@@ -239,7 +239,7 @@ If you use this framework in your research, please cite:
   author = {Farzulla, Murad},
   title = {Tensor Decomposition for DeFi Market Microstructure},
   year = {2025},
-  url = {https://github.com/YOUR_USERNAME/tensor-defi},
+  url = {https://github.com/studiofarzulla/tensor-defi},
   note = {Research implementation, Phase 1}
 }
 ```
@@ -264,3 +264,4 @@ This is an active research project. Contributions welcome:
 ---
 
 **Status**: Research Framework | **Phase**: 1 (Proof of Concept) | **Updated**: October 2025
+
