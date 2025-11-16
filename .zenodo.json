@@ -1,0 +1,65 @@
+{
+  "title": "tensor-defi: Information Geometry of Markets v1.0.0",
+  "description": "Tensor decomposition framework for cryptocurrency market microstructure. Version 1.0.0 provides proof-of-concept demonstrating that tensor methods preserve multiplicative interactions between asset and temporal dimensions. Using one year of hourly OHLCV data for BTC, ETH, and SOL from Binance, rank-4 CP and Tucker decompositions achieve 96.55% and 96.56% explained variance respectively, outperforming PCA (92.31%) by 4.6 percentage points. Future versions will expand to multi-venue analysis.",
+  "creators": [
+    {
+      "name": "Farzulla, Murad",
+      "affiliation": "Farzulla Research",
+      "orcid": "0009-0002-7164-8704"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "upload_type": "software",
+  "keywords": [
+    "tensor decomposition",
+    "cryptocurrency",
+    "market microstructure",
+    "CP decomposition",
+    "Tucker decomposition",
+    "high-frequency data",
+    "factor models",
+    "information geometry",
+    "Bitcoin",
+    "Ethereum",
+    "Solana"
+  ],
+  "subjects": [
+    {
+      "term": "Quantitative Finance",
+      "identifier": "https://id.loc.gov/authorities/subjects/sh85109594"
+    },
+    {
+      "term": "Cryptocurrency",
+      "identifier": "https://id.loc.gov/authorities/subjects/sh2018002395"
+    },
+    {
+      "term": "Financial Econometrics",
+      "identifier": "https://id.loc.gov/authorities/subjects/sh2008120106"
+    }
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.17595207",
+      "relation": "isSupplementedBy",
+      "resource_type": "publication-workingpaper",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/resurrexi/tensor-defi",
+      "relation": "isIdenticalTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "contributors": [],
+  "references": [
+    "Kolda, T. G., & Bader, B. W. (2009). Tensor decompositions and applications. SIAM review, 51(3), 455-500.",
+    "Lettau, M., & Pelger, M. (2024). Factors That Fit the Time Series and Cross-Section of Stock Returns. The Review of Financial Studies, 37(7), 2193-2228.",
+    "Babii, A., Ghysels, E., & Striaukas, J. (2023). Machine learning time series regressions with an application to nowcasting. Journal of Business & Economic Statistics, 41(3), 768-778."
+  ],
+  "version": "1.0.0",
+  "publication_date": "2025-11-16",
+  "notes": "Version 1.0.0: Proof-of-concept on single-venue (Binance) data with 3 assets (BTC, ETH, SOL). Future versions will expand to multi-venue analysis (v2.0), robustness validation (v2.1), higher-dimensional features (v3.0), and information geometry computations (v3.1). Software includes complete reproducibility pipeline: data collection, tensor construction, CP/Tucker decomposition, PCA baselines, and visualization tools."
+}

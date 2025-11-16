@@ -1,0 +1,55 @@
+---
+title: "Tensor Decomposition for Cryptocurrency Market Microstructure: Beyond Matrix Methods"
+author:
+  - Murad Farzulla (Farzulla Research, ORCID 0009-0002-7164-8704)
+date: November 2025
+license: CC BY 4.0
+bibliography: references.bib
+abstract: |
+  **Methods:** We propose a tensor decomposition framework for cryptocurrency market microstructure using CP (CANDECOMP/PARAFAC) and Tucker decomposition. Using one year of hourly OHLCV data (8,761 hours) for BTC, ETH, and SOL from Binance, we construct a 4-dimensional tensor (time × venue × asset × feature) and compare tensor methods against PCA baselines.
+
+  **Results:** Tensor decomposition reveals remarkable low-dimensional structure: rank-4 CP and Tucker decompositions achieve 96.55% and 96.56% explained variance respectively, vastly outperforming traditional PCA (92.31%). The negligible difference between CP and Tucker (0.01%) confirms true rank-4 structure with no higher-order interactions. Four latent factors admit clear economic interpretation: (1) Bitcoin dominance and market sentiment, (2) altcoin risk and ETH-SOL correlation, (3) volatility regimes and liquidity shocks, (4) intraday microstructure and mean reversion.
+
+  **Implications:** Our findings validate that cryptocurrency markets evolve on curved, low-dimensional manifolds induced by microstructure dynamics. Tensor methods capture multiplicative interactions between time, venue, asset, and feature dimensions that matrix methods destroy through flattening. This work addresses the research gap identified by Almeida et al. (2024): no prior studies apply high-dimensional joint modeling across cryptocurrency exchanges. Applications include regime detection, multi-asset portfolio construction, cross-venue arbitrage, and risk management.
+keywords:
+  - tensor decomposition
+  - cryptocurrency
+  - market microstructure
+  - CP decomposition
+  - Tucker decomposition
+  - dimensionality reduction
+  - volatility
+numbersections: true
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+geometry: margin=1in
+fontsize: 11pt
+linestretch: 1.5
+documentclass: article
+header-includes: |
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{setspace}
+  \usepackage{graphicx}
+  \usepackage{booktabs}
+  \usepackage{longtable}
+  \usepackage{float}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{algorithm}
+  \usepackage{algorithmic}
+  \DeclareUnicodeCharacter{03C1}{\ensuremath{\rho}}
+  \DeclareUnicodeCharacter{03C3}{\ensuremath{\sigma}}
+  \DeclareUnicodeCharacter{03B1}{\ensuremath{\alpha}}
+  \DeclareUnicodeCharacter{03B2}{\ensuremath{\beta}}
+  \DeclareUnicodeCharacter{03B3}{\ensuremath{\gamma}}
+  \DeclareUnicodeCharacter{03C4}{\ensuremath{\tau}}
+  \DeclareUnicodeCharacter{2211}{\ensuremath{\sum}}
+  \DeclareUnicodeCharacter{220F}{\ensuremath{\prod}}
+  \DeclareUnicodeCharacter{2297}{\ensuremath{\otimes}}
+  \DeclareUnicodeCharacter{00D7}{\ensuremath{\times}}
+  \DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+  \DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}
+  \DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}
+---

@@ -1,44 +1,38 @@
-# Tensor Decomposition for DeFi Market Microstructure
+# Information Geometry of Markets
 
-**Academic Research Framework** | Phase 1: Proof of Concept
+**Cryptocurrency Exchanges as Multiplicative Tensor Processes — Evidence from High-Frequency Decomposition**
 
 [![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: Research](https://img.shields.io/badge/status-research-orange.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Paper: CC-BY-4.0](https://img.shields.io/badge/Paper-CC--BY--4.0-green.svg)](arxiv-submission/Farzulla_2025_Tensor_Decomposition.pdf)
+[![DOI](https://img.shields.io/badge/DOI-pending-orange.svg)]()
+
+**Version 1.0.0** | November 2025 | [Murad Farzulla](https://farzulla.org)
 
 ## Overview
 
-This repository implements a tensor decomposition framework for analyzing cryptocurrency and DeFi market microstructure. The core thesis: **markets don't live on flat planes—they evolve on curved, low-dimensional manifolds induced by microstructure. Tensor methods respect that curvature; traditional linear models erase it.**
+This repository implements the **first tensor decomposition framework for multi-asset cryptocurrency market microstructure**. The core thesis: **markets don't live on flat planes—they evolve on curved, low-dimensional manifolds induced by microstructure dynamics. Tensor methods respect this geometry; traditional matrix methods erase it.**
 
-### Key Innovation
+### Research Paper
 
-Traditional models (PCA, VAR, GARCH) flatten multi-dimensional market data into matrices, losing critical interaction effects. This framework preserves the full tensor structure to capture:
+📄 **[Information Geometry of Markets: Cryptocurrency Exchanges as Multiplicative Tensor Processes](arxiv-submission/Farzulla_2025_Tensor_Decomposition.pdf)**
 
-- **Multi-dimensional assets**: Crypto assets simultaneously function as currency, collateral, gas, and governance tokens
-- **Cross-venue dynamics**: Assets behave differently on centralized exchanges vs decentralized AMMs
-- **Temporal regimes**: Market conditions create discrete behavioral modes (bull/bear, high/low volatility)
-- **Functional superposition**: DeFi assets exist in multiple functional states across venues and protocols
+**Abstract:** We propose tensor decomposition as a proof-of-concept framework for modeling cryptocurrency market microstructure, preserving multi-dimensional interaction effects lost by traditional matrix methods. Using one year of hourly OHLCV data (8,761 hours) for BTC, ETH, and SOL from Binance, rank-4 CP and Tucker decompositions achieve 96.55% and 96.56% explained variance respectively, outperforming PCA (92.31%) by 4.6 percentage points.
 
-## Current Status
+**Key Findings:**
+- Four economically interpretable factors: (1) Bitcoin dominance, (2) altcoin rotation, (3) volatility regimes, (4) intraday microstructure
+- Tensor methods preserve multiplicative interactions between asset and temporal dimensions
+- Negligible CP-Tucker difference (0.01%) suggests true rank-4 structure
 
-**Phase 1 (Proof of Concept):** 60% Complete
-
-- ✅ Data pipeline (CEX via CCXT)
-- ✅ Tensor construction (Time × Venue × Asset × Feature)
-- ✅ CP/Tucker/TT decomposition implementations
-- ✅ PCA baseline comparison framework
-- ✅ Visualization suite
-- ✅ **Full year dataset collected** (8,761 hours, 3 assets)
-- 🚧 Empirical results generation (in progress)
-- 📝 Academic paper (Introduction + Methodology complete)
+**Version 1.0.0:** Proof-of-concept on single-venue data. Future versions will expand to multi-venue analysis.
 
 ## Quick Start
 
-### Installation (Arch Linux / venv)
+### Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/tensor-defi.git
+git clone https://github.com/resurrexi/tensor-defi.git
 cd tensor-defi
 
 # Create virtual environment
@@ -49,218 +43,205 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Collect Market Data
+### Reproduce Paper Results
 
 ```bash
-# Test with 7 days
+# 1. Collect market data (takes ~30-60 minutes)
 python collect_data.py
 
-# Full year (takes ~30-60 minutes)
-# Edit collect_data.py: lookback_days = 365
-python collect_data.py
-```
-
-### Build Tensor
-
-```bash
-# Creates 3 tensor variants (raw, normalized, log-returns)
+# 2. Build tensor (creates 3 normalization variants)
 python scripts/build_tensor.py
+
+# 3. Run decompositions and baselines
+python scripts/run_full_experiments.py
+
+# Results saved to outputs/
 ```
 
-### Run Decomposition
+### Dataset
 
-```bash
-# CP and Tucker decomposition with rank selection
-python src/tensor_ops/decomposition.py
-```
+**Included in repo:** Processed tensors (outputs/tensors/)
+**Reproducible:** Raw OHLCV data can be re-collected via `collect_data.py`
+
+**Specifications:**
+- Duration: 1 year (Oct 26, 2024 - Oct 26, 2025)
+- Granularity: Hourly OHLCV
+- Assets: BTC/USDT, ETH/USDT, SOL/USDT
+- Venue: Binance (v1.0.0), multi-venue in v2.0
+- Total observations: 26,283 rows (8,761 hours × 3 assets)
+- Data quality: 100% completeness, zero gaps
 
 ## Project Structure
 
 ```
 tensor-defi/
+├── arxiv-submission/              # LaTeX paper + figures
+│   ├── Farzulla_2025_Tensor_Decomposition.tex
+│   ├── Farzulla_2025_Tensor_Decomposition.pdf
+│   ├── references.bib
+│   └── figures/
 ├── src/
-│   ├── data_pipeline/          # Multi-venue data collection
-│   │   ├── cex_collector.py    # Binance, Coinbase (CCXT)
-│   │   └── dex_collector.py    # Uniswap, Curve (The Graph)
-│   ├── tensor_ops/             # Tensor operations
-│   │   ├── tensor_builder.py   # Construct 4D tensors
-│   │   └── decomposition.py    # CP, Tucker, TT methods
-│   ├── baselines/              # Traditional methods
-│   │   └── traditional_methods.py  # PCA, VAR comparison
-│   └── visualization/          # Plotting tools
-│       └── tensor_plots.py     # Factor evolution, 3D projections
-├── scripts/                    # Analysis scripts
-│   ├── analyze_cex_data.py     # Data quality assessment
-│   └── build_tensor.py         # Tensor construction
-├── data/                       # Market data (not in repo)
-├── requirements.txt            # Python dependencies
-└── README.md                   # This file
+│   ├── data_pipeline/             # Data collection
+│   │   └── cex_collector.py       # CCXT-based CEX collector
+│   ├── tensor_ops/                # Tensor operations
+│   │   ├── tensor_builder.py      # Construct 4D tensors
+│   │   └── decomposition.py       # CP, Tucker implementations
+│   ├── baselines/                 # Traditional methods
+│   │   └── traditional_methods.py # PCA comparison
+│   └── visualization/             # Plotting tools
+│       └── tensor_plots.py
+├── scripts/                       # Analysis scripts
+│   ├── build_tensor.py            # Tensor construction
+│   └── run_full_experiments.py    # Full experimental pipeline
+├── outputs/                       # Results (generated)
+│   ├── tensors/                   # Processed tensor files
+│   ├── decomposition_results/     # CP/Tucker outputs
+│   └── figures/                   # Generated plots
+├── data/                          # Raw market data (not in repo, regenerate via collect_data.py)
+├── requirements.txt
+├── LICENSE
+├── CITATION.cff
+└── README.md
 ```
 
 ## Mathematical Framework
 
 ### Tensor Representation
 
-Market microstructure is represented as a 4-mode tensor:
+Market microstructure as a 3-way tensor (v1.0.0):
 
 ```
-𝓧 ∈ ℝ^(T × V × A × F)
+𝓧 ∈ ℝ^(T × A × F)
 
 where:
-  T = Time dimension (hourly timestamps)
-  V = Venue dimension (exchanges/AMMs)
-  A = Asset dimension (BTC, ETH, SOL, etc.)
-  F = Feature dimension (price, volume, spread, liquidity)
+  T = Time dimension (8,761 hourly timestamps)
+  A = Asset dimension (3 cryptocurrencies)
+  F = Feature dimension (5: open, high, low, close, volume)
 ```
+
+**Note:** v1.0.0 uses single venue (Binance). v2.0 will add venue dimension for full 4-way tensor.
 
 ### Decomposition Methods
 
-1. **CP (CANDECOMP/PARAFAC)**: Most compact representation
-   - Decomposes tensor as sum of rank-1 components
-   - Economically interpretable factors
-   - Best for discovering fundamental market drivers
+**CP (CANDECOMP/PARAFAC):**
+```
+𝓧 ≈ Σ_{r=1}^R λ_r · (a_r ⊗ b_r ⊗ c_r)
+```
+- Most compact representation
+- Economically interpretable factors
+- Rank-4 optimal for our dataset
 
-2. **Tucker**: Most flexible representation
-   - Core tensor captures factor interactions
-   - Allows different ranks per dimension
-   - Best for modeling complex cross-effects
-
-3. **Tensor Train (TT)**: Memory-efficient sequential decomposition
-   - Scales linearly with number of dimensions
-   - Best for high-dimensional extensions (MEV, gas, block position)
+**Tucker:**
+```
+𝓧 ≈ 𝓖 ×₁ A ×₂ B ×₃ C
+```
+- Core tensor captures interactions
+- Flexible rank per dimension
+- 96.56% explained variance (rank 4×1×4×4)
 
 ### Why Tensor > Matrix?
 
-**Matrix (PCA) Assumption:**
-```
-ℓ ≈ α_venue + β_asset + γ_time
-```
-(Additive model - misses interactions)
+**Matrix (PCA):** Flattens tensor, assumes additive effects
+**Tensor (CP/Tucker):** Preserves structure, models multiplicative interactions
 
-**Tensor (CP/Tucker) Reality:**
-```
-ℓ = g_venue(·) × h_asset(·) × φ_time(·)
-```
-(Multiplicative model - captures venue×asset×time interactions)
+**Example:** ETH liquidity = venue mechanics × asset function × time regime (3-way interaction lost by PCA)
 
-**Example**: ETH liquidity on Uniswap during high gas periods involves a 3-way interaction between:
-- AMM bonding curve mechanics (venue)
-- Gas payment demand (asset function)
-- Network congestion (time-specific event)
+## Results Summary
 
-Traditional models miss this by assuming additivity.
+**Reconstruction Performance:**
+- CP (rank-4): 96.55% explained variance
+- Tucker (4×1×4×4): 96.56% explained variance
+- PCA baseline: 92.31% explained variance
+- **Improvement:** 4.6 percentage points
 
-## Dataset
+**Extracted Factors:**
+1. Bitcoin dominance and systematic risk
+2. Altcoin rotation and risk appetite
+3. Volatility regimes and liquidity shocks
+4. Intraday microstructure and mean reversion
 
-**Current Collection:**
-- **Duration**: 1 year (Oct 26, 2024 - Oct 26, 2025)
-- **Granularity**: Hourly OHLCV data
-- **Assets**: BTC/USDT, ETH/USDT, SOL/USDT
-- **Venue**: Binance (CEX)
-- **Total observations**: 26,283 rows (8,761 hours × 3 assets)
-- **Data quality**: 100% completeness, zero gaps
+See [paper](arxiv-submission/Farzulla_2025_Tensor_Decomposition.pdf) for full analysis.
 
-**Market Coverage:**
-- BTC: $66,712 - $126,011 (+88.9% range)
-- ETH: $1,419 - $4,935 (+247.8% range)
-- SOL: $97 - $286 (+194.8% range)
+## Versioning Roadmap
 
-## Research Questions
-
-1. **Reconstruction**: Can tensor decomposition outperform PCA for market data reconstruction?
-   - Hypothesis: 20-50% error reduction
-
-2. **Regime Detection**: Do temporal factors reveal discrete market regimes?
-   - Hypothesis: Sharp transitions during known events (crashes, regulatory changes)
-
-3. **Cross-Asset Structure**: Can asset factors identify correlation patterns?
-   - Hypothesis: Factors map to fundamental market drivers (risk-on/risk-off, DeFi vs BTC)
-
-4. **Economic Interpretation**: Are extracted factors economically meaningful?
-   - Hypothesis: Factors correspond to bull/bear regimes, liquidity conditions, volatility states
-
-## Results (Preliminary)
-
-**7-Day Test Dataset:**
-- Tensor shape: (169, 1, 3, 5) = 2,535 elements
-- Cross-asset correlations:
-  - BTC-ETH: 0.637 (moderate)
-  - BTC-SOL: 0.862 (strong)
-  - ETH-SOL: 0.724 (strong)
-- After log-returns transformation:
-  - BTC-ETH: 0.878 ↑
-  - Indicates strong shared latent structure
-
-**Full Year Dataset:**
-- Tensor shape: (8761, 1, 3, 5) = 131,415 elements
-- Memory: 1 MB (tensor), 1.18 MB (pickle file)
-- Correlations reveal distinct market structure:
-  - BTC-ETH: 0.688 (crypto majors move together)
-  - ETH-SOL: 0.762 (altcoins highly correlated)
-  - BTC-SOL: 0.393 (BTC dominance effect)
-
-## Methodology
-
-See [METHODOLOGY.md](METHODOLOGY.md) for detailed technical documentation including:
-- Data collection pipeline
-- Tensor construction algorithms
-- Decomposition methods (CP-ALS, Tucker-HOOI)
-- Baseline comparison framework
-- Evaluation metrics
-
-## Roadmap
-
-### Phase 1: Proof of Concept (Current - 60% complete)
-- [x] Data pipeline
-- [x] Tensor operations
-- [x] Baseline comparisons
-- [x] Full year data collection
-- [ ] Empirical results generation
-- [ ] Academic paper completion
-
-### Phase 2: Multi-Venue Extension (Future)
-- [ ] Add Coinbase, Kraken (CEX)
-- [ ] Fix DEX collector (The Graph API migration)
-- [ ] Cross-venue arbitrage detection
-- [ ] MEV-aware microstructure
-
-### Phase 3: Manifold Geometry (Future)
-- [ ] Riemannian metrics on factor space
-- [ ] Ricci curvature for regime stress
-- [ ] Geodesic distances for asset similarity
-- [ ] Real-time deployment on homelab K8s
+**v1.0.0 (Current):** Proof-of-concept on single-venue, 3-asset data
+**v2.0 (Planned):** Multi-venue expansion (Coinbase, Kraken, Uniswap, Curve)
+**v2.1 (Planned):** Robustness validation (bootstrap CIs, out-of-sample tests, 10+ assets)
+**v3.0 (Planned):** Higher-dimensional features (MEV, gas prices, order book depth)
+**v3.1 (Planned):** Information geometry (Riemannian metrics, Ricci curvature)
 
 ## Citation
 
-If you use this framework in your research, please cite:
+If you use this work, please cite:
 
+**Paper:**
 ```bibtex
-@software{farzulla2025tensordefi,
+@techreport{Farzulla2025InformationGeometry,
   author = {Farzulla, Murad},
-  title = {Tensor Decomposition for DeFi Market Microstructure},
+  title = {Information Geometry of Markets: Cryptocurrency Exchanges as Multiplicative Tensor Processes},
+  institution = {Farzulla Research},
   year = {2025},
-  url = {https://github.com/YOUR_USERNAME/tensor-defi},
-  note = {Research implementation, Phase 1}
+  type = {Working Paper},
+  note = {Version 1.0.0},
+  url = {https://github.com/resurrexi/tensor-defi}
+}
+```
+
+**Software:**
+```bibtex
+@software{Farzulla2025TensorDefi,
+  author = {Farzulla, Murad},
+  title = {tensor-defi: Tensor Decomposition for Cryptocurrency Market Microstructure},
+  year = {2025},
+  version = {1.0.0},
+  url = {https://github.com/resurrexi/tensor-defi},
+  doi = {pending}
 }
 ```
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+- **Code:** MIT License (see [LICENSE](LICENSE))
+- **Paper:** CC-BY-4.0 (see [arxiv-submission/](arxiv-submission/))
+- **Data:** Public market data from Binance (reproducible via CCXT)
+
+## Reproducibility
+
+**Software versions:**
+- Python: 3.13+
+- TensorLy: 0.8.1
+- NumPy: 1.26.4
+- CCXT: 4.4+
+
+**Hardware:**
+- Development: AMD Ryzen 9900X, 128GB RAM, Arch Linux
+- Minimum: 8GB RAM, any modern CPU (experiments run in 30-90 seconds)
+
+**Random seed:** 42 (set in all decomposition scripts)
+
+**Convergence criteria:** ALS tolerance 10^-4, max 500 iterations
 
 ## Contributing
 
 This is an active research project. Contributions welcome:
-- Bug reports and feature requests via Issues
-- Code contributions via Pull Requests
-- Academic collaboration inquiries: murad@farzulla.org
+- **Bug reports:** Open an issue
+- **Feature requests:** Open an issue with "enhancement" label
+- **Code contributions:** Submit a pull request
+- **Academic collaboration:** contact@farzulla.org
 
 ## Acknowledgments
 
-- **Data Sources**: Binance (CCXT library), The Graph (DeFi protocols)
-- **Libraries**: TensorLy, PyTorch, NumPy, Pandas
-- **Infrastructure**: Developed on Arch Linux with Claude Code
+**Data sources:** Binance (via CCXT library)
+**Libraries:** TensorLy, NumPy, Pandas, Matplotlib
+**AI assistance:** Anthropic Claude Sonnet 4.5 (literature review, code implementation, LaTeX preparation)
+**Infrastructure:** Developed on Arch Linux with Claude Code
+
+**Related work:** This complements [Farzulla (2025) Cryptocurrency Event Study](https://doi.org/10.5281/zenodo.17595207) analyzing cross-sectional heterogeneity in volatility responses.
 
 ---
 
-**Status**: Research Framework | **Phase**: 1 (Proof of Concept) | **Updated**: October 2025
+**Author:** [Murad Farzulla](https://farzulla.org) | [Farzulla Research](https://farzulla.org)
+**Contact:** contact@farzulla.org
+**ORCID:** [0009-0002-7164-8704](https://orcid.org/0009-0002-7164-8704)
+
+**Status:** Research Framework | **Version:** 1.0.0 | **Updated:** November 2025

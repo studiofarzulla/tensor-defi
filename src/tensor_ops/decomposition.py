@@ -51,7 +51,7 @@ class TensorDecomposer:
         self,
         tensor: np.ndarray,
         rank: int,
-        init: str = 'svd',
+        init: str = 'random',
         n_iter_max: int = 100,
         tol: float = 1e-6,
         verbose: bool = False
@@ -68,7 +68,10 @@ class TensorDecomposer:
         Args:
             tensor: Input tensor
             rank: Number of components
-            init: Initialization method ('svd', 'random')
+            init: Initialization method ('random', 'svd')
+                  'random' is memory-efficient and recommended for large tensors
+                  'svd' provides better initialization but requires O(N²) memory
+                  for HOSVD where N is the product of dimensions
             n_iter_max: Maximum iterations
             tol: Convergence tolerance
             verbose: Print progress
@@ -77,7 +80,20 @@ class TensorDecomposer:
             DecompositionResult with factors and metrics
         """
         if verbose:
-            print(f"\n=== CP Decomposition (rank={rank}) ===")
+            print(f"\n=== CP Decomposition (rank={rank}, init={init}) ===")
+
+        # Memory optimization: warn if using SVD with large tensor
+        if init == 'svd':
+            tensor_size_gb = tensor.nbytes / (1024**3)
+            # Estimate HOSVD memory: largest unfolding creates N×M matrix
+            # where M = prod(dims) / N, and SVD needs M×M for V matrix
+            max_unfold_dim = max(np.prod(tensor.shape) // s for s in tensor.shape)
+            svd_memory_gb = (max_unfold_dim ** 2 * 8) / (1024**3)
+
+            if svd_memory_gb > 10:
+                if verbose:
+                    print(f"  WARNING: SVD init may require {svd_memory_gb:.1f} GB memory")
+                    print(f"  Consider using init='random' for large tensors")
 
         # Convert to tensorly tensor
         tl_tensor = tl.tensor(tensor)
@@ -132,7 +148,7 @@ class TensorDecomposer:
         self,
         tensor: np.ndarray,
         ranks: Union[int, List[int]],
-        init: str = 'svd',
+        init: str = 'random',
         n_iter_max: int = 100,
         tol: float = 1e-6,
         verbose: bool = False
@@ -149,7 +165,9 @@ class TensorDecomposer:
         Args:
             tensor: Input tensor
             ranks: Rank per dimension (int = same for all, list = per-dimension)
-            init: Initialization method
+            init: Initialization method ('random', 'svd')
+                  'random' is memory-efficient and recommended for large tensors
+                  'svd' (HOSVD) provides better initialization but requires O(N²) memory
             n_iter_max: Maximum iterations
             tol: Convergence tolerance
             verbose: Print progress
@@ -158,7 +176,17 @@ class TensorDecomposer:
             DecompositionResult with core, factors, and metrics
         """
         if verbose:
-            print(f"\n=== Tucker Decomposition (ranks={ranks}) ===")
+            print(f"\n=== Tucker Decomposition (ranks={ranks}, init={init}) ===")
+
+        # Memory optimization: warn if using SVD with large tensor
+        if init == 'svd':
+            max_unfold_dim = max(np.prod(tensor.shape) // s for s in tensor.shape)
+            svd_memory_gb = (max_unfold_dim ** 2 * 8) / (1024**3)
+
+            if svd_memory_gb > 10:
+                if verbose:
+                    print(f"  WARNING: SVD init may require {svd_memory_gb:.1f} GB memory")
+                    print(f"  Consider using init='random' for large tensors")
 
         tl_tensor = tl.tensor(tensor)
 

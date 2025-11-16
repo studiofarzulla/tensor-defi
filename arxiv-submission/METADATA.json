@@ -1,0 +1,37 @@
+{
+  "title": "Tensor Decomposition for Cryptocurrency Market Microstructure: Beyond Matrix Methods",
+  "creators": [
+    {"name": "Farzulla, Murad", "affiliation": "Farzulla Research", "orcid": "0009-0002-7164-8704"}
+  ],
+  "description": "Tensor decomposition framework for cryptocurrency market microstructure achieving 96.55% explained variance with rank-4 CP decomposition, outperforming traditional PCA by 4.24 percentage points. Using one year of hourly OHLCV data for BTC, ETH, and SOL from Binance, we reveal low-dimensional manifold structure with interpretable factors corresponding to market-wide trends, asset-specific dynamics, volatility regimes, and microstructure noise.",
+  "keywords": [
+    "tensor decomposition",
+    "cryptocurrency",
+    "market microstructure",
+    "CP decomposition",
+    "Tucker decomposition",
+    "CANDECOMP/PARAFAC",
+    "dimensionality reduction",
+    "OHLCV data",
+    "manifold learning",
+    "multi-way analysis",
+    "Bitcoin",
+    "Ethereum",
+    "Solana"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "workingpaper",
+  "date": "2025-11-15",
+  "version": "1.0",
+  "contributors": [],
+  "subjects": [
+    "Quantitative Finance",
+    "Cryptocurrency",
+    "Computational Finance",
+    "Market Microstructure",
+    "Tensor Methods"
+  ],
+  "language": "eng",
+  "notes": "Working paper proposing tensor decomposition methods for cryptocurrency market analysis. Code available at: https://github.com/resurrexi/tensor-defi"
+}

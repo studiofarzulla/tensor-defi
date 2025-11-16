@@ -1,0 +1,224 @@
+\begin{thebibliography}{}
+
+\bibitem[Almeida and Gonçalves, 2024]{Almeida2024Cryptocurrency}
+Almeida, J. and Gonçalves, T. (2024).
+\newblock Cryptocurrency market microstructure: A systematic literature review.
+\newblock {\em Digital Finance}.
+\newblock Systematic review of 138 cryptocurrency microstructure papers
+  (2016-2023) - identifies gap in high-dimensional joint modeling.
+
+\bibitem[Anandkumar et~al., 2014]{AnandkumarOrthoALS}
+Anandkumar, A., Ge, R., Hsu, D., Kakade, S.~M., and Telgarsky, M. (2014).
+\newblock Tensor decompositions for learning latent variable models.
+\newblock {\em Journal of Machine Learning Research}, 15(1):2773--2832.
+\newblock Orthogonalized ALS - handles unbalanced factors robustly.
+
+\bibitem[Babii et~al., 2023]{Babii2023Tensor}
+Babii, A., Ghysels, E., and Pan, J. (2023).
+\newblock Tensor principal component analysis in high dimensional multiway
+  data.
+\newblock {\em National Bank of Belgium Working Paper}.
+\newblock Proves tensor PCA achieves optimal convergence rates for financial
+  factor models.
+
+\bibitem[Back and Weigend, 1997]{Back1997First}
+Back, A.~D. and Weigend, A.~S. (1997).
+\newblock A first application of independent component analysis to extracting
+  structure from stock returns.
+\newblock {\em International Journal of Neural Systems}, 8(04):473--484.
+\newblock ICA in finance - alternative to PCA.
+
+\bibitem[Battaglino et~al., 2018]{Battaglino2018Practical}
+Battaglino, C., Ballard, G., and Kolda, T.~G. (2018).
+\newblock A practical randomized cp tensor decomposition.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  39(2):876--901.
+\newblock Randomized CP-ALS achieving 5-10x speedup for large-scale data.
+
+\bibitem[Bianchi et~al., 2022]{Bianchi2022Trading}
+Bianchi, D., Babiak, M., and Dickerson, A. (2022).
+\newblock Trading volume and liquidity provision in cryptocurrency markets.
+\newblock {\em Journal of Banking \& Finance}, 142.
+\newblock Documents substantial heterogeneity in liquidity provision across
+  exchanges and pairs.
+
+\bibitem[Bozzetto, 2023]{Bozzetto2023Microstructure}
+Bozzetto, C. (2023).
+\newblock Cryptocurrency markets microstructure: Machine learning application.
+\newblock {\em Master's Thesis, Università Ca' Foscari Venezia}.
+\newblock ML application to crypto microstructure - fee structure shocks
+  disrupt market.
+
+\bibitem[Capital, 2025]{Sparkline2025IntangibleValue}
+Capital, S. (2025).
+\newblock Crypto factor investing: Intangible value and the strongest factor.
+\newblock \url{https://www.sparklinecapital.com/post/crypto-factor-investing}.
+\newblock Industry research - intangible value factor (Sharpe ratio 0.89).
+
+\bibitem[Chang et~al., 2023]{Chang2023Modelling}
+Chang, J., Yao, Q., Sun, Q., and Chen, R. (2023).
+\newblock Modelling matrix time series via a tensor cp-decomposition.
+\newblock {\em Journal of the Royal Statistical Society Series B: Statistical
+  Methodology}.
+\newblock One-pass CP estimation via generalized eigenanalysis -
+  computationally efficient.
+
+\bibitem[Cichocki et~al., 2015]{Cichocki2015Tensor}
+Cichocki, A., Mandic, D., De~Lathauwer, L., Zhou, G., Zhao, Q., Caiafa, C., and
+  Phan, H.~A. (2015).
+\newblock Tensor decompositions for signal processing applications: From
+  two-way to multiway component analysis.
+\newblock {\em IEEE Signal Processing Magazine}, 32(2):145--163.
+\newblock Tensor methods in signal processing - comprehensive review.
+
+\bibitem[Cont, 2001]{Cont2001Empirical}
+Cont, R. (2001).
+\newblock Empirical properties of asset returns: stylized facts and statistical
+  issues.
+\newblock {\em Quantitative Finance}, 1(2):223--236.
+\newblock PCA applications in finance - foundational empirical work.
+
+\bibitem[de~Freitas~Pinto et~al., 2025]{DeFreitas2025HighFreq}
+de~Freitas~Pinto, M. et~al. (2025).
+\newblock High-frequency dynamics of bitcoin and ethereum perpetual futures.
+\newblock {\em ScienceDirect}.
+\newblock Shows perpetual futures lead spot markets in price discovery.
+
+\bibitem[De~Lathauwer et~al., 2000]{DeLathauwer2000Multilinear}
+De~Lathauwer, L., De~Moor, B., and Vandewalle, J. (2000).
+\newblock A multilinear singular value decomposition.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  21(4):1253--1278.
+\newblock HOSVD/HOOI algorithms for tensor decomposition.
+
+\bibitem[Easley et~al., 2012]{Easley2012Flow}
+Easley, D., López~de Prado, M.~M., and O'Hara, M. (2012).
+\newblock Flow toxicity and liquidity in a high-frequency world.
+\newblock {\em The Review of Financial Studies}, 25(5):1457--1493.
+\newblock VPIN (Volume-synchronized Probability of Informed Trading)
+  development.
+
+\bibitem[Easley et~al., 2024]{Easley2024CrossAsset}
+Easley, D., O'Hara, M., et~al. (2024).
+\newblock Cross-asset microstructure dynamics in cryptocurrency markets.
+\newblock {\em SSRN Working Paper}.
+\newblock Pairwise analysis of cross-asset microstructure effects - tensor
+  method captures higher-order interactions they miss.
+
+\bibitem[Fan et~al., 2013]{Fan2013Large}
+Fan, J., Liao, Y., and Mincheva, M. (2013).
+\newblock Large covariance estimation by thresholding principal orthogonal
+  complements.
+\newblock {\em Journal of the Royal Statistical Society Series B: Statistical
+  Methodology}, 75(4):603--680.
+\newblock Factor-based high-dimensional covariance estimation - extended to
+  tensor settings.
+
+\bibitem[Farzulla, 2025]{Farzulla2025Cryptocurrency}
+Farzulla, M. (2025).
+\newblock Cross-sectional heterogeneity in cryptocurrency event sensitivity:
+  Evidence from {TARCH-X} models.
+\newblock Working paper, Independent Researcher.
+\newblock Available at Zenodo: \url{https://doi.org/10.5281/zenodo.17595207}.
+
+\bibitem[Fieberg et~al., 2023]{Fieberg2023CTREND}
+Fieberg, C., Poddig, T., et~al. (2023).
+\newblock A trend factor for the cross-section of cryptocurrency returns.
+\newblock {\em Journal of Financial and Quantitative Analysis}.
+\newblock CTREND factor captures 52\% of cryptocurrency return variation.
+
+\bibitem[Han et~al., 2022]{Han2022CP}
+Han, Y., Yang, D., Zhang, C.-H., and Chen, R. (2022).
+\newblock Cp factor model for dynamic tensors.
+\newblock {\em Journal of the Royal Statistical Society Series B: Statistical
+  Methodology}, 84(5):1859--1884.
+\newblock Dynamic tensor time series with CP decomposition - theoretical
+  foundation.
+
+\bibitem[Hasbrouck, 2007]{Hasbrouck2007Empirical}
+Hasbrouck, J. (2007).
+\newblock {\em Empirical market microstructure: The institutions, economics,
+  and econometrics of securities trading}.
+\newblock Oxford University Press.
+\newblock Empirical microstructure methods - standard reference.
+
+\bibitem[Heaton et~al., 2017]{Heaton2017Deep}
+Heaton, J., Polson, N., and Witte, J. (2017).
+\newblock Deep learning for finance: deep portfolios.
+\newblock {\em Applied Stochastic Models in Business and Industry},
+  33(1):3--12.
+\newblock Autoencoders for portfolio construction.
+
+\bibitem[Kolda and Bader, 2009]{Kolda2009Tensor}
+Kolda, T.~G. and Bader, B.~W. (2009).
+\newblock Tensor decompositions and applications.
+\newblock {\em SIAM Review}, 51(3):455--500.
+\newblock Foundational tensor methods survey - comprehensive introduction to
+  CP, Tucker, HOSVD.
+
+\bibitem[Kossaifi et~al., 2019]{Kossaifi2019TensorLy}
+Kossaifi, J., Panagakis, Y., Anandkumar, A., and Pantic, M. (2019).
+\newblock Tensorly: Tensor learning in python.
+\newblock {\em Journal of Machine Learning Research}, 20(26):1--6.
+\newblock TensorLy library - Python implementation of tensor methods.
+
+\bibitem[Lettau, 2024]{Lettau2024ThreeD}
+Lettau, M. (2024).
+\newblock 3d-pca: Factor models with restrictions.
+\newblock {\em NYU Stern / Toulouse School of Economics Working Paper}.
+\newblock Shows 3D-PCA explains 65-76\% of portfolio returns vs 50\% for
+  traditional PCA.
+
+\bibitem[Liu et~al., 2025]{Liu2025LiquidityCommonality}
+Liu, W. et~al. (2025).
+\newblock Liquidity commonality in cryptocurrencies: Evidence from the covid-19
+  crisis.
+\newblock {\em International Review of Economics \& Finance}.
+\newblock Documents significant liquidity commonality in cryptocurrencies
+  during crisis periods.
+
+\bibitem[Liu and Tsyvinski, 2021]{Liu2021Risks}
+Liu, Y. and Tsyvinski, A. (2021).
+\newblock Risks and returns of cryptocurrency.
+\newblock {\em The Review of Financial Studies}, 34(6):2689--2727.
+\newblock Network and momentum factors explain 64\% of cryptocurrency return
+  variation.
+
+\bibitem[Mo et~al., 2025]{Mo2025ACT}
+Mo, J., Li, J., Zhang, D., and Chen, E. (2025).
+\newblock Act-tensor: Adaptive cluster tensor completion for financial dataset
+  imputation.
+\newblock {\em arXiv preprint}.
+\newblock State-of-the-art tensor completion for missing financial data -
+  40-74\% improvement.
+
+\bibitem[O'Hara, 1995]{OHara1995Market}
+O'Hara, M. (1995).
+\newblock {\em Market microstructure theory}.
+\newblock Blackwell Publishers.
+\newblock Foundational microstructure textbook.
+
+\bibitem[Tucker, 1966]{Tucker1966Some}
+Tucker, L.~R. (1966).
+\newblock Some mathematical notes on three-mode factor analysis.
+\newblock {\em Psychometrika}, 31(3):279--311.
+\newblock Original Tucker decomposition paper.
+
+\bibitem[Wang et~al., 2024]{Wang2024CrossExchange}
+Wang, Y., Li, J., et~al. (2024).
+\newblock Cross-exchange crypto risk: A high-frequency dynamic network
+  perspective.
+\newblock {\em International Review of Financial Analysis}.
+\newblock Uses correlation networks for cross-exchange analysis - tensor
+  CP-decomposition captures higher-order interactions.
+
+\bibitem[Wątorek et~al., 2023]{Watorek2023Decomposing}
+Wątorek, M., Kwapień, J., and Drożdż, S. (2023).
+\newblock Decomposing cryptocurrency high-frequency price dynamics using matrix
+  pca.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  33(8).
+\newblock Uses matrix PCA to decompose single-asset HF dynamics - tensor method
+  extends to cross-asset/cross-exchange.
+
+\end{thebibliography}

@@ -1,0 +1,17 @@
+[2025-11-15 05:41:22.470011] Starting...
+[2025-11-15 05:41:22.557755] Tensor: (8761, 1, 3, 5)
+[2025-11-15 05:41:22.557790] Rank selection...
+
+=== Rank Selection (method=cp, criterion=explained_variance) ===
+Rank  1: Error=230.0167, Var=0.5974
+Rank  2: Error=169.6684, Var=0.7809
+Rank  3: Error=100.3389, Var=0.9234
+Rank  4: Error=67.4422, Var=0.9654
+
+✓ Threshold 0.95 reached at rank 4
+[2025-11-15 05:41:23.475455] Optimal rank: 4
+[2025-11-15 05:41:23.475471] Running CP...
+[2025-11-15 05:41:23.921316] CP done! Variance: 0.9655
+[2025-11-15 05:41:23.921866] Running Tucker...
+[2025-11-15 05:41:23.931135] Tucker done! Variance: 0.9656
+[2025-11-15 05:41:23.931897] COMPLETE! Rank=4, CP=96.55%, Tucker=96.56%

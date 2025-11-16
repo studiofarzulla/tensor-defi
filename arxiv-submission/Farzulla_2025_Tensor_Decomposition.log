@@ -1,0 +1,1172 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.10.28)  16 NOV 2025 03:41
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Farzulla_2025_Tensor_Decomposition.tex
+(./Farzulla_2025_Tensor_Decomposition.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count270
+\Gm@cntv=\count271
+\c@Gm@tempcnt=\count272
+\Gm@bindingoffset=\dimen142
+\Gm@wd@mp=\dimen143
+\Gm@odd@mp=\dimen144
+\Gm@even@mp=\dimen145
+\Gm@layoutwidth=\dimen146
+\Gm@layoutheight=\dimen147
+\Gm@layouthoffset=\dimen148
+\Gm@layoutvoffset=\dimen149
+\Gm@dimlist=\toks20
+)
+(/usr/share/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+
+(/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count273
+)
+(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count274
+)
+(/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen150
+\Hy@linkcounter=\count275
+\Hy@pagecounter=\count276
+
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count277
+
+(/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count278
+
+(/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen151
+
+(/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count279
+\Field@Width=\dimen152
+\Fld@charsize=\dimen153
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+
+(/usr/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count280
+\c@Item=\count281
+\c@Hfootnote=\count282
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
+
+(/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count283
+\c@bookmark@seq@number=\count284
+
+(/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip51
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen154
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen155
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count285
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count286
+\leftroot@=\count287
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count288
+\DOTSCASE@=\count289
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen156
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count290
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count291
+\dotsspace@=\muskip18
+\c@parentequation=\count292
+\dspbrk@lvl=\count293
+\tag@help=\toks22
+\row@=\count294
+\column@=\count295
+\maxfields@=\count296
+\andhelp@=\toks23
+\eqnshift@=\dimen157
+\alignsep@=\dimen158
+\tagshift@=\dimen159
+\tagwidth@=\dimen160
+\totwidth@=\dimen161
+\lineht@=\dimen162
+\@envbody=\toks24
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box54
+\beforetitleunit=\skip55
+\aftertitleunit=\skip56
+\ttl@plus=\dimen163
+\ttl@minus=\dimen164
+\ttl@toksa=\toks26
+\titlewidth=\dimen165
+\titlewidthlast=\dimen166
+\titlewidthfirst=\dimen167
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen168
+\Gin@req@width=\dimen169
+)
+(/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen170
+\lightrulewidth=\dimen171
+\cmidrulewidth=\dimen172
+\belowrulesep=\dimen173
+\belowbottomsep=\dimen174
+\aboverulesep=\dimen175
+\abovetopsep=\dimen176
+\cmidrulesep=\dimen177
+\cmidrulekern=\dimen178
+\defaultaddspace=\dimen179
+\@cmidla=\count297
+\@cmidlb=\count298
+\@aboverulesep=\dimen180
+\@belowrulesep=\dimen181
+\@thisruleclass=\count299
+\@lastruleclass=\count300
+\@thisrulewidth=\dimen182
+)
+(/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip57
+\multirow@cntb=\count301
+\multirow@dima=\skip58
+\bigstrutjot=\dimen183
+)
+(/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen184
+\ar@mcellbox=\box55
+\extrarowheight=\dimen185
+\NC@list=\toks27
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box56
+)
+(/usr/share/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
+\LTleft=\skip61
+\LTright=\skip62
+\LTpre=\skip63
+\LTpost=\skip64
+\LTchunksize=\count302
+\LTcapwidth=\dimen186
+\LT@head=\box57
+\LT@firsthead=\box58
+\LT@foot=\box59
+\LT@lastfoot=\box60
+\LT@gbox=\box61
+\LT@cols=\count303
+\LT@rows=\count304
+\c@LT@tables=\count305
+\c@LT@chunks=\count306
+\LT@p@ftn=\toks28
+)
+(/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+
+
+Package natbib Warning: The `cite' package should not be used
+(natbib)                with natbib. Use option `sort' instead.
+
+\bibhang=\skip65
+\bibsep=\skip66
+LaTeX Info: Redefining \cite on input line 694.
+LaTeX Info: Redefining \citenum on input line 708.
+\c@NAT@ctr=\count307
+) (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip67
+\enit@outerparindent=\dimen187
+\enit@toks=\toks29
+\enit@inbox=\box62
+\enit@count@id=\count308
+\enitdp@description=\count309
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 63
+.
+
+(/usr/share/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count310
+\l__pdf_internal_box=\box63
+)
+(./Farzulla_2025_Tensor_Decomposition.aux)
+\openout1 = `Farzulla_2025_Tensor_Decomposition.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=36.135pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+Package hyperref Info: Link coloring ON on input line 63.
+
+(./Farzulla_2025_Tensor_Decomposition.out)
+(./Farzulla_2025_Tensor_Decomposition.out)
+\@outlinefile=\write3
+\openout3 = `Farzulla_2025_Tensor_Decomposition.out'.
+
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count311
+\scratchdimen=\dimen188
+\scratchbox=\box64
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen189
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks31
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
+8.
+
+(/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
+8.
+
+(/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+68.
+
+(/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+68.
+
+(/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 68.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
+
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
+
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
+8.
+
+(/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 72.
+
+Overfull \hbox (11.81203pt too wide) in paragraph at lines 76--77
+[]\T1/lmr/bx/n/9 Implications: \T1/lmr/m/n/9 This proof-of-concept demon-strate
+s that cryp-tocur-rency mar-kets ex-hibit low-dimensional
+ []
+
+
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
+/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/
+usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fo
+nts/enc/dvips/lm/lm-mathit.enc}] (./Farzulla_2025_Tensor_Decomposition.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 2.
+
+
+[2])
+\tf@toc=\write4
+\openout4 = `Farzulla_2025_Tensor_Decomposition.toc'.
+
+
+
+[3]
+Overfull \hbox (21.85579pt too wide) in paragraph at lines 98--99
+\T1/lmr/m/n/10 This func-tional su-per-po-si-tion cre-ates multi-dimensional
+ []
+
+
+Overfull \hbox (3.77315pt too wide) in paragraph at lines 98--99
+\T1/lmr/m/n/10 mar-ket dy-nam-ics that matrix-based meth-ods strug-
+ []
+
+
+Overfull \hbox (13.71742pt too wide) in paragraph at lines 102--103
+\T1/lmr/m/n/10 crostruc-ture, these meth-ods flat-ten multi-dimensional
+ []
+
+
+Overfull \hbox (16.27393pt too wide) in paragraph at lines 106--107
+\T1/lmr/m/n/10 tion), and net-work con-ges-tion (time-dependent event).
+ []
+
+
+
+
+Overfull \hbox (6.27423pt too wide) in paragraph at lines 110--111
+\T1/lmr/m/n/10 We pro-pose that cryp-tocur-rency mar-ket mi-crostruc-
+ []
+
+
+Overfull \hbox (13.19382pt too wide) in paragraph at lines 110--111
+\T1/lmr/m/n/10 ture nat-u-rally lives in a ten-sor space $\OMS/lmsy/m/n/10 X 2 
+\U/msb/m/n/10 R[]$\T1/lmr/m/n/10 ,
+ []
+
+
+Overfull \hbox (3.5781pt too wide) in paragraph at lines 119--120
+[]\T1/lmr/m/n/10 Tensor de-com-po-si-tion methods--particularly CP
+ []
+
+
+Overfull \hbox (32.05089pt too wide) in paragraph at lines 119--120
+\T1/lmr/m/n/10 et al.[][], [][]2000[][]; [][]Tucker[][], [][]1966[][])--preserv
+e this multi-dimensional
+ []
+
+
+Overfull \hbox (0.3286pt too wide) in paragraph at lines 123--124
+\T1/lmr/m/n/10 eco-nomic re-al-ity of how mar-ket mi-crostruc-ture fac-
+ []
+
+
+Overfull \hbox (10.16466pt too wide) in paragraph at lines 127--128
+\T1/lmr/bx/n/10 on curved, low-dimensional man-i-folds in-duced
+ []
+
+
+
+[4
+
+
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+Overfull \hbox (4.52342pt too wide) in paragraph at lines 129--130
+\T1/lmr/m/n/10 ac-cu-racy, regime de-tec-tion ca-pa-bil-ity, and eco-nomic
+ []
+
+
+Overfull \hbox (8.10664pt too wide) in paragraph at lines 129--130
+\T1/lmr/m/n/10 in-ter-pretabil-ity be-tween ten-sor de-com-po-si-tion meth-
+ []
+
+
+Overfull \hbox (0.46756pt too wide) in paragraph at lines 136--137
+\T1/lmr/m/n/10 crostruc-ture with sys-tem-atic com-par-i-son to ma-
+ []
+
+
+Overfull \hbox (1.2209pt too wide) in paragraph at lines 137--138
+[]\T1/lmr/bx/n/10 Empirical val-i-da-tion\T1/lmr/m/n/10 : Anal-y-sis of 8,761 h
+ours
+ []
+
+
+Overfull \hbox (5.87349pt too wide) in paragraph at lines 138--139
+[]\T1/lmr/bx/n/10 Methodological in-sights\T1/lmr/m/n/10 : Demon-stra-tion that
+
+ []
+
+
+Overfull \hbox (13.49577pt too wide) in paragraph at lines 139--140
+\T1/lmr/m/n/10 ter-pretable mar-ket fac-tors cor-re-spond-ing to regime
+ []
+
+
+Overfull \hbox (5.40314pt too wide) in paragraph at lines 144--145
+\T1/lmr/m/n/10 nance. Sec-tion [][]3[][] de-tails our data col-lec-tion pipelin
+e,
+ []
+
+
+Overfull \hbox (3.43962pt too wide) in paragraph at lines 144--145
+\T1/lmr/m/n/10 ten-sor con-struc-tion, and de-com-po-si-tion al-go-rithms.
+ []
+
+
+
+
+Overfull \hbox (15.99586pt too wide) in paragraph at lines 151--152
+\T1/lmr/m/n/10 Traditional mar-ket mi-crostruc-ture the-ory ([][]Has-brouck[][]
+,
+ []
+
+
+Overfull \hbox (0.76305pt too wide) in paragraph at lines 151--152
+\T1/lmr/m/n/10 formed. Clas-sic mod-els em-pha-size bid-ask spreads,
+ []
+
+
+Overfull \hbox (1.44034pt too wide) in paragraph at lines 155--156
+\T1/lmr/m/n/10 nan-cial mar-kets since the early work of [][]Cont[][] ([][]2001
+[][])
+ []
+
+
+Overfull \hbox (0.10596pt too wide) in paragraph at lines 155--156
+\T1/lmr/m/n/10 clude In-de-pen-dent Com-po-nent Anal-y-sis ([][]Back and
+ []
+
+
+
+[5]
+Overfull \hbox (1.88547pt too wide) in paragraph at lines 157--158
+[]\T1/lmr/m/n/10 Recent cryp-tocur-rency fac-tor stud-ies have iden-
+ []
+
+
+Overfull \hbox (8.62614pt too wide) in paragraph at lines 157--158
+\T1/lmr/m/n/10 ti-fied asset-specific drivers. [][]Liu and Tsyvin-ski[][] ([][]
+2021[][])
+ []
+
+
+Overfull \hbox (8.02269pt too wide) in paragraph at lines 163--164
+[]\T1/lmr/m/n/10 Empirical ap-pli-ca-tions demon-strate ten-sor meth-
+ []
+
+
+Overfull \hbox (11.02266pt too wide) in paragraph at lines 163--164
+\T1/lmr/m/n/10 ized CP-ALS, en-abling 5--10x com-pu-ta-tional speedup
+ []
+
+
+Overfull \hbox (14.2453pt too wide) in paragraph at lines 163--164
+\T1/lmr/m/n/10 with min-i-mal ac-cu-racy loss--critical for high-frequency
+ []
+
+
+
+
+Overfull \hbox (3.80162pt too wide) in paragraph at lines 165--166
+\T1/lmr/m/n/10 ten-sor de-com-po-si-tion to multi-asset cryp-tocur-rency
+ []
+
+
+Overfull \hbox (16.57791pt too wide) in paragraph at lines 165--166
+\T1/lmr/m/n/10 mul-ti-ple as-sets and time--preserving multi-dimensional
+ []
+
+
+Overfull \hbox (11.43982pt too wide) in paragraph at lines 165--166
+\T1/lmr/m/n/10 proof-of-concept es-tab-lishes the method-olog-i-cal foun-
+ []
+
+
+Overfull \hbox (25.46837pt too wide) in paragraph at lines 167--167
+|[]\T1/lmr/bx/n/12 Cryptocurrency Mar-ket Mi-crostruc-
+ []
+
+
+Overfull \hbox (4.4374pt too wide) in paragraph at lines 169--170
+\T1/lmr/bx/n/10 no stud-ies ap-ply high-dimensional joint mod-
+ []
+
+
+Overfull \hbox (3.21889pt too wide) in paragraph at lines 171--172
+\T1/lmr/m/n/10 volatility--suggesting time-varying cross-market dy-
+ []
+
+
+
+[6{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+Overfull \hbox (0.49576pt too wide) in paragraph at lines 173--174
+\T1/lmr/m/n/10 via dy-namic cor-re-la-tion net-works, find-ing that net-
+ []
+
+
+Overfull \hbox (0.44011pt too wide) in paragraph at lines 173--174
+\T1/lmr/m/n/10 cross-asset mi-crostruc-ture spillovers us-ing ma-chine
+ []
+
+
+Overfull \hbox (1.41214pt too wide) in paragraph at lines 177--178
+\T1/lmr/m/n/10 proof-of-concept demon-strates the method-ol-ogy on
+ []
+
+
+
+
+Overfull \hbox (1.27382pt too wide) in paragraph at lines 182--183
+\T1/lmr/m/n/10 ity con-di-tions, and cross-asset cor-re-la-tions, with
+ []
+
+
+Overfull \hbox (1.32796pt too wide) in paragraph at lines 185--186
+[]\T1/lmr/m/n/10 Building on the the-o-ret-i-cal foun-da-tions of [][]Babii
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+92.
+(/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (6.067pt too wide) in paragraph at lines 199--200
+[]\T1/lmr/bx/n/10 Assets\T1/lmr/m/n/10 : BTC/USDT, ETH/USDT, SOL/USDT 
+ []
+
+
+
+[7]
+Overfull \hbox (5.27274pt too wide) in paragraph at lines 221--222
+\T1/lmr/m/n/10 mul-ti-ple mar-ket regimes (bull/bear cy-cles, high/low
+ []
+
+
+Overfull \hbox (0.68964pt too wide) in paragraph at lines 227--228
+\T1/lmr/m/n/10 cor-re-sponds to a nat-u-ral di-men-sion of mar-ket data: 
+ []
+
+
+
+
+Overfull \hbox (6.78394pt too wide) in paragraph at lines 243--244
+[]\T1/lmr/bx/n/10 Raw OHLCV\T1/lmr/m/n/10 : No nor-mal-iza-tion, ab-so-lute pri
+ce
+ []
+
+
+Overfull \hbox (10.7413pt too wide) in paragraph at lines 245--246
+\T1/lmr/m/n/10 tures $\OT1/lmr/m/n/10 [[](\OML/lmm/m/it/10 p[]=p[]\OT1/lmr/m/n/
+10 )\OML/lmm/m/it/10 ; []; []\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 V\OT1/lmr/m/n/10
+ )]$\T1/lmr/m/n/10 , suit-
+ []
+
+
+Overfull \hbox (62.47987pt too wide) in paragraph at lines 252--252
+|[]\T1/lmr/bx/n/10 CP De-com-po-si-tion (CAN-DE-COMP/PARAFAC)| 
+ []
+
+
+
+[8]
+Overfull \hbox (5.02422pt too wide) in paragraph at lines 263--264
+[]\T1/lmr/m/n/10 We em-ploy the Al-ter-nat-ing Least Squares (ALS)
+ []
+
+
+Overfull \hbox (5.51027pt too wide) in paragraph at lines 270--271
+[]\T1/lmr/bx/n/10 Interpretability\T1/lmr/m/n/10 : Each com-po-nent cor-re-spon
+ds
+ []
+
+
+
+
+Overfull \hbox (2.34465pt too wide) in paragraph at lines 291--292
+[]\T1/lmr/bx/n/10 Lower er-ror\T1/lmr/m/n/10 : Of-ten achieves bet-ter re-con-s
+truc-
+ []
+
+
+Overfull \hbox (12.21745pt too wide) in paragraph at lines 309--310
+[]\T1/lmr/m/n/10 For Tucker de-com-po-si-tion with asym-met-ric ranks,
+ []
+
+
+
+[9]
+Overfull \hbox (5.11531pt too wide) in paragraph at lines 329--330
+[]\T1/lmr/bx/n/10 Explained vari-ance\T1/lmr/m/n/10 : $\OT1/lmr/m/n/10 1 \OMS/l
+msy/m/n/10 ^^@ \OT1/lmr/m/n/10 ([])[]$ 
+ []
+
+
+Overfull \hbox (12.69049pt too wide) in paragraph at lines 334--335
+[]\T1/lmr/m/n/10 Our hy-poth-e-sis is that ten-sor meth-ods will achieve
+ []
+
+
+
+
+Overfull \hbox (3.71751pt too wide) in paragraph at lines 340--341
+\T1/lmr/m/n/10 struc-tions will be made pub-licly avail-able at [][]$\T1/lmtt/m
+/n/10 https :
+ []
+
+
+Overfull \hbox (8.57799pt too wide) in paragraph at lines 340--341
+\T1/lmtt/m/n/10 / / github . com / resurrexi / tensor-[]defi$[][] \T1/lmr/m/n/1
+0 upon pub-
+ []
+
+
+Overfull \hbox (0.5225pt too wide) in paragraph at lines 365--366
+[]\T1/lmr/m/n/10 The cor-re-la-tion struc-ture re-veals that ETH and
+ []
+
+
+Overfull \hbox (2.38448pt too wide) in paragraph at lines 365--366
+\T1/lmr/m/n/10 SOL are strongly cor-re-lated (0.762), re-flect-ing their
+ []
+
+
+Overfull \hbox (2.51932pt too wide) in paragraph at lines 365--366
+\T1/lmr/m/n/10 coin's role as a rel-a-tively in-de-pen-dent ``dig-i-tal gold''
+ []
+
+
+Overfull \hbox (6.63367pt too wide) in paragraph at lines 390--391
+\T1/lmr/m/n/10 com-po-si-tion cap-tures 96.55% of vari-ance, demon-
+ []
+
+
+
+[10]
+Overfull \hbox (3.04478pt too wide) in paragraph at lines 392--393
+[]\T1/lmr/bx/n/10 CP-Tucker equiv-a-lence\T1/lmr/m/n/10 : Neg-li-gi-ble dif-fer
+-ence
+ []
+
+<figures/rank_selection.png, id=450, 860.4948pt x 283.0575pt>
+File: figures/rank_selection.png Graphic file (type png)
+<use figures/rank_selection.png>
+Package pdftex.def Info: figures/rank_selection.png  used on input line 397.
+(pdftex.def)             Requested size: 446.26582pt x 146.80202pt.
+
+Overfull \hbox (3.71783pt too wide) in paragraph at lines 402--403
+\T1/lmr/m/n/10 our rank se-lec-tion ap-proach and con-firms that cryp-
+ []
+
+
+Overfull \hbox (0.79173pt too wide) in paragraph at lines 410--411
+[]\T1/lmr/bx/n/10 Factor 1 (Bit-coin Dom-i-nance)\T1/lmr/m/n/10 : Strong pos-
+ []
+
+
+Overfull \hbox (0.71385pt too wide) in paragraph at lines 412--413
+\T1/lmr/m/n/10 when ETH and SOL out-per-form BTC, cor-re-spond-
+ []
+
+
+Overfull \hbox (8.24661pt too wide) in paragraph at lines 414--415
+\T1/lmr/m/n/10 ing high-volatility pe-ri-ods (Nov 2024 elec-tion, March
+ []
+
+
+
+
+Overfull \hbox (7.49593pt too wide) in paragraph at lines 416--417
+\T1/lmr/m/n/10 cil-lates at 24-hour fre-quency, cap-tur-ing di-ur-nal trad-
+ []
+
+
+
+[11]
+Overfull \hbox (9.32938pt too wide) in paragraph at lines 447--448
+\T1/lmr/m/n/10 sti-tu-tional adop-tion wave) con-firms this fac-tor tracks
+ []
+
+
+Overfull \hbox (4.6893pt too wide) in paragraph at lines 449--450
+[]\T1/lmr/bx/n/10 Factor 2 (Alt-coin Risk) \T1/lmr/m/n/10 iso-lates pe-ri-ods w
+hen
+ []
+
+
+
+
+Overfull \hbox (17.93034pt too wide) in paragraph at lines 463--463
+|[]\T1/lmr/bx/n/12 Tensor vs. Ma-trix Meth-ods: When
+ []
+
+
+
+[12 <./figures/rank_selection.png>]
+Overfull \hbox (2.85603pt too wide) in paragraph at lines 477--478
+[]\T1/lmr/m/n/10 while ten-sor de-com-po-si-tion cap-tures mul-ti-plica-
+ []
+
+
+Overfull \hbox (1.84106pt too wide) detected at line 479
+[][] \OT1/lmr/m/n/10 = [][] \OMS/lmsy/m/n/10 ^^B \OML/lmm/m/it/10 A[] \OMS/lmsy
+/m/n/10 ^^B [][] ^^B \OML/lmm/m/it/10 ^^U[]
+ []
+
+
+
+
+Overfull \hbox (2.73352pt too wide) in paragraph at lines 490--491
+[]\T1/lmr/bx/n/10 Low volatil-ity / high liq-uid-ity\T1/lmr/m/n/10 : Nor-mal ma
+r-
+ []
+
+
+Overfull \hbox (3.12267pt too wide) in paragraph at lines 491--492
+[]\T1/lmr/bx/n/10 High volatil-ity / low liq-uid-ity\T1/lmr/m/n/10 : Stress reg
+ime
+ []
+
+
+Overfull \hbox (2.20396pt too wide) in paragraph at lines 494--495
+\T1/lmr/m/n/10 trad-ing: tra-di-tional volatil-ity es-ti-ma-tors (GARCH,
+ []
+
+
+Overfull \hbox (0.71762pt too wide) in paragraph at lines 494--495
+\T1/lmr/m/n/10 our fac-tor ap-proach pro-vides con-tem-po-ra-ne-ous sig-
+ []
+
+
+Overfull \hbox (12.04759pt too wide) in paragraph at lines 501--502
+[]\T1/lmr/bx/n/10 High Fac-tor 2 load-ing\T1/lmr/m/n/10 : Over-weight ETH+SOL,
+ []
+
+
+Overfull \hbox (13.88492pt too wide) in paragraph at lines 509--510
+\T1/lmr/m/n/10 Our cur-rent single-venue anal-y-sis demon-strates proof-
+ []
+
+
+
+[13]
+Overfull \hbox (11.03108pt too wide) in paragraph at lines 533--534
+[]\T1/lmr/bx/n/10 Version 2.0 - Multi-venue ex-pan-sion\T1/lmr/m/n/10 : Adding
+ []
+
+
+Overfull \hbox (9.01419pt too wide) in paragraph at lines 533--534
+\T1/lmr/m/n/10 ics and venue-specific mi-crostruc-ture ef-fects. This
+ []
+
+
+
+
+Overfull \hbox (2.54117pt too wide) in paragraph at lines 535--536
+[]\T1/lmr/bx/n/10 Version 3.0 - Higher-dimensional fea-tures\T1/lmr/m/n/10 :
+ []
+
+
+Overfull \hbox (12.16219pt too wide) in paragraph at lines 535--536
+\T1/lmr/m/n/10 In-cor-po-rat-ing MEV (Max-i-mal Ex-tractable Value),
+ []
+
+
+Overfull \hbox (2.16165pt too wide) in paragraph at lines 540--541
+\T1/lmr/m/n/10 da-tion while main-tain-ing re-pro-ducibil-ity and trace-
+ []
+
+
+Overfull \hbox (6.27403pt too wide) in paragraph at lines 545--546
+\T1/lmr/m/n/10 work for cryp-tocur-rency mar-ket mi-crostruc-ture that
+ []
+
+
+Overfull \hbox (3.99454pt too wide) in paragraph at lines 545--546
+\T1/lmr/m/n/10 vari-ance re-spec-tively, out-per-form-ing PCA (92.31%)
+ []
+
+
+
+[14]
+Overfull \hbox (13.19975pt too wide) in paragraph at lines 547--548
+\T1/lmr/bx/n/10 planes--they evolve on curved, low-dimensional
+ []
+
+
+Overfull \hbox (5.164pt too wide) in paragraph at lines 547--548
+\T1/lmr/bx/n/10 man-i-folds in-duced by mi-crostruc-ture dy-nam-
+ []
+
+
+Overfull \hbox (0.82838pt too wide) in paragraph at lines 558--559
+\T1/lmr/m/n/10 the CCXT li-brary (cryp-tocur-rency data col-lec-tion)
+ []
+
+
+
+
+Overfull \hbox (0.87512pt too wide) in paragraph at lines 560--561
+\T1/lmr/m/n/10 re-search. The col-lab-o-ra-tive pro-cess with the model
+ []
+
+
+
+[15] (./Farzulla_2025_Tensor_Decomposition.bbl
+
+[16
+
+
+]
+
+[17])
+
+[18] (./Farzulla_2025_Tensor_Decomposition.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+Package rerunfilecheck Info: File `Farzulla_2025_Tensor_Decomposition.out' has 
+not changed.
+(rerunfilecheck)             Checksum: 404B86AA57EBF37065AB620FF64A7965;7640.
+ ) 
+Here is how much of TeX's memory you used:
+ 12433 strings out of 475171
+ 188885 string characters out of 5767094
+ 587997 words of memory out of 5000000
+ 35087 multiletter control sequences out of 15000+600000
+ 656100 words of font info for 99 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 75i,11n,79p,910b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/
+fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/l
+mbx9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/
+share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb
+></usr/share/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf-dist/f
+onts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7
+.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-di
+st/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/
+lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/
+texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></us
+r/share/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf-dist/fonts
+/type1/public/lm/lmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.
+pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Farzulla_2025_Tensor_Decomposition.pdf (18 pages, 654311 byte
+s).
+PDF statistics:
+ 655 PDF objects out of 1000 (max. 8388607)
+ 571 compressed objects within 6 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 358 words of extra memory for PDF output out of 10000 (max. 10000000)
+

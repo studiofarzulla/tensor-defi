@@ -1,0 +1,27 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: tensor-defi-2025
+  title: Tensor Decomposition for Cryptocurrency Market Microstructure
+  description: Beyond Matrix Methods
+  keywords:
+    - tensor decomposition
+    - cryptocurrency
+    - market microstructure
+    - CP decomposition
+    - Tucker decomposition
+    - dimensionality reduction
+    - volatility
+  authors:
+    - name: Murad Farzulla
+      orcid: 0009-0002-7164-8704
+      affiliations:
+        - Farzulla Research
+  github: https://github.com/studiofarzulla
+  exports:
+    - format: pdf
+      template: lapreprint
+      output: Farzulla_2025_Tensor_Decomposition_LaPreprint.pdf
+
+site:
+  template: book-theme
