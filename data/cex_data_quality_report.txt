@@ -1,0 +1,33 @@
+================================================================================
+CEX DATA QUALITY REPORT - TENSOR DECOMPOSITION FRAMEWORK
+Generated: 2025-10-26 01:34:12
+================================================================================
+
+Dataset: /home/kawaiikali/Documents/Resurrexi/coding-with-buddy/tensor-defi/data/cex_data_7d.csv
+Total Records: 507
+Symbols: BTC/USDT, ETH/USDT, SOL/USDT
+Date Range: 2025-10-19 01:00:00 to 2025-10-26 01:00:00
+Duration: 7 days 00:00:00
+
+QUALITY CHECKS:
+  Missing Values:     PASS
+  Duplicates:         PASS
+  Time Alignment:     PASS
+  OHLC Consistency:   PASS
+  Zero Volumes:       PASS
+  Extreme Outliers:   PASS
+  Temporal Gaps:      PASS
+
+OVERALL QUALITY SCORE: 100.0%
+
+TENSOR SHAPE:
+  (169, 1, 3, 5)
+  Time × Venue × Asset × Feature
+
+VOLATILITY SUMMARY:
+  symbol  mean_return  volatility  sharpe_approx
+BTC/USDT     0.000274    0.004685       0.058376
+ETH/USDT     0.000141    0.006401       0.022095
+SOL/USDT     0.000265    0.007129       0.037119
+
+RECOMMENDATION: PROCEED WITH TENSOR CONSTRUCTION - Data is production-ready
