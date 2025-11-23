@@ -5,7 +5,7 @@
 [![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Paper: CC-BY-4.0](https://img.shields.io/badge/Paper-CC--BY--4.0-green.svg)](Farzulla_2025_Tensor_Structure_v1.0.0.pdf)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17626899-blue.svg)](https://doi.org/10.5281/zenodo.17626899)
+[![DOI](https://zenodo.org/badge/1083436148.svg)](https://doi.org/10.5281/zenodo.17688564)
 
 **Version 1.0.0** | November 2025 | [Murad Farzulla](https://farzulla.org)
 
