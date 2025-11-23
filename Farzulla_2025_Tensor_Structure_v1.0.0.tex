@@ -1,84 +1,286 @@
-\documentclass{article}
+% ============================================================================
+% FARZULLA RESEARCH PREPRINT TEMPLATE
+% ============================================================================
+% Custom academic preprint template with branding, version control, and logos
+% Author: Murad Farzulla
+% Organization: Farzulla Research
+% Template Version: 1.0.0
+% Last Updated: November 2025
+%
+% QUICK START - CUSTOMIZE THESE PLACEHOLDERS PER PAPER:
+% 1. [Your Paper Title Here] - Full title
+% 2. [Your Subtitle Here] - Subtitle (italic)
+% 3. [Short Title Here] - Running header (2-4 words, concise)
+% 4. [Month Year] - Publication date (e.g., "November 2025")
+% 5. [keyword1, keyword2, keyword3] - PDF metadata keywords
+%
+% Author info already filled in (Murad Farzulla, ORCID, Farzulla Research, email)
+%
+% FEATURES IMPLEMENTED:
+% - Corner logos (FR left, Zenodo right) aligned with preprint banner
+% - Burgundy section headings (keeps sizes unchanged)
+% - Running headers: Author (left) | Short Title (right)
+% - Academic affiliation footnotes (superscript on institution, clickable)
+% - URL line breaking (fixes long URLs in bibliography)
+% - Hyperlinked citations (clickable in-text → bibliography)
+% - First page style (no header, just logos + footers)
+% ============================================================================
 
-% ====================
+\documentclass[11pt,twocolumn]{article}
+
+% ============================================================================
 % PACKAGE IMPORTS
-% ====================
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}  % T1 font encoding for proper < > symbols
-\usepackage[margin=1in]{geometry}
-\usepackage{lmodern}  % Latin Modern font for better math spacing
-\usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{cite}
+% ============================================================================
+
+% Page geometry and layout
+\usepackage[a4paper, margin=1in]{geometry}
 \usepackage{setspace}
-\usepackage{titlesec}
+
+% Fonts and typography
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Graphics and figures
 \usepackage{graphicx}
+\usepackage{float}
+\graphicspath{{arxiv-submission/figures/}}
+
+% Tables
 \usepackage{booktabs}
-\usepackage{multirow}
 \usepackage{array}
 \usepackage{longtable}
-\usepackage[authoryear,round]{natbib}
-\usepackage{enumitem}  % For customizable lists
+\usepackage{multirow}
 
-% Graphics path
-\graphicspath{{figures/}}
+% Lists
+\usepackage{enumitem}
 
-% Bibliography style
-\bibliographystyle{apalike}
+% Math packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
 
-% Two-column layout configuration
-\setlength{\columnsep}{0.5in}  % Space between columns
+% Bibliography
+\usepackage[round,authoryear]{natbib}
+\bibliographystyle{abbrvnat}
 
-% ====================
-% HYPERREF CONFIGURATION
-% ====================
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=cyan,
-    citecolor=blue,
-    pdftitle={Tensor Decomposition for Cryptocurrency Market Microstructure: Beyond Matrix Methods},
-    pdfauthor={Murad Farzulla},
+% Colors
+\usepackage{xcolor}
+\definecolor{farzullaburgundy}{RGB}{128,0,32}      % Farzulla Research brand color
+\definecolor{zenodoblue}{RGB}{0,123,255}            % Zenodo blue
+\definecolor{orcidgreen}{RGB}{166,206,57}           % ORCID green
+
+% Colored boxes
+\usepackage{tcolorbox}
+
+% TikZ for custom graphics
+\usepackage{tikz}
+\usepackage{scalerel}
+
+% Hyperlinks and PDF metadata
+\usepackage{url}  % Better URL formatting and line breaking
+\usepackage[colorlinks=true,
+            linkcolor=farzullaburgundy,
+            citecolor=farzullaburgundy,
+            urlcolor=farzullaburgundy,
+            breaklinks=true,
+            pdftitle={Tensor Structure in Cryptocurrency Microstructure: Low-Rank CP Decomposition from Binance OHLCV},
+            pdfauthor={Murad Farzulla},
+            pdfkeywords={Tensor decomposition, cryptocurrency markets, market microstructure, CP decomposition, Tucker decomposition, high-frequency data, factor models}]{hyperref}
+
+% Allow URLs to break at hyphens and slashes
+\def\UrlBreaks{\do\/\do-\do_}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z}
+
+% Section spacing and formatting
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{1ex plus 0.2ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus 0.4ex minus 0.2ex}{0.8ex plus 0.2ex}
+
+% Burgundy section headings (justified for traditional block look, scaled down)
+\titleformat{\section}{\normalfont\large\bfseries\color{farzullaburgundy}}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries\color{farzullaburgundy}}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalfont\small\bfseries\color{farzullaburgundy}}{\thesubsubsection}{0.5em}{}
+
+% Footer customization
+\usepackage{fancyhdr}
+
+% Absolute positioning for corner logos
+\usepackage{eso-pic}
+
+% ============================================================================
+% CUSTOM LOGO COMMANDS
+% ============================================================================
+
+% ORCID icon (clickable green circle with iD mark) - adjustable size
+\newcommand{\orcidicon}{\scalerel*{
+    \begin{tikzpicture}[x=3ex,y=3ex]
+    \draw[fill=orcidgreen] (0,0) circle (0.5);
+    \draw[white,line width=0.08ex] (0,0.15) -- (0,0.3);
+    \draw[white,line width=0.08ex] (-0.15,0) -- (-0.3,0);
+    \end{tikzpicture}
+}{\textrm{I}}}
+
+% Farzulla Research logo (actual logo image - PDF for vector scaling)
+\newcommand{\farzullalogo}{%
+    \href{https://farzulla.org}{%
+        \includegraphics[height=4ex]{farzulla-logo.pdf}%
+    }%
 }
 
-% ====================
-% TITLE AND AUTHOR
-% ====================
+% Zenodo logo (actual logo image - PDF for vector scaling)
+\newcommand{\zenodologo}{%
+    \href{https://zenodo.org}{%
+        \includegraphics[height=4ex]{zenodo-logo.pdf}%
+    }%
+}
 
-\title{\textbf{Information Geometry of Markets: Cryptocurrency Exchanges as Multiplicative Tensor Processes — Evidence from High-Frequency Decomposition}}
+% ============================================================================
+% VERSION AND PREPRINT BANNER
+% ============================================================================
+
+% Version number command (CUSTOMIZE - update for each version/paper)
+\newcommand{\paperver}{1.0.0}
+\newcommand{\paperdate}{November 2025}
+
+% Corner logos removed - using header/footer text instead
+
+% ============================================================================
+% METADATA BOX (appears after abstract on first page)
+% ============================================================================
+
+\newcommand{\metadatabox}[1]{%
+\begin{tcolorbox}[
+    colback=gray!5,
+    colframe=farzullaburgundy,
+    title=Publication Metadata,
+    fonttitle=\bfseries,
+    coltitle=white,
+    colbacktitle=farzullaburgundy,
+    width=\columnwidth,
+    arc=2mm,
+    boxrule=0.8pt
+]
+\small
+\textbf{DOI:} \href{https://doi.org/#1}{\texttt{#1}}\\
+\textbf{Version:} \paperver\\
+\textbf{Date:} \paperdate\\
+\textbf{License:} CC-BY-4.0
+\end{tcolorbox}
+}
+
+% ============================================================================
+% HEADER AND FOOTER CONFIGURATION
+% ============================================================================
+
+% Short title command (CUSTOMIZE THIS - used in running header)
+% Keep it concise (2-4 words max)
+\newcommand{\shorttitle}{Tensor Crypto Microstructure}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear default
+
+% Running headers (for main body pages)
+\fancyhead[L]{\small\href{https://farzulla.org}{farzulla.org}}  % Left: Website
+\fancyhead[C]{}                                                  % Center: Empty
+\fancyhead[R]{\small\href{https://doi.org/10.5281/zenodo.17626899}{DOI: 10.5281/zenodo.17626899}}  % Right: DOI
+
+% Footers
+\fancyfoot[C]{\small\thepage}
+\fancyfoot[L]{\small Murad Farzulla}
+\fancyfoot[R]{\small v\paperver~| \paperdate}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% First page style (no headers, just footers)
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyfoot[C]{\small\thepage}
+  \fancyfoot[L]{\small Murad Farzulla}
+  \fancyfoot[R]{\small v\paperver~| \paperdate}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+% ============================================================================
+% DOCUMENT METADATA
+% ============================================================================
+
+\title{\vspace{-1em}\textbf{Tensor Structure in Cryptocurrency Microstructure: Low-Rank CP Decomposition from Binance OHLCV}\\[0.5em]
+\large \textit{Single-Venue Proof-of-Concept}\vspace{-0.5em}}
 
 \author{
-    Murad Farzulla\thanks{Farzulla Research. ORCID: 0009-0002-7164-8704. Email: contact@farzulla.org} \\
-    \textit{Farzulla Research}
+    \textbf{Murad Farzulla} \href{https://orcid.org/0009-0002-7164-8704}{\orcidicon}\\
+    \textit{Farzulla Research} \farzullalogo\\[0.3em]
+    \small \paperdate
 }
 
-\date{November 2025}
+\date{}
 
-% ====================
-% DOCUMENT BEGINS
-% ====================
+% ============================================================================
+% DOCUMENT BODY
+% ============================================================================
 
 \begin{document}
 
-\setstretch{1.5}  % Set 1.5 line spacing throughout document
+% Single-column frontmatter
+\onecolumn
+\setstretch{1.2}
 
-\maketitle
+% Apply first page style (no header)
+\thispagestyle{firstpage}
 
+% Preprint status centered above title
+\begin{center}
+{\small\color{farzullaburgundy}\textbf{PREPRINT v\paperver} | \color{gray}Not peer-reviewed}
+\end{center}
+\vspace{0.5em}
+
+% Manual title construction
+\begin{center}
+{\Large\bfseries Tensor Structure in Cryptocurrency Microstructure: Low-Rank CP Decomposition from Binance OHLCV}\\[0.5em]
+{\large\itshape Single-Venue Proof-of-Concept}\\[1em]
+{\bfseries Murad Farzulla}\textsuperscript{1} \href{https://orcid.org/0009-0002-7164-8704}{\orcidicon\ \texttt{0009-0002-7164-8704}}\\[0.5em]
+{\small\itshape \textsuperscript{1}\href{https://farzulla.org}{Farzulla Research}}\\[0.3em]
+{\small \paperdate}\\[0.5em]
+{\small Correspondence: \href{mailto:murad@farzulla.org}{murad@farzulla.org}}
+\end{center}
+
+% Abstract
 \begin{abstract}
 \noindent \textit{Version 1.0.0 (November 2025) - Proof-of-concept demonstrating tensor methods for cryptocurrency microstructure. Future versions will expand to multi-venue analysis.}
 
-\textbf{Methods:} We propose tensor decomposition as a proof-of-concept framework for modeling cryptocurrency market microstructure, preserving multi-dimensional interaction effects lost by traditional matrix methods. Using one year of hourly OHLCV data (8,761 hours) for three major cryptocurrencies (BTC, ETH, SOL) from Binance, we construct a fourth-order tensor $\mathcal{X} \in \mathbb{R}^{T \times A \times F}$ representing time-asset-feature dynamics. We apply CP (CANDECOMP/PARAFAC) and Tucker decomposition via Alternating Least Squares (ALS) and Higher-Order Orthogonal Iteration (HOOI), comparing reconstruction accuracy against Principal Component Analysis (PCA) baselines on flattened tensors.
+\textbf{Methods:} This proof-of-concept applies CP/Tucker decomposition to one year of hourly Binance OHLCV data (BTC/ETH/SOL), preserving multi-dimensional interaction effects lost by traditional matrix methods. Using 8,761 hours of data, we construct a tensor $\mathcal{X} \in \mathbb{R}^{T \times A \times F}$ representing time-asset-feature dynamics. We apply CP (CANDECOMP/PARAFAC) and Tucker decomposition via Alternating Least Squares (ALS) and Higher-Order Orthogonal Iteration (HOOI), comparing reconstruction accuracy against Principal Component Analysis (PCA) baselines on flattened tensors.
 
 \textbf{Results:} Rank-4 CP and Tucker decompositions achieve 96.55\% and 96.56\% explained variance respectively, outperforming PCA (92.31\%) by 4.6 percentage points. Tensor methods preserve multiplicative interactions between asset and temporal dimensions that PCA destroys through flattening. The extracted factors reveal four economically interpretable drivers: (1) Bitcoin dominance and systematic risk, (2) altcoin rotation and risk appetite, (3) volatility regimes and liquidity shocks, (4) intraday microstructure and mean reversion. Negligible difference (0.01\%) between CP and Tucker suggests true rank-4 structure with minimal higher-order interactions.
 
-\textbf{Implications:} This proof-of-concept demonstrates that cryptocurrency markets exhibit low-dimensional tensor structure induced by microstructure dynamics. Tensor decomposition methods respect this multi-way structure, enabling future applications in regime detection, portfolio construction, and risk management. \textbf{Limitation:} This version analyzes single-venue (Binance) data; future work will expand to multi-venue analysis to capture cross-exchange arbitrage dynamics. This work establishes the methodological foundation for tensor-based cryptocurrency market analysis.
+\textbf{Implications:} This proof-of-concept demonstrates that cryptocurrency markets exhibit low-dimensional tensor structure induced by microstructure dynamics. Tensor decomposition methods respect this multi-way structure, demonstrating tensor methods' potential for cryptocurrency microstructure analysis. Future work will test multi-venue extensions. \textbf{Limitation:} This version analyzes single-venue (Binance) data; future work will expand to multi-venue analysis to capture cross-exchange arbitrage dynamics.
 \end{abstract}
 
 \vspace{0.5em}
 \noindent \textbf{Keywords:} Tensor decomposition, cryptocurrency markets, market microstructure, CP decomposition, Tucker decomposition, high-frequency data, factor models
 
+\vspace{0.5em}
+\noindent \textbf{JEL Classification:} C38 (Classification Methods; Cluster Analysis; Principal Components), G12 (Asset Pricing; Trading Volume; Bond Interest Rates), C58 (Financial Econometrics)
+
+% Metadata box with DOI
+\metadatabox{10.5281/zenodo.17626899}
+
+\vspace{0.5em}
+\noindent \textbf{Interactive Dashboard:} Explore visualizations, methodology, and results interactively at \url{https://farzulla.org/research/tensor-defi/}
+
+\section*{Research Context}
+
+This work forms part of the Adversarial Systems Research program, which investigates stability, alignment, and friction dynamics in complex systems where competing interests generate structural conflict. The program examines how agents with divergent preferences interact within institutional constraints across multiple domains: political governance, financial markets (cryptocurrency volatility and regulatory responses), human cognitive development (trauma as maladaptive learning from adversarial training environments), and artificial intelligence alignment (multi-agent systems with competing objectives).
+
+In financial markets, adversarial dynamics manifest as the tension between different market participants (high-frequency traders vs. long-term investors, centralized exchanges vs. decentralized protocols) and between market innovation and regulatory oversight. This paper applies tensor decomposition to cryptocurrency microstructure to reveal how multi-dimensional market dynamics encode these competing forces. By preserving the full tensor structure (time $\times$ asset $\times$ feature) rather than flattening to matrices, we uncover low-rank factor structure that reflects the multiplicative interaction between venue mechanics, asset-specific functions, and temporal regimes—interactions that traditional matrix methods destroy.
+
+The 96.56\% explained variance achieved with rank-4 decomposition demonstrates that cryptocurrency markets, despite appearing chaotic, exhibit strong low-dimensional structure induced by systematic microstructure forces. This finding establishes tensor methods as essential for modeling markets where functional superposition (assets serving simultaneously as currency, collateral, gas tokens, and governance mechanisms) creates inherently multi-dimensional dynamics.
+
+Future extensions will examine whether this low-rank tensor structure generalizes across different cryptocurrency market regimes (bull vs. bear markets, high vs. low volatility periods) and whether the extracted factors predict regime transitions. Ongoing work investigates multi-venue tensor decomposition to capture cross-exchange arbitrage dynamics and decentralized exchange (DEX) vs. centralized exchange (CEX) microstructure differences. The framework also suggests applications beyond finance: do political systems exhibit analogous low-rank structure when modeling voter preferences across multiple policy dimensions and time periods?
+
+% Table of contents on new page
+\clearpage
 \tableofcontents
 
 % ====================
@@ -124,7 +326,7 @@ This multiplicative structure aligns with the economic reality of how market mic
 
 \subsection{Core Hypothesis}
 
-Our central thesis is that \textbf{cryptocurrency markets do not live on flat planes--they evolve on curved, low-dimensional manifolds induced by microstructure dynamics}. Tensor decomposition methods respect this curvature by preserving multi-way interactions, while traditional matrix methods erase it through flattening.
+This proof-of-concept tests whether cryptocurrency markets exhibit low-rank tensor structure in a single-venue (Binance) setting. Tensor decomposition methods respect multi-way interactions by preserving structure that traditional matrix methods erase through flattening.
 
 We test this hypothesis using one year of high-frequency market data, comparing reconstruction accuracy, regime detection capability, and economic interpretability between tensor decomposition methods (CP and Tucker) and PCA baselines.
 
@@ -174,7 +376,7 @@ Despite these advances, no prior work applies tensor decomposition to multi-asse
 
 \subsection{Our Contribution}
 
-We fill the identified research gap by proposing the first tensor decomposition framework for multi-asset cryptocurrency market microstructure. This proof-of-concept demonstrates the methodology on single-venue data; future versions will expand to multi-venue analysis. Our approach differs from prior work in three ways:
+This single-venue proof-of-concept demonstrates tensor decomposition on multi-asset Binance OHLCV data, establishing feasibility for future multi-venue extensions. Our approach differs from prior work in three ways:
 
 \begin{enumerate}[leftmargin=*]
     \item \textbf{Multi-dimensional modeling}: We preserve the tensor structure (asset $\times$ time $\times$ feature) rather than flattening to matrices, capturing interaction effects that matrix methods destroy.
@@ -182,7 +384,7 @@ We fill the identified research gap by proposing the first tensor decomposition 
     \item \textbf{Economic interpretability}: We extract factors corresponding to regime dynamics, liquidity conditions, and cross-asset correlations, with clear economic interpretation grounded in microstructure theory.
 \end{enumerate}
 
-Building on the theoretical foundations of \citet{Babii2023Tensor} and the empirical success of \citet{Lettau2024ThreeD}, we demonstrate that cryptocurrency markets exhibit low-dimensional tensor structure induced by microstructure dynamics, and that tensor methods provide superior reconstruction accuracy while revealing economically meaningful factors invisible to traditional approaches.
+Building on the theoretical foundations of \citet{Babii2023Tensor} and the empirical success of \citet{Lettau2024ThreeD}, we establish that Binance OHLCV data exhibits low-dimensional tensor structure, and that tensor methods provide superior reconstruction accuracy while revealing economically meaningful factors invisible to traditional approaches.
 
 \section{Methodology}
 \label{sec:methodology}
@@ -335,7 +537,7 @@ Our hypothesis is that tensor methods will achieve 20--50\% improvement in expla
 
 \subsection{Implementation}
 
-All decompositions are implemented using TensorLy v0.8.1 \citep{Kossaifi2019TensorLy} with NumPy 1.26.4 backend. Experiments run on commodity hardware (AMD Ryzen 9900X, 128GB RAM, Arch Linux). CP decomposition via ALS with convergence tolerance $10^{-4}$, maximum 500 iterations (typically converges in 50--150 iterations). Tucker decomposition via HOOI with identical tolerance. Random seed set to 42 for reproducibility. CP and Tucker decompositions converge in 30--90 seconds for our dataset.
+All decompositions are implemented using TensorLy v0.8.1 \citep{Kossaifi2019TensorLy} with NumPy 1.26.4 backend. Experiments executed on Resurrexi Lab, a distributed computing cluster with professional Kubernetes orchestration across consumer-grade hardware (8 nodes, 66 cores, 229GB RAM, 48GB VRAM). CP decomposition via ALS with convergence tolerance $10^{-4}$, maximum 500 iterations (typically converges in 50--150 iterations). Tucker decomposition via HOOI with identical tolerance. Random seed set to 42 for reproducibility. CP and Tucker decompositions converge in 30--90 seconds for our dataset.
 
 Code, data, and complete reproducibility instructions will be made publicly available at \url{https://github.com/resurrexi/tensor-defi} upon publication.
 
@@ -394,12 +596,19 @@ PCA & 4 & 0.3208 & 92.31\% & baseline \\
 
 \begin{figure*}[htbp]
     \centering
-    \includegraphics[width=0.95\textwidth]{rank_selection.png}
-    \caption{Explained variance vs. rank for different decomposition methods}
+    \makebox[\textwidth]{\includegraphics[width=1.15\textwidth]{reconstruction_quality.pdf}}
+    \caption{Reconstruction quality comparison across methods. Tensor methods (CP and Tucker) substantially outperform PCA, with reconstruction error declining more rapidly and plateauing at lower values. The negligible gap between CP and Tucker validates the true rank-4 structure assumption.}
+    \label{fig:reconstruction-quality}
+\end{figure*}
+
+\begin{figure*}[htbp]
+    \centering
+    \makebox[\textwidth]{\includegraphics[width=1.15\textwidth]{rank_selection.png}}
+    \caption{Explained variance vs. rank for different decomposition methods. Variance saturates rapidly beyond rank 4, with diminishing returns for additional components.}
     \label{fig:rank-selection}
 \end{figure*}
 
-Figure~\ref{fig:rank-selection} shows that explained variance saturates rapidly beyond rank 4, with diminishing returns for additional components. This validates our rank selection approach and confirms that cryptocurrency market dynamics are dominated by a small number of latent factors.
+Figures~\ref{fig:reconstruction-quality} and \ref{fig:rank-selection} demonstrate that tensor methods achieve superior reconstruction quality and that explained variance saturates rapidly beyond rank 4, with diminishing returns for additional components. This validates our rank selection approach and confirms that cryptocurrency market dynamics are dominated by a small number of latent factors.
 
 \subsection{Factor Interpretation}
 
@@ -414,6 +623,15 @@ The temporal factors (Mode 1) reveal four distinct market regimes:
 \textbf{Factor 3 (Volatility Regime)}: Spikes during high-volatility periods (Nov 2024 election, March 2025 banking crisis), capturing market-wide stress and liquidity shocks.
 
 \textbf{Factor 4 (Intraday Microstructure)}: Oscillates at 24-hour frequency, capturing diurnal trading patterns (Asian/European/US session effects) and mean reversion dynamics.
+
+\begin{figure*}[htbp]
+    \centering
+    \makebox[\textwidth]{\includegraphics[width=1.15\textwidth]{temporal_evolution.pdf}}
+    \caption{Temporal evolution of the four extracted factors over the one-year period. Factor 3 (volatility regime) shows clear spikes during known market stress events (November 2024 election, March 2025 banking crisis), while Factor 4 exhibits regular 24-hour oscillations reflecting intraday microstructure. Factors 1 and 2 capture the alternation between Bitcoin dominance and altcoin season regimes.}
+    \label{fig:temporal-evolution}
+\end{figure*}
+
+Figure~\ref{fig:temporal-evolution} visualizes the temporal dynamics of all four factors across the full year, revealing the clear regime structure that emerges from tensor decomposition. The alternating dominance of Factors 1 and 2 corresponds to observable market cycles, while Factor 3's event-driven spikes and Factor 4's periodic oscillations confirm the interpretability of the extracted latent structure.
 
 \subsubsection{Asset Factors}
 
@@ -462,7 +680,7 @@ This factor could serve as a real-time regime detection signal for risk manageme
 
 \subsection{Tensor vs. Matrix Methods: When Does Structure Matter?}
 
-Our results demonstrate that cryptocurrency markets exhibit \textbf{multiplicative interaction effects} that matrix methods fail to capture. The 4.6\% improvement in explained variance (from 92.31\% to 96.56\%) represents substantial economic value:
+On Binance data, tensor methods capture 4.6\% higher explained variance than PCA, suggesting multiplicative structure may exist in cryptocurrency microstructure. The improvement (from 92.31\% to 96.56\%) represents substantial economic value:
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Portfolio construction}: Factor loadings enable multi-asset allocation based on regime exposure
@@ -527,37 +745,28 @@ Our current analysis has several limitations:
     \item \textbf{Linear methods}: CP and Tucker are linear; future work could explore nonlinear tensor networks or manifold-aware decompositions
 \end{enumerate}
 
-Future extensions planned for subsequent versions (v2.0+):
+Future work will focus on several key extensions:
 
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Version 2.0 - Multi-venue expansion}: Adding Coinbase, Kraken (CEX) and Uniswup, Curve (DEX) to test cross-exchange arbitrage dynamics and venue-specific microstructure effects. This will validate the full 4-way tensor hypothesis.
-    \item \textbf{Version 2.1 - Robustness validation}: Bootstrap confidence intervals, out-of-sample regime detection, expanded asset universe (10+ cryptocurrencies), dynamic PCA baseline comparison
-    \item \textbf{Version 3.0 - Higher-dimensional features}: Incorporating MEV (Maximal Extractable Value), gas prices, block positions for Ethereum, order book depth features
-    \item \textbf{Version 3.1 - Information geometry}: Computing Riemannian metrics on extracted factor space, using Ricci curvature for regime stress detection (fulfilling the "Information Geometry of Markets" framework)
-    \item \textbf{Future work - Real-time deployment}: Implementing rolling window decomposition for live factor tracking, incremental tensor updates for streaming data
+    \item \textbf{Multi-venue expansion}: Adding Coinbase, Kraken (CEX) and Uniswap, Curve (DEX) to test cross-exchange arbitrage dynamics and venue-specific microstructure effects. This will validate the full 4-way tensor hypothesis (time $\times$ venue $\times$ asset $\times$ feature) and enable analysis of CEX-DEX basis spreads.
+    \item \textbf{Robustness validation}: Bootstrap confidence intervals for factor loadings, out-of-sample regime detection, expanded asset universe (10+ cryptocurrencies) to test rank scalability, and dynamic PCA baseline comparison across different market conditions.
+    \item \textbf{Higher-dimensional features}: Incorporating blockchain-specific metrics such as MEV (Maximal Extractable Value), gas prices, block positions for Ethereum, and order book depth features to capture microstructure dynamics invisible in OHLCV data alone.
+    \item \textbf{Information geometry framework}: Computing Riemannian metrics on the extracted factor manifold and using Ricci curvature for regime stress detection, enabling geometric characterization of market states beyond Euclidean distance measures.
+    \item \textbf{Real-time deployment}: Implementing rolling window decomposition for live factor tracking and incremental tensor updates for streaming data, enabling practical applications in algorithmic trading and risk management.
 \end{itemize}
 
-This versioning approach enables iterative validation while maintaining reproducibility and traceability of methodological evolution.
+These extensions will test whether the low-rank tensor structure observed in single-venue data generalizes to multi-venue settings and whether tensor methods provide robust out-of-sample regime predictions.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
 We have presented a tensor decomposition framework for cryptocurrency market microstructure that preserves multi-dimensional interaction effects lost by traditional matrix methods. Using one year of hourly OHLCV data for BTC, ETH, and SOL, we demonstrated that rank-4 CP and Tucker decompositions achieve 96.55\% and 96.56\% explained variance respectively, outperforming PCA (92.31\%) by 4.6 percentage points.
 
-Our central contribution is the recognition that \textbf{cryptocurrency markets do not live on flat planes--they evolve on curved, low-dimensional manifolds induced by microstructure dynamics}. Tensor decomposition methods respect this curvature by modeling multiplicative interactions between time, venue, asset, and feature dimensions, while PCA and other matrix methods erase it through flattening.
+This proof-of-concept demonstrates that Binance cryptocurrency OHLCV data exhibits low-rank tensor structure (96.56\% variance with rank-4), outperforming PCA by 4.6pp. Tensor decomposition methods respect multi-way interactions between time, asset, and feature dimensions, while PCA and other matrix methods erase them through flattening.
 
 The extracted factors reveal four economically interpretable drivers: (1) Bitcoin dominance and systematic risk, (2) altcoin rotation and risk appetite, (3) volatility regimes and liquidity shocks, (4) intraday microstructure and mean reversion. These factors enable applications in regime detection (real-time volatility monitoring), portfolio construction (systematic factor rotation), cross-venue arbitrage (basis spread decomposition), and risk management (stress signal generation).
 
 This work establishes tensor decomposition as a viable--and often superior--alternative to matrix methods for modeling multi-dimensional financial data. As cryptocurrency markets continue to exhibit functional superposition across venues and asset roles, methods that preserve full tensor structure will become increasingly important for accurate microstructure modeling.
-
-% ====================
-% ACKNOWLEDGMENTS
-% ====================
-\section*{Acknowledgments}
-
-The author thanks the open-source community for the CCXT library (cryptocurrency data collection) and TensorLy framework (tensor decomposition implementation). This research was conducted using publicly available market data from Binance.
-
-\textbf{AI Disclosure:} Anthropic's Claude Sonnet 4.5 provided significant assistance throughout this research. The collaborative process with the model allowed the core research questions and ideas to come to life through iterative discussion, literature synthesis, methodology development, code implementation, and document preparation. Perplexity was used for targeted research queries. The author acknowledges valuable contributions from the academic community whose foundational work on tensor decomposition methods informed this research.
 
 % ====================
 % SWITCH BACK TO SINGLE-COLUMN FOR REFERENCES
@@ -565,6 +774,22 @@ The author thanks the open-source community for the CCXT library (cryptocurrency
 \clearpage
 \onecolumn
 \setstretch{1.5}  % Re-apply line spacing
+
+% ====================
+% DATA AVAILABILITY & ACKNOWLEDGEMENTS
+% ====================
+
+\section*{Data Availability Statement}
+
+All data, analysis code, figure generation scripts, and comprehensive documentation are publicly available at: \url{https://github.com/resurrexi/tensor-defi}. The repository includes complete implementation details, parameter configurations, and instructions for reproducing all results. Data sources include Binance historical OHLCV data (via CCXT library). Models are implemented in Python 3.13+ using TensorLy and can be executed on standard hardware. The code repository will be archived on Zenodo upon publication.
+
+\section*{Acknowledgements}
+
+This research benefited from Perplexity AI for efficient literature discovery and source verification, and Anthropic's Claude for assistance with analytical framework development, custom tensor decomposition implementation, literature synthesis, and technical writing. All conceptual innovations, theoretical claims, and interpretive judgments remain the author's sole responsibility.
+
+All computational analysis was conducted at Resurrexi Lab, a distributed computing cluster built from consumer-grade hardware (8 nodes, 66 cores, 229GB RAM, 48GB VRAM), demonstrating that rigorous quantitative finance research is accessible without institutional supercomputing infrastructure.
+
+Research methodologies and reproducibility practices are documented at \url{https://farzulla.org/methodologies}.
 
 % ====================
 % BIBLIOGRAPHY

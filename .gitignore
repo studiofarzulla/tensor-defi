@@ -35,6 +35,14 @@ paper/
 # Tests
 test_*.py
 
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+
 # Temporary files
 *.tmp
 *.bak

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive dashboard for tensor decomposition analysis of cryptocurrency market microstructure">
+    <meta name="author" content="Murad Farzulla">
+    <title>Information Geometry of Markets | Interactive Dashboard</title>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #8b5cf6;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            min-width: 200px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            color: var(--primary);
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary);
+        }
+
+        /* Figure Container */
+        .figure-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .figure-caption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            background: var(--light);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--light);
+        }
+
+        .method-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-cp { background: #dbeafe; color: #1e40af; }
+        .badge-tucker { background: #e0e7ff; color: #4c1d95; }
+        .badge-pca { background: #fee2e2; color: #991b1b; }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Citation Box */
+        .citation-box {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .citation-box pre {
+            white-space: pre-wrap;
+            margin: 0;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .copy-btn.copied {
+            background: var(--success);
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .stats { flex-direction: column; align-items: center; }
+            .stat-card { width: 100%; max-width: 300px; }
+            .tabs { gap: 0.5rem; }
+            .tab { padding: 0.75rem 1rem; font-size: 0.9rem; }
+            .container { padding: 1rem; }
+        }
+
+        /* Interactive Elements */
+        .interactive-control {
+            margin: 1rem 0;
+        }
+
+        .slider-container {
+            margin: 1.5rem 0;
+        }
+
+        .slider-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--border);
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Links */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Information Geometry of Markets</h1>
+        <p>Cryptocurrency Exchanges as Multiplicative Tensor Processes — Evidence from High-Frequency Decomposition</p>
+
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-value">96.55%</span>
+                <span class="stat-label">Explained Variance (CP)</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">+4.6pp</span>
+                <span class="stat-label">vs. PCA Baseline</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">Rank-4</span>
+                <span class="stat-label">Optimal Structure</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">8,761</span>
+                <span class="stat-label">Hours Analyzed</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="openTab(event, 'overview')">Overview</button>
+            <button class="tab" onclick="openTab(event, 'methodology')">Methodology</button>
+            <button class="tab" onclick="openTab(event, 'results')">Results</button>
+            <button class="tab" onclick="openTab(event, 'interpretation')">Interpretation</button>
+            <button class="tab" onclick="openTab(event, 'citation')">Citation</button>
+        </div>
+
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="card">
+                <h2>Research Overview</h2>
+                <p>Traditional market microstructure models rely on matrix factorization methods like PCA, which flatten multi-dimensional market data and lose critical interaction effects. This research demonstrates that <strong>cryptocurrency markets exhibit low-dimensional tensor structure induced by microstructure dynamics</strong>, and that tensor decomposition methods preserve these multi-way interactions better than traditional approaches.</p>
+
+                <div class="highlight-box">
+                    <h4>🎯 Core Thesis</h4>
+                    <p><strong>Cryptocurrency markets do not live on flat planes—they evolve on curved, low-dimensional manifolds induced by microstructure dynamics.</strong> Tensor methods respect this geometry; matrix methods erase it through flattening.</p>
+                </div>
+
+                <h3>Key Contributions</h3>
+                <ul>
+                    <li><strong>Novel Framework:</strong> First application of tensor decomposition to cryptocurrency market microstructure with systematic comparison to matrix baselines</li>
+                    <li><strong>Empirical Validation:</strong> Analysis of 8,761 hours of OHLCV data across BTC, ETH, and SOL from Binance</li>
+                    <li><strong>Methodological Insights:</strong> Demonstration that low-rank tensor structure exists in cryptocurrency markets and can be exploited for dimensionality reduction</li>
+                    <li><strong>Economic Interpretation:</strong> Extraction of four interpretable market factors corresponding to regime dynamics and cross-asset correlations</li>
+                </ul>
+
+                <h3>Dataset</h3>
+                <div class="grid">
+                    <div class="card" style="margin: 0;">
+                        <strong>Duration</strong><br>
+                        1 year (Oct 26, 2024 - Oct 26, 2025)
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <strong>Assets</strong><br>
+                        BTC/USDT, ETH/USDT, SOL/USDT
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <strong>Venue</strong><br>
+                        Binance (largest CEX by volume)
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <strong>Observations</strong><br>
+                        26,283 rows (8,761 hrs × 3 assets)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methodology Tab -->
+        <div id="methodology" class="tab-content">
+            <div class="card">
+                <h2>Tensor Decomposition Methods</h2>
+
+                <h3>Tensor Structure</h3>
+                <p>Market microstructure is represented as a third-order tensor <strong>𝓧 ∈ ℝ<sup>T×A×F</sup></strong> where:</p>
+                <ul>
+                    <li><strong>T = 8,761:</strong> Hourly timestamps</li>
+                    <li><strong>A = 3:</strong> Assets (BTC, ETH, SOL)</li>
+                    <li><strong>F = 5:</strong> Features (open, high, low, close, volume)</li>
+                </ul>
+
+                <h3>CP Decomposition (CANDECOMP/PARAFAC)</h3>
+                <p>Factorizes the tensor as a sum of rank-one components:</p>
+                <div class="citation-box" style="margin: 1rem 0;">
+                    <pre>𝓧 ≈ Σᵣ₌₁ᴿ λᵣ · (aᵣ ⊗ bᵣ ⊗ cᵣ)</pre>
+                </div>
+                <p>Where λᵣ are component weights and ⊗ denotes outer product. Most compact representation with economically interpretable factors.</p>
+
+                <h3>Tucker Decomposition</h3>
+                <p>Generalizes CP with a core tensor capturing factor interactions:</p>
+                <div class="citation-box" style="margin: 1rem 0;">
+                    <pre>𝓧 ≈ 𝓖 ×₁ A ×₂ B ×₃ C</pre>
+                </div>
+                <p>Allows different ranks per dimension with explicit interaction modeling via core tensor 𝓖.</p>
+
+                <h3>PCA Baseline</h3>
+                <p>Traditional matrix approach: flatten tensor to matrix <strong>X ∈ ℝ<sup>T×(A·F)</sup></strong> and apply standard PCA. This destroys multi-way interaction structure that tensor methods preserve.</p>
+
+                <div class="figure-container">
+                    <img src="arxiv-submission/figures/method_comparison.png" alt="Method comparison">
+                    <p class="figure-caption">Figure: Comparison of CP, Tucker, and PCA decomposition methods</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Tab -->
+        <div id="results" class="tab-content">
+            <div class="card">
+                <h2>Empirical Results</h2>
+
+                <h3>Reconstruction Performance</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Rank</th>
+                            <th>Explained Variance</th>
+                            <th>Improvement vs PCA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="method-badge badge-cp">CP</span></td>
+                            <td>4</td>
+                            <td><strong>96.55%</strong></td>
+                            <td style="color: var(--success);">+4.24pp</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-badge badge-tucker">Tucker</span></td>
+                            <td>4×1×4×4</td>
+                            <td><strong>96.56%</strong></td>
+                            <td style="color: var(--success);">+4.25pp</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-badge badge-pca">PCA</span></td>
+                            <td>4</td>
+                            <td>92.31%</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <h4>💡 Key Finding</h4>
+                    <p>Negligible difference (0.01%) between CP and Tucker suggests <strong>true rank-4 structure with minimal higher-order interactions</strong>. This indicates that cryptocurrency market microstructure is genuinely low-dimensional and well-approximated by multiplicative factor models.</p>
+                </div>
+
+                <div class="figure-container">
+                    <img src="arxiv-submission/figures/rank_selection.png" alt="Rank selection analysis">
+                    <p class="figure-caption">Figure: Explained variance vs. rank for different decomposition methods</p>
+                </div>
+
+                <div class="figure-container">
+                    <img src="arxiv-submission/figures/reconstruction_quality.png" alt="Reconstruction quality">
+                    <p class="figure-caption">Figure: Per-asset reconstruction quality comparison</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interpretation Tab -->
+        <div id="interpretation" class="tab-content">
+            <div class="card">
+                <h2>Economic Interpretation of Factors</h2>
+
+                <p>Tensor decomposition extracts four economically meaningful factors from cryptocurrency market microstructure:</p>
+
+                <h3>Factor 1: Bitcoin Dominance & Systematic Risk</h3>
+                <p>Primary factor capturing BTC's role as "digital gold" and systematic risk driver across the cryptocurrency ecosystem. High loadings during market-wide movements.</p>
+
+                <h3>Factor 2: Altcoin Rotation & Risk Appetite</h3>
+                <p>Second factor representing ETH-SOL dynamics and altcoin rotation patterns. Reflects shifts in risk appetite and speculation cycles.</p>
+
+                <h3>Factor 3: Volatility Regimes & Liquidity Shocks</h3>
+                <p>Third factor corresponding to regime transitions between high/low volatility states and liquidity shock events.</p>
+
+                <h3>Factor 4: Intraday Microstructure & Mean Reversion</h3>
+                <p>Fourth factor capturing intraday patterns, mean reversion dynamics, and hourly microstructure effects.</p>
+
+                <div class="figure-container">
+                    <img src="arxiv-submission/figures/cp_factors.png" alt="CP factor loadings">
+                    <p class="figure-caption">Figure: CP decomposition factor loadings across temporal, asset, and feature dimensions</p>
+                </div>
+
+                <div class="figure-container">
+                    <img src="arxiv-submission/figures/temporal_evolution.png" alt="Temporal factor evolution">
+                    <p class="figure-caption">Figure: Evolution of temporal factors over the analysis period</p>
+                </div>
+
+                <div class="figure-container">
+                    <img src="arxiv-submission/figures/asset_factor_space.png" alt="Asset factor space">
+                    <p class="figure-caption">Figure: Asset positioning in extracted factor space</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🔍 Cross-Asset Correlation Structure</h4>
+                    <p>The extracted factors reveal that ETH and SOL are strongly correlated (0.762), reflecting shared altcoin dynamics, while BTC exhibits lower correlation with SOL (0.393), consistent with Bitcoin's role as a relatively independent "digital gold" asset.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Citation Tab -->
+        <div id="citation" class="tab-content">
+            <div class="card">
+                <h2>How to Cite</h2>
+
+                <h3>Research Paper (BibTeX)</h3>
+                <div class="citation-box">
+                    <button class="copy-btn" onclick="copyToClipboard('paper-citation')">Copy</button>
+                    <pre id="paper-citation">@techreport{Farzulla2025InformationGeometry,
+  author = {Farzulla, Murad},
+  title = {Information Geometry of Markets: Cryptocurrency
+           Exchanges as Multiplicative Tensor Processes},
+  institution = {Farzulla Research},
+  year = {2025},
+  type = {Working Paper},
+  note = {Version 1.0.0},
+  url = {https://github.com/resurrexi/tensor-defi}
+}</pre>
+                </div>
+
+                <h3>Software (BibTeX)</h3>
+                <div class="citation-box">
+                    <button class="copy-btn" onclick="copyToClipboard('software-citation')">Copy</button>
+                    <pre id="software-citation">@software{Farzulla2025TensorDefi,
+  author = {Farzulla, Murad},
+  title = {tensor-defi: Tensor Decomposition for
+           Cryptocurrency Market Microstructure},
+  year = {2025},
+  version = {1.0.0},
+  url = {https://github.com/resurrexi/tensor-defi}
+}</pre>
+                </div>
+
+                <h3>Links</h3>
+                <ul>
+                    <li><strong>Paper PDF:</strong> <a href="arxiv-submission/Farzulla_2025_Tensor_Decomposition.pdf" target="_blank">Download PDF</a></li>
+                    <li><strong>Source Code:</strong> <a href="https://github.com/resurrexi/tensor-defi" target="_blank">GitHub Repository</a></li>
+                    <li><strong>Author:</strong> <a href="https://farzulla.org" target="_blank">Murad Farzulla</a></li>
+                    <li><strong>ORCID:</strong> <a href="https://orcid.org/0009-0002-7164-8704" target="_blank">0009-0002-7164-8704</a></li>
+                    <li><strong>Related Work:</strong> <a href="https://doi.org/10.5281/zenodo.17595207" target="_blank">Cryptocurrency Event Study</a></li>
+                </ul>
+
+                <h3>License</h3>
+                <p><strong>Code:</strong> MIT License</p>
+                <p><strong>Paper:</strong> CC-BY-4.0</p>
+                <p><strong>Data:</strong> Public market data (Binance via CCXT)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 <a href="https://farzulla.org">Murad Farzulla</a> | <a href="https://farzulla.org">Farzulla Research</a></p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Version 1.0.0 | November 2025</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Tab switching functionality
+        function openTab(evt, tabName) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // Remove active class from all tabs
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            // Show current tab and mark as active
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Copy to clipboard functionality
+        function copyToClipboard(elementId) {
+            var text = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                // Find the button that was clicked
+                var element = document.getElementById(elementId);
+                var button = element.parentElement.querySelector('.copy-btn');
+
+                // Update button text
+                var originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+
+                // Reset after 2 seconds
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -4,45 +4,48 @@ type: software
 title: "tensor-defi: Tensor Decomposition for Cryptocurrency Market Microstructure"
 version: 1.0.0
 date-released: 2025-11-16
+doi: 10.5281/zenodo.17626899
 authors:
   - family-names: Farzulla
     given-names: Murad
-    email: contact@farzulla.org
+    email: murad@farzulla.org
     affiliation: Farzulla Research
     orcid: https://orcid.org/0009-0002-7164-8704
 repository-code: "https://github.com/resurrexi/tensor-defi"
 url: "https://farzulla.org"
 abstract: >-
-  This repository implements the first tensor decomposition framework for
-  multi-asset cryptocurrency market microstructure. Version 1.0.0 provides
-  a proof-of-concept demonstrating that tensor methods preserve multiplicative
-  interactions between asset and temporal dimensions that traditional matrix
-  methods destroy. Using one year of hourly OHLCV data for BTC, ETH, and SOL,
-  rank-4 CP and Tucker decompositions achieve 96.55% and 96.56% explained
-  variance respectively, outperforming PCA (92.31%) by 4.6 percentage points.
+  This proof-of-concept demonstrates tensor decomposition methods applied to
+  cryptocurrency market microstructure, preserving multi-dimensional interaction
+  effects lost by traditional matrix methods. Using one year of hourly OHLCV data
+  for BTC, ETH, and SOL from Binance, rank-4 CP and Tucker decompositions achieve
+  96.55% and 96.56% explained variance respectively, outperforming PCA (92.31%)
+  by 4.6 percentage points. Version 1.0.0 establishes feasibility on single-venue
+  data for future multi-venue extensions.
 keywords:
   - tensor decomposition
-  - cryptocurrency
+  - cryptocurrency markets
   - market microstructure
   - CP decomposition
   - Tucker decomposition
+  - CANDECOMP/PARAFAC
   - high-frequency data
   - factor models
-  - information geometry
+  - dimensionality reduction
 license: MIT
 preferred-citation:
   type: article
-  title: "Information Geometry of Markets: Cryptocurrency Exchanges as Multiplicative Tensor Processes — Evidence from High-Frequency Decomposition"
+  title: "Tensor Structure in Cryptocurrency Microstructure: Low-Rank CP Decomposition from Binance OHLCV—Single-Venue Proof-of-Concept"
   authors:
     - family-names: Farzulla
       given-names: Murad
-      email: contact@farzulla.org
+      email: murad@farzulla.org
       affiliation: Farzulla Research
       orcid: https://orcid.org/0009-0002-7164-8704
   year: 2025
   institution:
     name: Farzulla Research
-  notes: "Version 1.0.0 - Proof-of-concept"
+  notes: "Preprint v1.0.0 (November 2025)"
+  doi: 10.5281/zenodo.17626899
   url: "https://github.com/resurrexi/tensor-defi"
 references:
   - type: article
@@ -51,5 +54,5 @@ references:
       - family-names: Farzulla
         given-names: Murad
     year: 2025
-    doi: 10.5281/zenodo.17595207
+    doi: 10.5281/zenodo.17677682
     notes: "Related work on cryptocurrency volatility heterogeneity"
