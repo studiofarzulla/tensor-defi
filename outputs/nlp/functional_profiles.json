@@ -1,0 +1,249 @@
+{
+  "BTC": {
+    "project_name": "Bitcoin",
+    "num_chunks": 55,
+    "primary_functions": [
+      "medium_of_exchange",
+      "infrastructure"
+    ],
+    "functional_profile": {
+      "store_of_value": 0.0,
+      "medium_of_exchange": 0.4590085795996185,
+      "smart_contracts": 0.039180171591992365,
+      "infrastructure": 0.38407213218938663,
+      "privacy": 0.017476962186209085,
+      "governance": 0.0,
+      "data_oracle": 0.0,
+      "identity": 0.06594375595805528,
+      "gaming_metaverse": 0.0,
+      "stablecoin": 0.0
+    },
+    "feature_vector": [
+      0.0,
+      0.4590085744857788,
+      0.039180170744657516,
+      0.38407212495803833,
+      0.017476962879300117,
+      0.0,
+      0.0,
+      0.06594375520944595,
+      0.0,
+      0.0
+    ]
+  },
+  "ETH": {
+    "project_name": "Ethereum",
+    "num_chunks": 194,
+    "primary_functions": [],
+    "functional_profile": {
+      "store_of_value": 0.008610792192881751,
+      "medium_of_exchange": 0.27785112897053205,
+      "smart_contracts": 0.10039944508228095,
+      "infrastructure": 0.27780807500956767,
+      "privacy": 0.013454362801377736,
+      "governance": 0.0768393608878684,
+      "data_oracle": 0.0457448335246843,
+      "identity": 0.11792001530807505,
+      "gaming_metaverse": 0.0009567546880979722,
+      "stablecoin": 0.03994450822809035
+    },
+    "feature_vector": [
+      0.008610792458057404,
+      0.2778511345386505,
+      0.1003994420170784,
+      0.2778080701828003,
+      0.013454362750053406,
+      0.07683935761451721,
+      0.04574483260512352,
+      0.11792001873254776,
+      0.0009567546658217907,
+      0.03994450718164444
+    ]
+  },
+  "SOL": {
+    "project_name": "Solana",
+    "num_chunks": 126,
+    "primary_functions": [
+      "infrastructure"
+    ],
+    "functional_profile": {
+      "store_of_value": 0.0,
+      "medium_of_exchange": 0.04734262618547515,
+      "smart_contracts": 0.15347527210234865,
+      "infrastructure": 0.5197918655718923,
+      "privacy": 0.033336515816943545,
+      "governance": 0.041451849022977535,
+      "data_oracle": 0.003421169880975113,
+      "identity": 0.1736840430271784,
+      "gaming_metaverse": 0.0,
+      "stablecoin": 0.0
+    },
+    "feature_vector": [
+      0.0,
+      0.04734262451529503,
+      0.15347526967525482,
+      0.519791841506958,
+      0.033336516469717026,
+      0.04145184904336929,
+      0.003421169938519597,
+      0.1736840456724167,
+      0.0,
+      0.0
+    ]
+  },
+  "AVAX": {
+    "project_name": "Avalanche",
+    "num_chunks": 117,
+    "primary_functions": [
+      "infrastructure"
+    ],
+    "functional_profile": {
+      "store_of_value": 0.004701967592592591,
+      "medium_of_exchange": 0.09385127314814812,
+      "smart_contracts": 0.033391203703703694,
+      "infrastructure": 0.6405237268518517,
+      "privacy": 0.0,
+      "governance": 0.10487196180555552,
+      "data_oracle": 0.006264467592592591,
+      "identity": 0.08586516203703702,
+      "gaming_metaverse": 0.003255208333333332,
+      "stablecoin": 0.009045862268518516
+    },
+    "feature_vector": [
+      0.004701967816799879,
+      0.09385127574205399,
+      0.03339120373129845,
+      0.6405237317085266,
+      0.0,
+      0.1048719584941864,
+      0.006264467723667622,
+      0.08586516231298447,
+      0.0032552082557231188,
+      0.009045862592756748
+    ]
+  },
+  "DOT": {
+    "project_name": "Polkadot",
+    "num_chunks": 4,
+    "primary_functions": [
+      "governance"
+    ],
+    "functional_profile": {
+      "store_of_value": 0.0,
+      "medium_of_exchange": 0.0,
+      "smart_contracts": 0.1478787878787879,
+      "infrastructure": 0.04363636363636365,
+      "privacy": 0.06060606060606061,
+      "governance": 0.6327272727272728,
+      "data_oracle": 0.0,
+      "identity": 0.0,
+      "gaming_metaverse": 0.06060606060606061,
+      "stablecoin": 0.0
+    },
+    "feature_vector": [
+      0.0,
+      0.0,
+      0.14787878096103668,
+      0.04363636299967766,
+      0.06060606241226196,
+      0.6327272653579712,
+      0.0,
+      0.0,
+      0.06060606241226196,
+      0.0
+    ]
+  },
+  "FIL": {
+    "project_name": "Filecoin",
+    "num_chunks": 205,
+    "primary_functions": [
+      "infrastructure"
+    ],
+    "functional_profile": {
+      "store_of_value": 0.0,
+      "medium_of_exchange": 0.10109232829892385,
+      "smart_contracts": 0.057387649531199486,
+      "infrastructure": 0.508579280402753,
+      "privacy": 0.06189090573183688,
+      "governance": 0.0031176389081335742,
+      "data_oracle": 0.0036949794466768285,
+      "identity": 0.16760195833910677,
+      "gaming_metaverse": 0.010392129693778581,
+      "stablecoin": 0.03885501824396102
+    },
+    "feature_vector": [
+      0.0,
+      0.10109233111143112,
+      0.05738765001296997,
+      0.5085792541503906,
+      0.06189090758562088,
+      0.003117638872936368,
+      0.0036949794739484787,
+      0.16760195791721344,
+      0.01039212942123413,
+      0.038855019956827164
+    ]
+  },
+  "LINK": {
+    "project_name": "Chainlink",
+    "num_chunks": 230,
+    "primary_functions": [
+      "data_oracle"
+    ],
+    "functional_profile": {
+      "store_of_value": 0.0,
+      "medium_of_exchange": 0.03816347263665717,
+      "smart_contracts": 0.0742501229057581,
+      "infrastructure": 0.172456838613152,
+      "privacy": 0.02308424686314873,
+      "governance": 0.01608078422611925,
+      "data_oracle": 0.5416908868894701,
+      "identity": 0.11326512158741817,
+      "gaming_metaverse": 0.004840245310015056,
+      "stablecoin": 0.002094336912987284
+    },
+    "feature_vector": [
+      0.0,
+      0.03816347196698189,
+      0.07425012439489365,
+      0.17245684564113617,
+      0.0230842474848032,
+      0.016080783680081367,
+      0.5416908860206604,
+      0.11326511949300766,
+      0.004840245470404625,
+      0.0020943370182067156
+    ]
+  },
+  "ALGO": {
+    "project_name": "Algorand",
+    "num_chunks": 544,
+    "primary_functions": [
+      "identity"
+    ],
+    "functional_profile": {
+      "store_of_value": 0.0,
+      "medium_of_exchange": 0.1269483141530394,
+      "smart_contracts": 0.001009489198465583,
+      "infrastructure": 0.178523117302646,
+      "privacy": 0.010725822733696821,
+      "governance": 0.005678376741368905,
+      "data_oracle": 0.027634766807995335,
+      "identity": 0.4537653947102796,
+      "gaming_metaverse": 0.0413890571370889,
+      "stablecoin": 0.002145164546739364
+    },
+    "feature_vector": [
+      0.0,
+      0.1269483119249344,
+      0.0010094891767948866,
+      0.17852312326431274,
+      0.010725822299718857,
+      0.0056783766485750675,
+      0.027634765952825546,
+      0.4537653923034668,
+      0.04138905555009842,
+      0.0021451646462082863
+    ]
+  }
+}

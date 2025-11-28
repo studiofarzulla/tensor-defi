@@ -1,16 +1,34 @@
+# Core scientific computing
 numpy>=1.26.0
 pandas>=2.1.0
+scipy>=1.11.0
+scikit-learn>=1.3.0
+
+# Tensor decomposition
 tensorly>=0.8.1
 torch>=2.1.0
 geomstats>=2.7.0
-scipy>=1.11.0
-scikit-learn>=1.3.0
+
+# Visualization
 matplotlib>=3.8.0
 seaborn>=0.13.0
 plotly>=5.18.0
+
+# Data collection
 ccxt>=4.1.0
 web3>=6.11.0
 requests>=2.31.0
 python-dotenv>=1.0.0
+
+# NLP Pipeline (NEW for v2.0)
+transformers>=4.35.0          # Zero-shot classification (BART MNLI)
+sentence-transformers>=2.2.0  # Embedding models (optional fallback)
+PyMuPDF>=1.23.0               # PDF extraction (fitz)
+beautifulsoup4>=4.12.0        # Web scraping (future)
+
+# Alignment Testing (NEW for v2.0)
+statsmodels>=0.14.0           # VAR, Granger causality
+
+# Development
 jupyterlab>=4.0.0
 ipykernel>=6.26.0

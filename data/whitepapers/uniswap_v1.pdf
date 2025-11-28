@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Uniswap Interface</title>
+
+    <!-- Vite uses / for public assets instead of %PUBLIC_URL% -->
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/192x192_App_Icon.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/512x512_App_Icon.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="format-detection" content="telephone=no">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;wasm-unsafe-eval&#39; https://challenges.cloudflare.com; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.gstatic.com/s/inter/v18/*; font-src &#39;self&#39; https://fonts.googleapis.com https://fonts.gstatic.com https://fonts.gstatic.com/s/inter/v18/*; img-src * blob: data:; frame-src &#39;self&#39; https://buy.moonpay.com/ https://verify.walletconnect.com/ https://verify.walletconnect.org/ https://id.porto.sh; media-src self *; form-action &#39;none&#39;; connect-src &#39;self&#39; blob: data: https://*.alchemy.com https://*.arbitrum.io https://*.base.org/ https://*.coinbase.com https://*.coingecko.com/ https://*.coinmarketcap.com/ https://*.drpc.org/ https://*.gemini.com https://*.googleapis.com https://*.infura.io https://*.nodereal.io https://*.optimism.io https://*.quiknode.pro https://*.twnodes.com https://*.uniswap.org https://*.walletconnect.com https://*.walletconnect.org https://*.zerion.io https://alfajores-forno.celo-testnet.org https://api.avax.network/ext/bc/C/rpc https://api.moonpay.com/ https://api.opensea.io https://bsc-dataseed1.binance.org/ https://bsc-dataseed1.bnbchain.org https://buy.moonpay.com/ https://cdn.center.app/ https://celo-org.github.io https://cloudflare-eth.com https://erasld2vrf.execute-api.us-east-2.amazonaws.com https://embedded-wallet-dev.app-907329d19a06.enclave.evervault.com https://embedded-wallet-staging.app-907329d19a06.enclave.evervault.com https://embedded-wallet.app-907329d19a06.enclave.evervault.com https://ethereum-optimism.github.io/ https://forno.celo.org/ https://gateway.ipfs.io/ https://hardbin.com/ https://i.seadn.io/ https://images-country.meld.io https://invalid.rpki.cloudflare.com/ https://ipfs.io/ https://ipv4-check-perf.radar.cloudflare.com https://ipv6-check-perf.radar.cloudflare.com/ https://lh3.googleusercontent.com/ https://mainnet.base.org/ https://browser-intake-datadoghq.com https://openseauserdata.com/ https://performance.radar.cloudflare.com/ https://polygon-rpc.com/ https://raw.githubusercontent.com https://raw.seadn.io/ https://rpc-mainnet.maticvigil.com https://rpc-mumbai.maticvigil.com https://rpc.ankr.com https://eth-mainnet.public.blastapi.io https://rpc.blast.io/ https://rpc.degen.tips https://rpc.goerli.mudit.blog/ https://rpc.mevblocker.io/ https://rpc.scroll.io/ https://rpc.sepolia.org/ https://rpc.soneium.org https://rpc.zora.energy/ https://sockjs-us3.pusher.com/ https://sparrow.cloudflare.com/ https://statsigapi.net https://trustwallet.com https://uniswap.org https://us-central1-uniswap-mobile.cloudfunctions.net/ https://valid.rpki.cloudflare.com https://vercel.com https://vercel.live/ https://wallet.crypto.com https://web3.1inch.io https://x6ahx1oagk.execute-api.us-east-2.amazonaws.com https://mainnet.era.zksync.io/ https://8mr3mthjba.execute-api.us-east-2.amazonaws.com https://mainnet.unichain.org/ https://api.web3modal.org https://api.statsig.com https://featuregates.org https://events.statsigapi.net https://api.statsigcdn.com https://featureassets.org https://assetsconfigcdn.org https://prodregistryv2.org https://cloudflare-dns.com https://beyondwickedmapping.org wss://*.uniswap.org wss://relay.walletconnect.com wss://relay.walletconnect.org wss://ws-us3.pusher.com/ wss://www.walletlink.org wss://nbstream.binance.com; worker-src &#39;self&#39; blob:">
+
+    <link rel="preconnect" href="https://interface.gateway.uniswap.org/" crossorigin/>
+    <link rel="preconnect" href="https://mainnet.infura.io/" crossorigin/>
+
+    <link rel="preload" href="/fonts/Basel-Grotesk-Book.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Basel-Grotesk-Medium.woff2" as="font" type="font/woff2" crossorigin />
+
+    <style>
+      * {
+        font-family: 'Basel', sans-serif;
+        box-sizing: border-box;
+      }
+
+      /**
+        Explicitly load Basel var from public/ so it does not block LCP's critical path.
+      */
+      @font-face {
+        font-family: 'Basel';
+        font-weight: 535;
+        font-style: normal;
+        font-display: block;
+        src: 
+          url('/fonts/Basel-Grotesk-Medium.woff2') format('woff2'),
+          url('/fonts/Basel-Grotesk-Medium.woff') format('woff');
+      }
+
+      @font-face {
+        font-family: 'Basel';
+        font-weight: 485;
+        font-style: normal;
+        font-display: block;
+        src: 
+          url('/fonts/Basel-Grotesk-Book.woff2') format('woff2'),
+          url('/fonts/Basel-Grotesk-Book.woff') format('woff');
+      }
+
+      @supports (font-variation-settings: normal) {
+        * {
+          font-family: 'Basel', sans-serif;
+        }
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Only apply overflow-x: hidden on desktop */
+      @media (min-width: 768px) {
+        html {
+          overflow-x: hidden;
+        }
+      }
+
+      button {
+        user-select: none;
+      }
+
+      html {
+        font-size: 16px;
+        font-weight: 485;
+        font-variant: none;
+        font-smooth: always;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      html,
+      body,
+      #root {
+        min-height: 100%;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html {
+          background: linear-gradient(rgb(19, 19, 19) 0%, rgb(19, 19, 19) 100%);
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        html {
+          background: radial-gradient(100% 100% at 50% 0%, rgba(255, 184, 226, 0) 0%, rgba(255, 255, 255, 0) 100%), rgb(255, 255, 255);
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-x9U4fm5N.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-HVZPio9B.css">
+  <meta name="description" content="Swap crypto on Ethereum, Base, Arbitrum, Polygon, Unichain and more. The DeFi platform trusted by millions." data-rh="true">
+<meta property="og:title" content="Uniswap Interface" data-rh="true">
+<meta property="og:description" content="Swap crypto on Ethereum, Base, Arbitrum, Polygon, Unichain and more. The DeFi platform trusted by millions." data-rh="true">
+<meta property="og:image" content="https://app.uniswap.org/images/1200x630_Rich_Link_Preview_Image.png" data-rh="true">
+<meta property="og:image:width" content="1200" data-rh="true">
+<meta property="og:image:height" content="630" data-rh="true">
+<meta property="og:image:alt" content="Uniswap Interface" data-rh="true">
+<meta property="og:type" content="website" data-rh="true">
+<meta property="og:url" content="https://app.uniswap.org/swap" data-rh="true">
+<meta property="twitter:card" content="summary_large_image" data-rh="true">
+<meta property="twitter:title" content="Uniswap Interface" data-rh="true">
+<meta property="twitter:image" content="https://app.uniswap.org/images/1200x630_Rich_Link_Preview_Image.png" data-rh="true">
+<meta property="twitter:image:alt" content="Uniswap Interface" data-rh="true">
+<meta property="x:blocked-paths" content="/" data-rh="true">
+</head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="root"></div>
+    <div id="background-radial-gradient"></div>
+
+    <script type="module" src="/zone-events.js"></script>
+    <!-- Vite entry point -->
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "congruence_coefficient": 0.7194889471452267,
+  "interpretation": "Some similarity (0.65 \u2264 \u03c6 < 0.85)",
+  "procrustes_disparity": 1.4263952367091695,
+  "per_factor_congruence": [
+    0.30134787624289405,
+    0.8666520631796916,
+    0.7282377842843495,
+    0.9817180648739718
+  ],
+  "n_entities": 8,
+  "n_factors": 4,
+  "entity_labels": [
+    "BTC",
+    "ETH",
+    "SOL",
+    "AVAX",
+    "DOT",
+    "FIL",
+    "LINK",
+    "ALGO"
+  ],
+  "bootstrap": {
+    "point_estimate": 0.7194889471452267,
+    "ci_lower": 0.622558150455833,
+    "ci_upper": 0.952793208096919,
+    "confidence": 0.95,
+    "n_bootstrap": 50
+  },
+  "timestamp": "2025-11-28T04:41:44.101166"
+}
