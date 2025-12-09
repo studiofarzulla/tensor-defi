@@ -6,9 +6,8 @@
 **Affiliations:** King's Business School, King's College London | Farzulla Research
 **Status:** Preprint v2.0.1
 **Date:** December 2025
-**Zenodo DOI:** [10.5281/zenodo.17772652](https://doi.org/10.5281/zenodo.17772652)
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17772652.svg)](https://doi.org/10.5281/zenodo.17772652)
+[![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17772652.svg)](https://doi.org/10.5281/zenodo.17772652)
+[![Code DOI](https://zenodo.org/badge/1083436148.svg)](https://doi.org/10.5281/zenodo.17688564)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ## Abstract
