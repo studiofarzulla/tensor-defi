@@ -1,23 +1,31 @@
-# Crypto Narrative-Market Alignment
+# Testing Narrative-Market Alignment in Cryptocurrency
 
-**Do Whitepaper Claims Predict Market Factor Structure?**
+**A Methodological Framework**
 
-[![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
+**Author:** Murad Farzulla
+**Affiliations:** King's Business School, King's College London | Farzulla Research
+**Status:** Preprint v2.0.1
+**Date:** December 2025
+**Zenodo DOI:** [10.5281/zenodo.17772652](https://doi.org/10.5281/zenodo.17772652)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17772652.svg)](https://doi.org/10.5281/zenodo.17772652)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Version 2.0.0** | November 2025 | [Murad Farzulla](https://farzulla.org)
+## Abstract
 
-## Overview
+Do the functional purposes articulated in cryptocurrency whitepapers correspond to how markets actually price these assets? We propose a three-stage framework combining NLP with market characterization to test narrative-market alignment.
 
-This research tests whether **functional claims in cryptocurrency whitepapers align with market factor structures**. We extract functional taxonomies from project documentation using NLP, construct tensor representations of both narrative and market dynamics, and measure alignment using Procrustes rotation and Tucker's congruence coefficient.
+**Stage 1:** Extract functional profiles from whitepapers using zero-shot classification against a 10-category taxonomy
+**Stage 2:** Construct market profiles from trading data (summary statistics)
+**Stage 3:** Measure alignment using Procrustes rotation and Tucker's congruence coefficient
 
-**Key Finding:** Whitepaper functional profiles show statistically significant but imperfect alignment with market factors (φ = 0.72, 95% CI: [0.62, 0.95]), with one factor achieving near-perfect congruence (φ = 0.98).
+A pilot on 8 cryptocurrencies yields overall congruence of **φ = 0.719** (95% CI: [0.623, 0.953]). We emphasize the methodology over point estimates—the small sample precludes robust empirical inference. The framework enables systematic detection of narrative-market divergence, with applications in due diligence, market efficiency analysis, and regulatory classification.
 
 ## Research Question
 
-> Do the functional purposes articulated in cryptocurrency whitepapers (store of value, smart contracts, infrastructure, etc.) correspond to how markets actually price these assets?
+> Do cryptocurrency whitepapers capture *static founding mandates* that markets subsequently reinterpret as *evolved utility*?
 
-This addresses a genuine research gap: while plenty of work examines either textual analysis of crypto documentation OR market microstructure, nobody has systematically tested the alignment between these domains.
+**Key insight:** Bitcoin's whitepaper emphasizes "peer-to-peer electronic cash" while markets price BTC as "digital gold"—illustrating the core problem. Whitepapers capture static founding mandates, while market profiles capture evolved market utility. The gap between them is what this framework measures.
 
 ## Methodology
 
@@ -25,7 +33,7 @@ This addresses a genuine research gap: while plenty of work examines either text
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                     NARRATIVE TENSOR (X)                            │
+│                      CLAIMS MATRIX (X)                              │
 │  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐          │
 │  │  Whitepaper  │───►│  Zero-Shot   │───►│  Functional  │          │
 │  │  Extraction  │    │Classification│    │   Profile    │          │
@@ -36,7 +44,7 @@ This addresses a genuine research gap: while plenty of work examines either text
 │                                          ┌──────────────┐          │
 │                                          │   Claims     │          │
 │                                          │   Matrix     │          │
-│                                          │ (8 × 10 dim) │          │
+│                                          │  (8 × 10)    │          │
 │                                          └──────────────┘          │
 └─────────────────────────────────────────────────────────────────────┘
                                                    │
@@ -50,25 +58,23 @@ This addresses a genuine research gap: while plenty of work examines either text
                                                    ▲
                                                    │
 ┌─────────────────────────────────────────────────────────────────────┐
-│                      MARKET TENSOR (Y)                              │
+│                      MARKET MATRIX (Y)                              │
 │  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐          │
-│  │   Binance    │───►│    Tensor    │───►│     CP       │          │
-│  │    OHLCV     │    │Construction  │    │Decomposition │          │
-│  │   (CCXT)     │    │ (TensorLy)   │    │  (rank-4)    │          │
+│  │   Binance    │───►│   Summary    │───►│    Market    │          │
+│  │    OHLCV     │    │  Statistics  │    │   Profile    │          │
+│  │   (CCXT)     │    │ Computation  │    │   Vectors    │          │
 │  └──────────────┘    └──────────────┘    └──────────────┘          │
 │                                                   │                 │
 │                                                   ▼                 │
 │                                          ┌──────────────┐          │
 │                                          │   Market     │          │
-│                                          │   Factors    │          │
-│                                          │ (8 × 4 dim)  │          │
+│                                          │   Matrix     │          │
+│                                          │  (8 × 7)     │          │
 │                                          └──────────────┘          │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Functional Taxonomy
-
-Zero-shot classification against 10 functional categories:
+### Functional Taxonomy (10 Categories)
 
 | Category | Description | Example Claims |
 |----------|-------------|----------------|
@@ -83,21 +89,33 @@ Zero-shot classification against 10 functional categories:
 | `gaming_metaverse` | NFTs, gaming | "play-to-earn", "metaverse" |
 | `stablecoin` | Price stability | "pegged", "algorithmic stable" |
 
-### Alignment Testing
+### Market Dimensions (7 Summary Statistics)
+
+| Dimension | Description |
+|-----------|-------------|
+| `mean_return` | Average daily return |
+| `volatility` | Standard deviation of returns |
+| `sharpe` | Risk-adjusted return |
+| `max_drawdown` | Maximum peak-to-trough decline |
+| `avg_volume` | Average trading volume |
+| `vol_volatility` | Volatility of volatility (volume variance) |
+| `trend` | Linear trend coefficient |
+
+### Alignment Measurement
 
 1. **Extract functional profiles** from whitepapers using BART-MNLI zero-shot classification
-2. **Construct claims matrix** X ∈ ℝ^(n_entities × n_functions)
-3. **Construct market matrix** Y ∈ ℝ^(n_entities × n_factors) from CP decomposition
-4. **Apply Procrustes rotation** to align factor spaces
-5. **Compute Tucker's congruence coefficient** φ for factor similarity
+2. **Construct claims matrix** X ∈ ℝ^(8 × 10) (entities × functional categories)
+3. **Construct market matrix** Y ∈ ℝ^(8 × 7) (entities × summary statistics)
+4. **Apply Procrustes rotation** to align heterogeneous spaces
+5. **Compute Tucker's congruence coefficient** φ for dimension similarity
 
 **Interpretation thresholds:**
-- φ ≥ 0.95: Factors equivalent
-- φ = 0.85-0.94: Fair similarity
-- φ = 0.65-0.84: Some similarity
-- φ < 0.65: Factors distinct
+- φ ≥ 0.95: Dimensions equivalent
+- φ = 0.85–0.94: Fair similarity
+- φ = 0.65–0.84: Some similarity
+- φ < 0.65: Dimensions distinct
 
-## Results
+## Pilot Results (Illustrative Only)
 
 ### Entity Universe
 
@@ -115,23 +133,58 @@ Zero-shot classification against 10 functional categories:
 ### Alignment Results
 
 **Overall Congruence:** φ = 0.719 (Some similarity)
-
 **95% Bootstrap CI:** [0.623, 0.953]
 
-**Per-Factor Congruence:**
+**Per-Dimension Congruence:**
 
-| Factor | φ | Interpretation |
-|--------|---|----------------|
-| Factor 1 | 0.301 | Distinct (claims ≠ market) |
-| Factor 2 | 0.867 | Fair similarity |
-| Factor 3 | 0.728 | Some similarity |
-| Factor 4 | 0.982 | Near-equivalent |
+| Dimension | φ | Interpretation |
+|-----------|---|----------------|
+| Dim 1 | 0.301 | Distinct (claims ≠ market) |
+| Dim 2 | 0.867 | Fair similarity |
+| Dim 3 | 0.728 | Some similarity |
+| Dim 4 | 0.982 | Near-equivalent |
 
-### Interpretation
+**Interpretation:** Results suggest non-random correspondence but also systematic divergence in specific dimensions. The N=8 sample is illustrative—see paper for limitations discussion.
 
-- **Factor 4** shows near-perfect alignment (φ = 0.98): whatever this market factor captures, whitepapers describe it accurately
-- **Factor 1** shows poor alignment (φ = 0.30): claims in this dimension diverge from market reality—potential marketing vs. fundamentals gap
-- **Overall** alignment is significant but imperfect: whitepapers partially predict market positioning but aren't the whole story
+## Repository Contents
+
+```
+tensor-defi/
+├── README.md                           # This file
+├── CITATION.cff                        # Citation metadata
+├── VERSION                             # Version tracking
+├── LICENSE                             # MIT for code, CC-BY-4.0 for paper
+├── ZENODO_METADATA.md                  # Zenodo upload metadata
+├── Farzulla_2025_Narrative_Alignment_v2.0.1.pdf    # Compiled paper
+├── Farzulla_2025_Narrative_Alignment_v2.0.1.tex    # LaTeX source
+├── references.bib                      # Bibliography
+├── src/
+│   ├── nlp/                            # NLP pipeline
+│   │   ├── whitepaper_collector.py
+│   │   ├── text_processor.py
+│   │   ├── claim_extractor.py          # Zero-shot classification
+│   │   └── taxonomy.py                 # Functional categories
+│   ├── market/                         # Market data processing
+│   │   └── summary_statistics.py       # Market profile construction
+│   ├── alignment/                      # Alignment testing
+│   │   ├── procrustes.py
+│   │   └── congruence.py
+│   └── visualization/
+├── scripts/
+│   ├── run_nlp_pipeline.py
+│   ├── run_market_analysis.py
+│   └── run_alignment_analysis.py
+├── data/                               # Whitepaper PDFs
+├── outputs/
+│   ├── nlp/                            # Functional profiles
+│   ├── alignment/                      # Congruence results
+│   └── figures/
+├── figures/                            # Publication figures
+│   ├── market_profiles.png             # Market summary statistics heatmap
+│   ├── claims_vs_market_space.png      # Procrustes overlay visualization
+│   └── per_dimension_congruence.png    # Per-dimension φ values
+└── requirements.txt
+```
 
 ## Quick Start
 
@@ -153,10 +206,7 @@ python scripts/collect_whitepapers.py
 # 2. Run NLP extraction
 python scripts/run_nlp_pipeline.py
 
-# 3. Build market tensor and run decomposition
-python scripts/run_full_experiments.py
-
-# 4. Test alignment
+# 3. Build market profiles and run alignment
 python scripts/run_alignment_analysis.py
 ```
 
@@ -167,60 +217,12 @@ All results are included in `outputs/`:
 - `outputs/alignment/alignment_results.json` - Congruence coefficients
 - `figures/` - Publication-ready visualizations
 
-## Project Structure
-
-```
-tensor-defi/
-├── src/
-│   ├── nlp/                      # NLP pipeline
-│   │   ├── whitepaper_collector.py
-│   │   ├── text_processor.py
-│   │   ├── claim_extractor.py    # Zero-shot classification
-│   │   └── taxonomy.py           # Functional categories
-│   ├── tensor_ops/               # Tensor operations
-│   │   ├── tensor_builder.py
-│   │   ├── decomposition.py      # CP, Tucker
-│   │   └── market_tensor.py
-│   ├── alignment/                # Alignment testing
-│   │   ├── procrustes.py
-│   │   └── congruence.py
-│   └── visualization/
-├── scripts/
-│   ├── run_nlp_pipeline.py
-│   ├── run_full_experiments.py
-│   └── run_alignment_analysis.py
-├── data/                         # Whitepaper PDFs
-├── outputs/
-│   ├── nlp/                      # Functional profiles
-│   ├── alignment/                # Congruence results
-│   └── figures/
-├── figures/                      # Publication figures
-└── requirements.txt
-```
-
 ## Mathematical Framework
-
-### Tensor Decomposition (Market Side)
-
-Market microstructure as 3-way tensor:
-```
-𝓧 ∈ ℝ^(T × A × F)
-
-T = Time (hourly timestamps)
-A = Assets (8 cryptocurrencies)
-F = Features (OHLCV)
-```
-
-CP decomposition:
-```
-𝓧 ≈ Σ_{r=1}^R λ_r · (a_r ⊗ b_r ⊗ c_r)
-```
-
-Rank-4 captures 96.56% explained variance.
 
 ### Procrustes Alignment
 
-Given claims matrix X and market factors Y:
+Given claims matrix X and market matrix Y with different dimensionalities:
+
 ```
 R* = argmin_R ||Y - XR||_F  s.t. R^T R = I
 ```
@@ -233,48 +235,45 @@ Closed-form solution via SVD of Y^T X.
 φ = Σ x_i y_i / √(Σ x_i² · Σ y_i²)
 ```
 
-Measures factor similarity independent of scale.
+Measures dimension similarity independent of scale.
 
-## Dependencies
+## Limitations
 
-```txt
-# Core
-tensorly>=0.8.1
-numpy>=1.26.4
-scipy>=1.11.0
+This is a **methodology proposal**, not robust empirical findings:
 
-# NLP
-transformers>=4.35.0
-PyMuPDF>=1.23.0
+- **Small Sample (N=8):** Pilot illustrates framework; insufficient for parametric inference
+- **OHLC Collinearity:** Summary statistics constructed from same price series introduce dependencies
+- **Temporal Mismatch:** Static whitepaper claims vs. dynamic market profiles
+- **Bootstrap Assumptions:** CI validity depends on assumptions that may not hold at N=8
 
-# Data
-ccxt>=4.4
-pandas>=2.1.0
-
-# Visualization
-matplotlib>=3.8.0
-seaborn>=0.13.0
-```
-
-## Citation
-
-```bibtex
-@techreport{Farzulla2025CryptoNarrative,
-  author = {Farzulla, Murad},
-  title = {Crypto Narrative-Market Alignment: Do Whitepaper Claims Predict Factor Structure?},
-  institution = {Farzulla Research},
-  year = {2025},
-  type = {Preprint},
-  version = {2.0.0},
-  url = {https://github.com/studiofarzulla/tensor-defi}
-}
-```
+See paper Section 6 for comprehensive limitations discussion.
 
 ## Related Work
 
 - **v1.0.0** (archived): [Tensor Structure in Cryptocurrency Microstructure](https://doi.org/10.5281/zenodo.17688564) - Single-venue OHLCV proof-of-concept
-- [Cryptocurrency Event Study](https://doi.org/10.5281/zenodo.17677682) - Infrastructure vs regulatory volatility
+- [Market Reaction Asymmetry](https://doi.org/10.5281/zenodo.17677682) - Infrastructure vs regulatory volatility (TARCH-X event study)
 - [Doctrine of Consensual Sovereignty](https://doi.org/10.5281/zenodo.17684676) - Adversarial systems framework
+
+## Citation
+
+### Paper Citation
+
+```bibtex
+@techreport{Farzulla2025NarrativeAlignment,
+  author = {Farzulla, Murad},
+  title = {Testing Narrative-Market Alignment in Cryptocurrency: A Methodological Framework},
+  institution = {Farzulla Research},
+  year = {2025},
+  type = {Preprint},
+  version = {2.0.1},
+  doi = {10.5281/zenodo.17772652},
+  url = {https://github.com/studiofarzulla/tensor-defi}
+}
+```
+
+### Repository Citation
+
+See `CITATION.cff` for structured citation metadata (Zenodo/GitHub compatible).
 
 ## License
 

@@ -1,32 +1,11 @@
 cff-version: 1.2.0
-title: "Crypto Narrative-Market Alignment: Do Whitepaper Claims Predict Factor Structure?"
 message: "If you use this software, please cite it as below."
-type: software
 authors:
-  - family-names: "Farzulla"
-    given-names: "Murad"
-    orcid: "https://orcid.org/0009-0002-7164-8704"
-    email: "murad@farzulla.org"
-    affiliation: "Farzulla Research"
-repository-code: "https://github.com/studiofarzulla/tensor-defi"
-url: "https://farzulla.org"
-abstract: >-
-  This research tests whether functional claims in cryptocurrency whitepapers
-  align with market factor structures. We extract functional taxonomies from
-  project documentation using NLP (zero-shot classification), construct tensor
-  representations of both narrative and market dynamics, and measure alignment
-  using Procrustes rotation and Tucker's congruence coefficient. Key finding:
-  whitepaper functional profiles show statistically significant but imperfect
-  alignment with market factors (φ = 0.72, 95% CI: [0.62, 0.95]).
-keywords:
-  - cryptocurrency
-  - tensor decomposition
-  - natural language processing
-  - market microstructure
-  - whitepaper analysis
-  - factor analysis
-  - Procrustes rotation
-  - Tucker congruence
-license: MIT
-version: "2.0.0"
-date-released: "2025-11-28"
+- family-names: "Farzulla"
+  given-names: "Murad"
+  orcid: "https://orcid.org/0009-0002-7164-8704"
+title: "Testing Narrative-Market Alignment in Cryptocurrency: A Methodological Framework"
+version: 2.0.1
+doi: 10.5281/zenodo.17772652
+date-released: 2025-12-09
+url: "https://github.com/studiofarzulla/tensor-defi"

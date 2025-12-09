@@ -31,6 +31,10 @@ Thumbs.db
 # Internal (drafts, sessions, paper, analysis outputs)
 _internal/
 paper/
+arxiv-submission/
+
+# Virtual environments
+.venv/
 
 # Tests
 test_*.py
