@@ -1,0 +1,27 @@
+[
+  {
+    "rank": 1,
+    "explained_variance": 0.7942399795012596,
+    "alignment_phi": 0.041030361928586924
+  },
+  {
+    "rank": 2,
+    "explained_variance": 0.9245111518582052,
+    "alignment_phi": 0.09063419006974126
+  },
+  {
+    "rank": 3,
+    "explained_variance": 0.9248730203532549,
+    "alignment_phi": 0.09543827867411288
+  },
+  {
+    "rank": 4,
+    "explained_variance": 0.9805960895211048,
+    "alignment_phi": 0.11760531715456861
+  },
+  {
+    "rank": 5,
+    "explained_variance": 0.9810126083467873,
+    "alignment_phi": 0.13223394504143443
+  }
+]

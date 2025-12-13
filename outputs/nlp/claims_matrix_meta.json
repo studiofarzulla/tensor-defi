@@ -1,0 +1,33 @@
+{
+  "symbols": [
+    "AAVE",
+    "ALGO",
+    "AR",
+    "ATOM",
+    "AVAX",
+    "BTC",
+    "DOT",
+    "ENS",
+    "ETH",
+    "FIL",
+    "ICP",
+    "SOL",
+    "UNI"
+  ],
+  "categories": [
+    "store_of_value",
+    "medium_of_exchange",
+    "smart_contracts",
+    "defi",
+    "governance",
+    "scalability",
+    "privacy",
+    "interoperability",
+    "data_storage",
+    "oracle"
+  ],
+  "shape": [
+    13,
+    10
+  ]
+}

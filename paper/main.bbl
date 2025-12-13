@@ -1,0 +1,113 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ante(2023)]{ante2023tweet}
+Lennart Ante.
+\newblock How {E}lon {M}usk's {T}witter activity moves cryptocurrency markets.
+\newblock \emph{Technological Forecasting and Social Change}, 186:\penalty0
+  122112, 2023.
+
+\bibitem[Chen and Xiao(2021)]{chen2021tensor}
+Rong Chen and Han Xiao.
+\newblock High-dimensional covariance estimation via tensor decomposition.
+\newblock \emph{Journal of Econometrics}, 220\penalty0 (2):\penalty0 313--329,
+  2021.
+
+\bibitem[Chen et~al.(2019)Chen, Li, and Sun]{chen2019bitcoin}
+Zheshi Chen, Chunhong Li, and Wenjun Sun.
+\newblock Bitcoin price prediction using machine learning: An approach to
+  sample dimension engineering.
+\newblock \emph{Journal of Computational and Applied Mathematics},
+  365:\penalty0 112395, 2019.
+
+\bibitem[Fama(1970)]{fama1970efficient}
+Eugene~F Fama.
+\newblock Efficient capital markets: A review of theory and empirical work.
+\newblock \emph{The Journal of Finance}, 25\penalty0 (2):\penalty0 383--417,
+  1970.
+
+\bibitem[Farzulla(2025)]{farzulla2025event}
+Murad Farzulla.
+\newblock Market reaction asymmetry: Infrastructure disruption dominance over
+  regulatory uncertainty in cryptocurrency volatility.
+\newblock \emph{SSRN Electronic Journal}, 2025.
+\newblock \doi{10.2139/ssrn.5788082}.
+
+\bibitem[Fisch(2019)]{fisch2019initial}
+Christian Fisch.
+\newblock Initial coin offerings ({ICO}s) to finance new ventures.
+\newblock \emph{Journal of Business Venturing}, 34\penalty0 (1):\penalty0
+  1--22, 2019.
+
+\bibitem[Grobys(2021)]{grobys2021speculation}
+Klaus Grobys.
+\newblock When {B}itcoin has the flu: On {B}itcoin's performance to hedge
+  equity risk in the early wake of the {COVID-19} outbreak.
+\newblock \emph{Applied Economics Letters}, 28\penalty0 (11):\penalty0
+  860--865, 2021.
+
+\bibitem[Harshman(1970)]{harshman1970foundations}
+Richard~A Harshman.
+\newblock Foundations of the {PARAFAC} procedure: Models and conditions for an
+  ``explanatory'' multimodal factor analysis.
+\newblock \emph{UCLA Working Papers in Phonetics}, 16:\penalty0 1--84, 1970.
+
+\bibitem[Howell et~al.(2020)Howell, Niessner, and Yermack]{howell2020initial}
+Sabrina~T Howell, Marina Niessner, and David Yermack.
+\newblock Initial coin offerings: Financing growth with cryptocurrency token
+  sales.
+\newblock \emph{The Review of Financial Studies}, 33\penalty0 (9):\penalty0
+  3925--3974, 2020.
+
+\bibitem[Kolda and Bader(2009)]{kolda2009tensor}
+Tamara~G Kolda and Brett~W Bader.
+\newblock Tensor decompositions and applications.
+\newblock \emph{SIAM Review}, 51\penalty0 (3):\penalty0 455--500, 2009.
+
+\bibitem[Lewis et~al.(2020)Lewis, Liu, Goyal, Ghazvininejad, Mohamed, Levy,
+  Stoyanov, and Zettlemoyer]{lewis2020bart}
+Mike Lewis, Yinhan Liu, Naman Goyal, Marjan Ghazvininejad, Abdelrahman Mohamed,
+  Omer Levy, Veselin Stoyanov, and Luke Zettlemoyer.
+\newblock {BART}: Denoising sequence-to-sequence pre-training for natural
+  language generation, translation, and comprehension.
+\newblock \emph{arXiv preprint arXiv:1910.13461}, 2020.
+
+\bibitem[Liu and Tsyvinski(2021)]{liu2021risks}
+Yukun Liu and Aleh Tsyvinski.
+\newblock Risks and returns of cryptocurrency.
+\newblock \emph{The Review of Financial Studies}, 34\penalty0 (6):\penalty0
+  2689--2727, 2021.
+
+\bibitem[Lorenzo-Seva and ten Berge(2006)]{lorenzo2006tuckers}
+Urbano Lorenzo-Seva and Jos~MF ten Berge.
+\newblock Tucker's congruence coefficient as a meaningful index of factor
+  similarity.
+\newblock \emph{Methodology}, 2\penalty0 (2):\penalty0 57--64, 2006.
+
+\bibitem[Sch{\"o}nemann(1966)]{schonemann1966generalized}
+Peter~H Sch{\"o}nemann.
+\newblock A generalized solution of the orthogonal {P}rocrustes problem.
+\newblock \emph{Psychometrika}, 31\penalty0 (1):\penalty0 1--10, 1966.
+
+\bibitem[Shiller(2017)]{shiller2017narrative}
+Robert~J Shiller.
+\newblock Narrative economics.
+\newblock \emph{American Economic Review}, 107\penalty0 (4):\penalty0
+  967--1004, 2017.
+
+\bibitem[Tucker(1951)]{tucker1951method}
+Ledyard~R Tucker.
+\newblock A method for synthesis of factor analysis studies.
+\newblock \emph{Personnel Research Section Report}, \penalty0 (984), 1951.
+
+\bibitem[Wang and Zhu(2020)]{wang2020tensor}
+Yining Wang and Tingting Zhu.
+\newblock Tensor decomposition for portfolio optimization.
+\newblock \emph{Quantitative Finance}, 20\penalty0 (12):\penalty0 1973--1990,
+  2020.
+
+\end{thebibliography}

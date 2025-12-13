@@ -1,0 +1,60 @@
+{
+  "importance": [
+    {
+      "feature": "interoperability",
+      "phi_without": 0.29608625103706754,
+      "importance": 0.034484892386701105
+    },
+    {
+      "feature": "smart_contracts",
+      "phi_without": 0.296980044884921,
+      "importance": 0.03359109853884762
+    },
+    {
+      "feature": "scalability",
+      "phi_without": 0.2984178313040512,
+      "importance": 0.03215331211971745
+    },
+    {
+      "feature": "defi",
+      "phi_without": 0.326298744463373,
+      "importance": 0.0042723989603956625
+    },
+    {
+      "feature": "oracle",
+      "phi_without": 0.3290314269587592,
+      "importance": 0.0015397164650094441
+    },
+    {
+      "feature": "store_of_value",
+      "phi_without": 0.3292149880488825,
+      "importance": 0.0013561553748861477
+    },
+    {
+      "feature": "governance",
+      "phi_without": 0.32961943507224234,
+      "importance": 0.0009517083515263036
+    },
+    {
+      "feature": "privacy",
+      "phi_without": 0.3377733161086126,
+      "importance": -0.007202172684843966
+    },
+    {
+      "feature": "data_storage",
+      "phi_without": 0.33914976096907423,
+      "importance": -0.008578617545305589
+    },
+    {
+      "feature": "medium_of_exchange",
+      "phi_without": 0.36498496193793156,
+      "importance": -0.03441381851416292
+    }
+  ],
+  "phi_full": 0.33057114342376864,
+  "most_important": [
+    "interoperability",
+    "smart_contracts",
+    "scalability"
+  ]
+}

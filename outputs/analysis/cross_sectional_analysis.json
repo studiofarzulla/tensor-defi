@@ -1,0 +1,107 @@
+{
+  "phi_full": 0.33057114342376864,
+  "entity_analysis": [
+    {
+      "symbol": "BTC",
+      "phi_without": 0.3052597306191324,
+      "impact": 0.025311412804636224,
+      "interpretation": "helps"
+    },
+    {
+      "symbol": "ALGO",
+      "phi_without": 0.32143315487481616,
+      "impact": 0.00913798854895248,
+      "interpretation": "neutral"
+    },
+    {
+      "symbol": "ETH",
+      "phi_without": 0.3282256380059465,
+      "impact": 0.0023455054178221357,
+      "interpretation": "neutral"
+    },
+    {
+      "symbol": "AVAX",
+      "phi_without": 0.33454055906770613,
+      "impact": -0.003969415643937491,
+      "interpretation": "neutral"
+    },
+    {
+      "symbol": "DOT",
+      "phi_without": 0.3365197764508631,
+      "impact": -0.005948633027094474,
+      "interpretation": "neutral"
+    },
+    {
+      "symbol": "ICP",
+      "phi_without": 0.3368617180774652,
+      "impact": -0.006290574653696535,
+      "interpretation": "neutral"
+    },
+    {
+      "symbol": "SOL",
+      "phi_without": 0.33895573600756784,
+      "impact": -0.0083845925837992,
+      "interpretation": "neutral"
+    },
+    {
+      "symbol": "ATOM",
+      "phi_without": 0.34030844918989844,
+      "impact": -0.0097373057661298,
+      "interpretation": "neutral"
+    },
+    {
+      "symbol": "FIL",
+      "phi_without": 0.37631295407700893,
+      "impact": -0.04574181065324029,
+      "interpretation": "hurts"
+    },
+    {
+      "symbol": "UNI",
+      "phi_without": 0.37638824317198766,
+      "impact": -0.045817099748219015,
+      "interpretation": "hurts"
+    },
+    {
+      "symbol": "AAVE",
+      "phi_without": 0.38784318840658827,
+      "impact": -0.057272044982819625,
+      "interpretation": "hurts"
+    },
+    {
+      "symbol": "ENS",
+      "phi_without": 0.3922377466230255,
+      "impact": -0.061666603199256875,
+      "interpretation": "hurts"
+    }
+  ],
+  "best_aligned": [
+    "BTC"
+  ],
+  "worst_aligned": [
+    "FIL",
+    "UNI",
+    "AAVE",
+    "ENS"
+  ],
+  "n_clusters": 3,
+  "clusters": {
+    "2": [
+      "AAVE",
+      "ETH",
+      "SOL"
+    ],
+    "1": [
+      "ALGO",
+      "ATOM",
+      "AVAX",
+      "DOT",
+      "ENS",
+      "FIL",
+      "ICP",
+      "UNI"
+    ],
+    "0": [
+      "BTC"
+    ]
+  }
+}

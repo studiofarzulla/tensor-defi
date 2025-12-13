@@ -1,0 +1,119 @@
+[
+  {
+    "symbol": "BTC",
+    "name": "Bitcoin",
+    "url": "https://bitcoin.org/bitcoin.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/btc_whitepaper.pdf",
+    "pages": 9,
+    "download_date": "2025-12-12T11:47:19.282638",
+    "fallback_type": null
+  },
+  {
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "url": "https://ethereum.org/content/whitepaper/whitepaper-pdf/Ethereum_Whitepaper_-_Buterin_2014.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/eth_whitepaper.pdf",
+    "pages": 36,
+    "download_date": "2025-12-12T11:47:20.203376",
+    "fallback_type": null
+  },
+  {
+    "symbol": "SOL",
+    "name": "Solana",
+    "url": "https://solana.com/solana-whitepaper.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/sol_whitepaper.pdf",
+    "pages": 32,
+    "download_date": "2025-12-12T11:47:18.039035",
+    "fallback_type": null
+  },
+  {
+    "symbol": "AVAX",
+    "name": "Avalanche",
+    "url": "https://assets.website-files.com/5d80307810123f5ffbb34d6e/6008d7bbf8b10d1eb01e7e16_Avalanche%20Platform%20Whitepaper.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/avax_whitepaper.pdf",
+    "pages": 14,
+    "download_date": "2025-12-12T11:47:19.344614",
+    "fallback_type": null
+  },
+  {
+    "symbol": "DOT",
+    "name": "Polkadot",
+    "url": "https://raw.githubusercontent.com/yuelipeng/Polkadot-WhitePaper-CN/main/README.md",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/dot_readme.md",
+    "pages": 1,
+    "download_date": "2025-12-12T11:47:18.783983",
+    "fallback_type": "github"
+  },
+  {
+    "symbol": "ATOM",
+    "name": "Cosmos",
+    "url": "https://raw.githubusercontent.com/Mdshobu/Liberty-House-Club-Whitepaper/main/README.md",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/atom_readme.md",
+    "pages": 1,
+    "download_date": "2025-12-12T11:47:19.575413",
+    "fallback_type": "github"
+  },
+  {
+    "symbol": "ICP",
+    "name": "Internet Computer",
+    "url": "https://internetcomputer.org/whitepaper.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/icp_whitepaper.pdf",
+    "pages": 45,
+    "download_date": "2025-12-12T11:47:19.162377",
+    "fallback_type": null
+  },
+  {
+    "symbol": "ALGO",
+    "name": "Algorand",
+    "url": "https://raw.githubusercontent.com/AlgoWorldNFT/algoworld-whitepaper/main/README.md",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/algo_readme.md",
+    "pages": 1,
+    "download_date": "2025-12-12T11:47:18.383573",
+    "fallback_type": "github"
+  },
+  {
+    "symbol": "FIL",
+    "name": "Filecoin",
+    "url": "https://filecoin.io/filecoin.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/fil_whitepaper.pdf",
+    "pages": 36,
+    "download_date": "2025-12-12T11:47:18.427443",
+    "fallback_type": null
+  },
+  {
+    "symbol": "AR",
+    "name": "Arweave",
+    "url": "https://www.arweave.org/whitepaper.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/ar_whitepaper.pdf",
+    "pages": 1,
+    "download_date": "2025-12-12T11:47:19.354707",
+    "fallback_type": null
+  },
+  {
+    "symbol": "UNI",
+    "name": "Uniswap",
+    "url": "https://uniswap.org/whitepaper-v3.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/uni_whitepaper.pdf",
+    "pages": 1,
+    "download_date": "2025-12-12T11:47:18.143326",
+    "fallback_type": null
+  },
+  {
+    "symbol": "AAVE",
+    "name": "Aave",
+    "url": "https://github.com/aave/aave-protocol/blob/master/docs/Aave_Protocol_Whitepaper_v1_0.pdf",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/aave_whitepaper.pdf",
+    "pages": 7,
+    "download_date": "2025-12-12T11:47:19.763651",
+    "fallback_type": null
+  },
+  {
+    "symbol": "ENS",
+    "name": "ENS",
+    "url": "https://raw.githubusercontent.com/o1-labs/ensue-whitepaper/main/README.md",
+    "local_path": "/home/purrpower/Resurrexi/projects/need-work/tensor-defi/data/whitepapers/ens_readme.md",
+    "pages": 1,
+    "download_date": "2025-12-12T11:47:18.316920",
+    "fallback_type": "github"
+  }
+]
