@@ -980,26 +980,26 @@ Table~\ref{tab:whitepaper_corpus_full} provides detailed information about the 1
 
 \begin{table}[H]
 \centering
-\small
+\footnotesize
 \caption{Whitepaper Corpus Details (Extended)}
 \label{tab:whitepaper_corpus_full}
-\begin{tabular}{@{}lllrrr@{}}
+\begin{tabular}{@{}llrrrr@{}}
 \toprule
-\textbf{Asset} & \textbf{Document Type} & \textbf{Year} & \textbf{Pages} & \textbf{Words} & \textbf{Chunks} \\
+\textbf{Asset} & \textbf{Type} & \textbf{Year} & \textbf{Pg} & \textbf{Words} & \textbf{Chunks} \\
 \midrule
-AAVE & Protocol Whitepaper & 2020 & 15 & 4,521 & 12 \\
-ALGO & Technical Paper & 2019 & 22 & 7,832 & 21 \\
+AAVE & Protocol WP & 2020 & 15 & 4,521 & 12 \\
+ALGO & Tech Paper & 2019 & 22 & 7,832 & 21 \\
 AR & Yellowpaper & 2019 & 18 & 5,643 & 15 \\
 ATOM & Whitepaper & 2019 & 24 & 8,234 & 22 \\
-AVAX & Consensus Paper & 2020 & 16 & 5,123 & 14 \\
-BTC & Original Whitepaper & 2008 & 9 & 3,442 & 9 \\
+AVAX & Consensus & 2020 & 16 & 5,123 & 14 \\
+BTC & Original WP & 2008 & 9 & 3,442 & 9 \\
 DOT & Lightpaper & 2020 & 12 & 3,876 & 10 \\
-ENS & Documentation & 2021 & 8 & 2,543 & 7 \\
+ENS & Docs & 2021 & 8 & 2,543 & 7 \\
 ETH & Whitepaper & 2014 & 36 & 12,453 & 33 \\
-FIL & Technical Report & 2017 & 32 & 11,234 & 30 \\
-ICP & Technical Overview & 2021 & 28 & 9,876 & 26 \\
+FIL & Tech Report & 2017 & 32 & 11,234 & 30 \\
+ICP & Tech Overview & 2021 & 28 & 9,876 & 26 \\
 SOL & Whitepaper & 2018 & 20 & 6,543 & 17 \\
-UNI & V2 Whitepaper & 2020 & 11 & 3,234 & 9 \\
+UNI & V2 WP & 2020 & 11 & 3,234 & 9 \\
 \midrule
 \textbf{Total} & & & \textbf{251} & \textbf{84,554} & \textbf{225} \\
 \bottomrule
@@ -1033,32 +1033,32 @@ Our zero-shot classification employs 10 functional categories derived from crypt
 
 \begin{table}[H]
 \centering
-\small
+\footnotesize
 \caption{Functional Category Taxonomy (Full Definitions)}
 \label{tab:taxonomy_full}
-\begin{tabular}{@{}p{2.5cm}p{5cm}p{4cm}@{}}
+\begin{tabular}{@{}p{1.8cm}p{3.8cm}p{2.2cm}@{}}
 \toprule
 \textbf{Category} & \textbf{Definition} & \textbf{Keywords} \\
 \midrule
-store\_of\_value & Digital asset designed for wealth preservation, hedging against inflation, or serving as a reserve asset & gold, hedge, savings, preserve, store \\
+store\_of\_value & Wealth preservation, inflation hedge, reserve asset & gold, hedge, savings \\
 \addlinespace
-medium\_of\_exchange & Currency designed for everyday transactions, payments, and commerce & payment, transaction, currency, spend, merchant \\
+medium\_of\_exchange & Everyday transactions, payments, commerce & payment, currency, spend \\
 \addlinespace
-smart\_contracts & Platform supporting programmable, self-executing contracts with arbitrary logic & contract, dApp, program, execute, EVM \\
+smart\_contracts & Programmable self-executing contracts & contract, dApp, EVM \\
 \addlinespace
-defi & Decentralized financial services including lending, borrowing, trading, and yield generation & lending, liquidity, yield, AMM, swap \\
+defi & Lending, borrowing, trading, yield & lending, liquidity, AMM \\
 \addlinespace
-governance & Token-based voting rights, protocol parameter control, and decentralized decision-making & vote, proposal, DAO, treasury, quorum \\
+governance & Token voting, protocol control, DAOs & vote, DAO, treasury \\
 \addlinespace
-scalability & Technologies addressing throughput limitations: layer 2s, sharding, parallel execution & throughput, TPS, layer2, rollup, shard \\
+scalability & Throughput: L2s, sharding, parallel & throughput, rollup, shard \\
 \addlinespace
-privacy & Cryptographic techniques for transaction confidentiality and user anonymity & anonymous, confidential, zkSNARK, mixer, ring \\
+privacy & Transaction confidentiality, anonymity & anonymous, zkSNARK \\
 \addlinespace
-interoperability & Cross-chain communication, bridges, and multi-chain coordination & bridge, cross-chain, relay, IBC, atomic \\
+interoperability & Cross-chain, bridges, multi-chain & bridge, IBC, relay \\
 \addlinespace
-data\_storage & Decentralized file storage, content addressing, and permanent archival & storage, IPFS, file, archive, pin \\
+data\_storage & Decentralized file storage, archival & storage, IPFS, file \\
 \addlinespace
-oracle & External data feeds, price oracles, and off-chain computation & oracle, feed, external, API, Chainlink \\
+oracle & External data feeds, off-chain compute & oracle, feed, Chainlink \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1146,26 +1146,27 @@ Table~\ref{tab:temporal_windows} provides details for each rolling window in the
 \section{CP Decomposition: Kruskal's Uniqueness Condition}
 \label{app:kruskal}
 
-\begin{theorem}[Kruskal, 1977]
-Let $\mathcal{X} = \sum_{r=1}^R \mathbf{a}_r \circ \mathbf{b}_r \circ \mathbf{c}_r$. The decomposition is unique (up to permutation and scaling) if:
+\begin{tcolorbox}[colback=gray!5,colframe=farzullaburgundy,title={\textbf{Theorem 3} (Kruskal, 1977)}]
+Let $\mathcal{X} = \sum_{r=1}^R \mathbf{a}_r \circ \mathbf{b}_r \circ \mathbf{c}_r$. The decomposition is \textbf{unique} (up to permutation and scaling) if:
 \begin{equation}
 k_A + k_B + k_C \geq 2R + 2
 \end{equation}
-where $k_A, k_B, k_C$ are the k-ranks (maximum number of linearly independent columns in any subset).
-\end{theorem}
+where $k_A, k_B, k_C$ are the \textit{k-ranks} (maximum number of linearly independent columns in any subset).
+\end{tcolorbox}
 
-\begin{proof}[Sketch]
-The proof proceeds by showing that if two different CP decompositions exist for the same tensor, they must satisfy a system of polynomial equations whose solution space is constrained by the k-rank condition. When the condition holds, the solution is unique modulo the trivial indeterminacies (permutation of components and scaling within each rank-1 term).
-\end{proof}
+\begin{tcolorbox}[colback=white,colframe=gray!50,title={\textit{Proof Sketch}}]
+The proof proceeds by showing that if two different CP decompositions exist for the same tensor, they must satisfy a system of polynomial equations whose solution space is constrained by the k-rank condition. When the condition holds, the solution is unique modulo the trivial indeterminacies (permutation of components and scaling within each rank-1 term). \hfill $\square$
+\end{tcolorbox}
 
-For our tensor with shape $(17543, 1, 49, 5)$ and rank $R=2$:
+\vspace{0.5em}
+\noindent\textbf{Application to Our Tensor.} For shape $(17543, 1, 49, 5)$ and rank $R=2$:
 \begin{itemize}
     \item Time mode: $k_A = 2$ (sufficient variation across 17,543 timestamps)
     \item Asset mode: $k_B = 2$ (49 assets provide adequate rank)
     \item Feature mode: $k_C = 2$ (5 features span the factor space)
 \end{itemize}
 
-Thus $k_A + k_B + k_C = 6 \geq 2(2) + 2 = 6$, satisfying Kruskal's condition.
+Thus $k_A + k_B + k_C = 6 \geq 2(2) + 2 = 6$, satisfying Kruskal's condition. $\checkmark$
 
 \section{Bootstrap Confidence Interval Procedure}
 \label{app:bootstrap}

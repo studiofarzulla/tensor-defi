@@ -209,10 +209,10 @@ def fig7_rank_sensitivity(data_path: Path, output_path: Path):
     ax1.set_title('Rank Selection: Variance-Alignment Trade-off')
     ax1.set_xticks(ranks)
 
-    # Combined legend
+    # Combined legend - upper left to avoid collision with data points
     lines = [line1, line2]
     labels = ['Explained Variance', 'Alignment φ']
-    ax1.legend(lines, labels, loc='center right')
+    ax1.legend(lines, labels, loc='upper left')
 
     plt.tight_layout()
     plt.savefig(output_path / 'fig7_rank_sensitivity.pdf', bbox_inches='tight')
@@ -320,21 +320,25 @@ def fig10_tensor_slice(data_path: Path, output_path: Path):
     assets = data['assets']
     features = data['features']
 
-    # Select subset for readability (every 3rd asset)
-    asset_idx = list(range(0, len(assets), 3))
-    slice_subset = slice_data[asset_idx, :]
+    # Clip outliers to [-2, 2] for better visualization (BTC has z-scores ~6.7)
+    slice_clipped = np.clip(slice_data, -2, 2)
+
+    # Select subset for readability (every 2nd asset for more coverage)
+    asset_idx = list(range(0, len(assets), 2))
+    slice_subset = slice_clipped[asset_idx, :]
     asset_labels = [assets[i] for i in asset_idx]
 
-    fig, ax = plt.subplots(figsize=(8, 8))
+    fig, ax = plt.subplots(figsize=(8, 10))
 
-    # Heatmap
+    # Heatmap with clipped range
     sns.heatmap(slice_subset, annot=False, cmap='RdBu_r', center=0,
+                vmin=-2, vmax=2,
                 xticklabels=features, yticklabels=asset_labels,
-                cbar_kws={'label': 'Z-Score'}, ax=ax)
+                cbar_kws={'label': 'Z-Score (clipped to ±2)'}, ax=ax)
 
     ax.set_xlabel('Market Feature')
     ax.set_ylabel('Asset')
-    ax.set_title(f'Market Tensor Slice (t = {data["timestamp_index"]}, normalized)')
+    ax.set_title(f'Market Tensor Slice (t = {data["timestamp_index"]}, z-normalized)')
 
     plt.tight_layout()
     plt.savefig(output_path / 'fig10_tensor_slice.pdf', bbox_inches='tight')
