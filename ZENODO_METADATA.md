@@ -17,7 +17,7 @@ Murad Farzulla (ORCID: 0009-0004-9646-9582)
 
 <h3>Methodology</h3>
 <ul>
-  <li><strong>NLP Pipeline:</strong> Zero-shot classification using BART-MNLI extracts semantic features from 13 major cryptocurrency whitepapers across 10 functional categories (decentralization, smart contracts, DeFi, scalability, privacy, interoperability, etc.)</li>
+  <li><strong>NLP Pipeline:</strong> Zero-shot classification using BART-MNLI extracts semantic features from 8 major cryptocurrency whitepapers across 10 functional categories (decentralization, smart contracts, DeFi, scalability, privacy, interoperability, etc.)</li>
   <li><strong>Tensor Decomposition:</strong> CP (CANDECOMP/PARAFAC) decomposition of market data tensor (17,543 × 49 × 5) achieves 92.45% variance explained with rank-2 factors</li>
   <li><strong>Alignment Measurement:</strong> Procrustes rotation with Tucker's congruence coefficient (φ) quantifies narrative-market correspondence</li>
 </ul>
@@ -43,7 +43,7 @@ Murad Farzulla (ORCID: 0009-0004-9646-9582)
 <ul>
   <li><code>paper/</code> - Full LaTeX paper (24 pages, two-column) with 10 figures</li>
   <li><code>scripts/</code> - Complete analysis pipeline (data collection, NLP, tensor ops, alignment)</li>
-  <li><code>data/</code> - Market data (49 assets) and whitepaper corpus (13 PDFs)</li>
+  <li><code>data/</code> - Market data (49 assets) and whitepaper corpus (8 PDFs)</li>
   <li><code>outputs/</code> - All analysis results in JSON/CSV format</li>
 </ul>
 
@@ -54,7 +54,7 @@ Murad Farzulla (ORCID: 0009-0004-9646-9582)
 
 ## Abstract (plain text)
 
-This paper investigates whether the functional claims made in cryptocurrency whitepapers exhibit measurable alignment with subsequent market behavior patterns. Using zero-shot NLP classification and tensor decomposition, we analyze 13 major cryptocurrency whitepapers against market data for 49 assets over 17,543 daily observations. Our CP tensor decomposition achieves 92.45% variance explained with rank-2 factors, revealing a "BTC dominance" factor (loading: 28.5) and a "diversified altcoin" factor. The primary claims-statistics alignment yields Tucker's φ = 0.331 (moderate alignment, p < 0.001), with "smart contracts" and "interoperability" categories showing strongest correspondence to market patterns. Leave-one-out analysis reveals Bitcoin contributes positively to alignment (+0.025) while DeFi tokens show the largest narrative-market gaps. Temporal analysis across rolling windows confirms alignment stability (φ = 0.232 ± 0.023). We contribute novel methodology combining NLP-extracted semantic features with tensor factor analysis for financial prediction, finding that while whitepapers capture some market-relevant information, their explanatory power remains limited—suggesting markets respond to factors beyond documented project narratives.
+This paper investigates whether the functional claims made in cryptocurrency whitepapers exhibit measurable alignment with subsequent market behavior patterns. Using zero-shot NLP classification and tensor decomposition, we analyze 8 major cryptocurrency whitepapers against market data for 49 assets over 17,543 daily observations. Our CP tensor decomposition achieves 92.45% variance explained with rank-2 factors, revealing a "BTC dominance" factor (loading: 28.5) and a "diversified altcoin" factor. The primary claims-statistics alignment yields Tucker's φ = 0.331 (moderate alignment, p < 0.001), with "smart contracts" and "interoperability" categories showing strongest correspondence to market patterns. Leave-one-out analysis reveals Bitcoin contributes positively to alignment (+0.025) while DeFi tokens show the largest narrative-market gaps. Temporal analysis across rolling windows confirms alignment stability (φ = 0.232 ± 0.023). We contribute novel methodology combining NLP-extracted semantic features with tensor factor analysis for financial prediction, finding that while whitepapers capture some market-relevant information, their explanatory power remains limited—suggesting markets respond to factors beyond documented project narratives.
 
 ---
 

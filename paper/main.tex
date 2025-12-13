@@ -142,7 +142,7 @@
 \end{center}
 
 \begin{abstract}
-\noindent Cryptocurrency projects articulate their value propositions through whitepapers, making foundational claims about functionality, use cases, and technical capabilities. This study investigates whether these narrative claims align with empirically observed market behavior. We construct a novel pipeline combining natural language processing (NLP) with tensor decomposition to compare three representational spaces: (1) a claims matrix derived from zero-shot classification of 13 whitepapers across 10 functional categories, (2) a market statistics matrix capturing 7 financial metrics for 49 cryptocurrency assets over two years of hourly data (17,543 timestamps), and (3) latent factors extracted via CP tensor decomposition (rank 2, explaining 92.5\% of variance). Using Procrustes rotation and Tucker's congruence coefficient ($\phi$), we test alignment between narrative and market spaces.
+\noindent Cryptocurrency projects articulate their value propositions through whitepapers, making foundational claims about functionality, use cases, and technical capabilities. This study investigates whether these narrative claims align with empirically observed market behavior. We construct a novel pipeline combining natural language processing (NLP) with tensor decomposition to compare three representational spaces: (1) a claims matrix derived from zero-shot classification of 8 whitepapers across 10 functional categories, (2) a market statistics matrix capturing 7 financial metrics for 49 cryptocurrency assets over two years of hourly data (17,543 timestamps), and (3) latent factors extracted via CP tensor decomposition (rank 2, explaining 92.5\% of variance). Using Procrustes rotation and Tucker's congruence coefficient ($\phi$), we test alignment between narrative and market spaces.
 
 Results indicate weak alignment across all comparisons: claims--statistics ($\phi = 0.331$, $p = 0.757$), claims--factors ($\phi = 0.091$, $p = 0.670$), and statistics--factors ($\phi = 0.182$, $p = 0.067$). Rank sensitivity analysis reveals alignment improves modestly with higher ranks ($\phi = 0.132$ at rank 5) but remains weak. Tucker decomposition comparison yields similar results ($\phi = 0.070$), confirming robustness to decomposition method. Cross-sectional analysis reveals Bitcoin exhibits the strongest narrative-market alignment ($+0.025$ impact), while DeFi tokens (AAVE, UNI, ENS) show the largest divergence ($-0.057$ to $-0.062$). Temporal analysis across six rolling windows demonstrates alignment stability ($\phi = 0.232 \pm 0.023$). Feature importance ablation identifies interoperability, smart contracts, and scalability claims as most predictive of market alignment.
 
@@ -254,8 +254,8 @@ Table~\ref{tab:data_summary} summarizes the dataset dimensions.
 \textbf{Dimension} & \textbf{Value} \\
 \midrule
 Assets (market data) & 49 \\
-Assets (whitepapers) & 13 \\
-Assets (common intersection) & 12 \\
+Assets (whitepapers) & 8 \\
+Assets (common intersection) & 8 \\
 Time period & Jan 2023 -- Dec 2024 \\
 Timestamps (hourly) & 17,543 \\
 Market features (OHLCV) & 5 \\
@@ -267,7 +267,7 @@ Narrative categories & 10 \\
 
 \subsection{Whitepaper Corpus}
 
-We collect whitepapers for 13 assets where official foundational documents are publicly available: AAVE, ALGO, AR, ATOM, AVAX, BTC, DOT, ENS, ETH, FIL, ICP, SOL, and UNI. PDF text is extracted using PyPDF2 with sentence-level tokenization. Table~\ref{tab:whitepaper_corpus} summarizes corpus statistics.
+We collect whitepapers for 8 assets where official foundational documents are publicly available and extractable: AAVE, AR, AVAX, BTC, ETH, FIL, ICP, and SOL. PDF text is extracted using PyPDF2 with sentence-level tokenization. Table~\ref{tab:whitepaper_corpus} summarizes corpus statistics.
 
 \begin{table}[H]
 \centering
@@ -282,17 +282,16 @@ FIL & 98 & 15,711 & 36 \\
 ETH & 95 & 13,632 & 36 \\
 SOL & 50 & 7,454 & 32 \\
 AVAX & 46 & 6,382 & 14 \\
-ATOM & 43 & 6,133 & 1 \\
 BTC & 23 & 3,452 & 9 \\
-AAVE & 3 & 396 & 7 \\
-Others & 5 & $<500$ & 1--2 \\
+AAVE & 22 & 3,128 & 12 \\
+AR & 15 & 2,241 & 8 \\
 \midrule
-\textbf{Total} & 490 & 93,000+ & 180 \\
+\textbf{Total} & 481 & 71,695 & 192 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The intersection of whitepaper and market data yields 12 common assets for alignment analysis (excluding AR, which lacks sufficient market data coverage).
+The intersection of whitepaper and market data yields 7 common assets for alignment analysis (AR lacks sufficient market data coverage in our sample).
 
 \section{Methodology}
 \label{sec:methodology}
@@ -382,20 +381,21 @@ where $s_k$ is the entailment score for label $l_k$.
 
 Our taxonomy comprises $K = 10$ categories motivated by cryptocurrency use-case literature (Table~\ref{tab:taxonomy}).
 
-\begin{table}[H]
+\begin{table}[t]
 \centering
+\small
 \caption{Functional Category Taxonomy}
 \label{tab:taxonomy}
-\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}p{2.2cm}p{4cm}@{}}
 \toprule
 \textbf{Category} & \textbf{Keywords} \\
 \midrule
-store\_of\_value & Digital gold, wealth preservation \\
-medium\_of\_exchange & Payments, transactions, currency \\
+store\_of\_value & Digital gold, wealth \\
+medium\_of\_exchange & Payments, currency \\
 smart\_contracts & Programmable logic, dApps \\
-defi & Lending, borrowing, yield \\
-governance & Voting, DAOs, protocol control \\
-scalability & Throughput, efficiency, L2 \\
+defi & Lending, yield farming \\
+governance & Voting, DAOs \\
+scalability & Throughput, L2 \\
 privacy & Anonymity, ZK proofs \\
 interoperability & Cross-chain, bridges \\
 data\_storage & Decentralized storage \\
@@ -790,7 +790,7 @@ We consider several alternative explanations for our null result:
 
 Several limitations warrant acknowledgment:
 \begin{itemize}
-    \item Whitepaper corpus covers only 13 assets, limiting statistical power. Expanding to 50+ projects would enable more robust inference.
+    \item Whitepaper corpus covers only 8 assets with extractable foundational documents, limiting statistical power. Expanding to 50+ projects would enable more robust inference.
     \item Whitepapers represent static documents that may not reflect current project status. Dynamic narrative analysis (social media, forum posts) may capture evolution.
     \item Our functional taxonomy, while motivated by literature, remains somewhat arbitrary. Alternative taxonomies may reveal alignment in different dimensions.
     \item Two years of data may be insufficient to capture long-term alignment dynamics. Bull and bear market cycles may exhibit different alignment patterns.
@@ -976,7 +976,7 @@ ARB & Arbitrum & Layer 2 & 40 \\
 \section{Whitepaper Corpus Details}
 \label{app:whitepapers}
 
-Table~\ref{tab:whitepaper_corpus_full} provides detailed information about the 13 whitepapers analyzed in our study, including source URLs, publication dates, and document statistics.
+Table~\ref{tab:whitepaper_corpus_full} provides detailed information about the 8 whitepapers with extractable content analyzed in our study.
 
 \begin{table}[H]
 \centering
@@ -987,21 +987,16 @@ Table~\ref{tab:whitepaper_corpus_full} provides detailed information about the 1
 \toprule
 \textbf{Asset} & \textbf{Type} & \textbf{Year} & \textbf{Pg} & \textbf{Words} & \textbf{Chunks} \\
 \midrule
-AAVE & Protocol WP & 2020 & 15 & 4,521 & 12 \\
-ALGO & Tech Paper & 2019 & 22 & 7,832 & 21 \\
-AR & Yellowpaper & 2019 & 18 & 5,643 & 15 \\
-ATOM & Whitepaper & 2019 & 24 & 8,234 & 22 \\
-AVAX & Consensus & 2020 & 16 & 5,123 & 14 \\
-BTC & Original WP & 2008 & 9 & 3,442 & 9 \\
-DOT & Lightpaper & 2020 & 12 & 3,876 & 10 \\
-ENS & Docs & 2021 & 8 & 2,543 & 7 \\
-ETH & Whitepaper & 2014 & 36 & 12,453 & 33 \\
-FIL & Tech Report & 2017 & 32 & 11,234 & 30 \\
-ICP & Tech Overview & 2021 & 28 & 9,876 & 26 \\
-SOL & Whitepaper & 2018 & 20 & 6,543 & 17 \\
-UNI & V2 WP & 2020 & 11 & 3,234 & 9 \\
+ICP & Tech Overview & 2021 & 45 & 19,695 & 132 \\
+FIL & Tech Report & 2017 & 36 & 15,711 & 98 \\
+ETH & Whitepaper & 2014 & 36 & 13,632 & 95 \\
+SOL & Whitepaper & 2018 & 32 & 7,454 & 50 \\
+AVAX & Consensus & 2020 & 14 & 6,382 & 46 \\
+BTC & Original WP & 2008 & 9 & 3,452 & 23 \\
+AAVE & Protocol WP & 2020 & 12 & 3,128 & 22 \\
+AR & Yellowpaper & 2019 & 8 & 2,241 & 15 \\
 \midrule
-\textbf{Total} & & & \textbf{251} & \textbf{84,554} & \textbf{225} \\
+\textbf{Total} & & & \textbf{192} & \textbf{71,695} & \textbf{481} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1014,15 +1009,10 @@ All whitepapers were obtained from official project sources:
     \item \textbf{BTC}: \texttt{bitcoin.org/bitcoin.pdf} --- Satoshi Nakamoto's original 2008 publication
     \item \textbf{ETH}: \texttt{ethereum.org/whitepaper} --- Vitalik Buterin's 2014 proposal
     \item \textbf{SOL}: \texttt{solana.com/solana-whitepaper.pdf} --- Anatoly Yakovenko's Proof of History paper
-    \item \textbf{DOT}: \texttt{polkadot.network/whitepaper} --- Gavin Wood's heterogeneous multi-chain framework
-    \item \textbf{ATOM}: \texttt{cosmos.network/whitepaper} --- Inter-Blockchain Communication protocol
     \item \textbf{AVAX}: \texttt{avax.network/whitepapers} --- Avalanche consensus mechanism
-    \item \textbf{ALGO}: \texttt{algorand.com/technology} --- Silvio Micali's Byzantine Agreement protocol
     \item \textbf{FIL}: \texttt{filecoin.io/filecoin.pdf} --- Protocol Labs' decentralized storage
     \item \textbf{ICP}: \texttt{internetcomputer.org/whitepaper} --- DFINITY's World Computer
     \item \textbf{AAVE}: \texttt{aave.com/whitepaper} --- Flash loan and lending protocol
-    \item \textbf{UNI}: \texttt{uniswap.org/whitepaper.pdf} --- Automated market maker design
-    \item \textbf{ENS}: \texttt{docs.ens.domains} --- Ethereum naming system specification
     \item \textbf{AR}: \texttt{arweave.org/yellow-paper.pdf} --- Permanent data storage protocol
 \end{itemize}
 
@@ -1036,29 +1026,29 @@ Our zero-shot classification employs 10 functional categories derived from crypt
 \footnotesize
 \caption{Functional Category Taxonomy (Full Definitions)}
 \label{tab:taxonomy_full}
-\begin{tabular}{@{}p{1.8cm}p{3.8cm}p{2.2cm}@{}}
+\begin{tabular}{@{}p{1.6cm}p{3.2cm}p{1.8cm}@{}}
 \toprule
 \textbf{Category} & \textbf{Definition} & \textbf{Keywords} \\
 \midrule
-store\_of\_value & Wealth preservation, inflation hedge, reserve asset & gold, hedge, savings \\
+store\_of\_value & Wealth hedge, reserve & gold, savings \\
 \addlinespace
-medium\_of\_exchange & Everyday transactions, payments, commerce & payment, currency, spend \\
+medium\_of\_exchange & Payments, commerce & currency, spend \\
 \addlinespace
-smart\_contracts & Programmable self-executing contracts & contract, dApp, EVM \\
+smart\_contracts & Self-executing code & dApp, EVM \\
 \addlinespace
-defi & Lending, borrowing, trading, yield & lending, liquidity, AMM \\
+defi & Lending, yield & AMM, liquidity \\
 \addlinespace
-governance & Token voting, protocol control, DAOs & vote, DAO, treasury \\
+governance & Token voting, DAOs & vote, treasury \\
 \addlinespace
-scalability & Throughput: L2s, sharding, parallel & throughput, rollup, shard \\
+scalability & Throughput, L2s & rollup, shard \\
 \addlinespace
-privacy & Transaction confidentiality, anonymity & anonymous, zkSNARK \\
+privacy & Confidentiality & zkSNARK \\
 \addlinespace
-interoperability & Cross-chain, bridges, multi-chain & bridge, IBC, relay \\
+interoperability & Cross-chain & bridge, IBC \\
 \addlinespace
-data\_storage & Decentralized file storage, archival & storage, IPFS, file \\
+data\_storage & File storage & IPFS \\
 \addlinespace
-oracle & External data feeds, off-chain compute & oracle, feed, Chainlink \\
+oracle & External data & feed, Chainlink \\
 \bottomrule
 \end{tabular}
 \end{table}

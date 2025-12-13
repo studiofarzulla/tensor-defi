@@ -297,11 +297,12 @@ def fig9_entity_impact(data_path: Path, output_path: Path):
     ax.set_ylabel('Asset')
     ax.set_title('Entity-Level Alignment Impact')
 
-    # Legend
+    # Legend - position outside plot area to avoid data collision
     helps_patch = mpatches.Patch(color='#2ecc71', label='Helps alignment')
     neutral_patch = mpatches.Patch(color=GRAY, label='Neutral')
     hurts_patch = mpatches.Patch(color='#e74c3c', label='Hurts alignment')
-    ax.legend(handles=[helps_patch, neutral_patch, hurts_patch], loc='lower right')
+    ax.legend(handles=[helps_patch, neutral_patch, hurts_patch],
+              loc='upper center', bbox_to_anchor=(0.5, -0.12), ncol=3, frameon=False)
 
     plt.tight_layout()
     plt.savefig(output_path / 'fig9_entity_impact.pdf', bbox_inches='tight')
