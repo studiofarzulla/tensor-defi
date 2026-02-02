@@ -1,0 +1,242 @@
+{
+  "AAVE": {
+    "technology": 0.36363636363636365,
+    "governance": 0.09090909090909091,
+    "tokenomics": 0.0,
+    "security": 0.0,
+    "scalability": 0.0,
+    "interoperability": 0.36363636363636365,
+    "privacy": 0.0,
+    "consensus": 0.18181818181818182
+  },
+  "ADA": {
+    "technology": 0.12025316455696203,
+    "governance": 0.05063291139240506,
+    "tokenomics": 0.0,
+    "security": 0.16455696202531644,
+    "scalability": 0.21518987341772153,
+    "interoperability": 0.310126582278481,
+    "privacy": 0.02531645569620253,
+    "consensus": 0.11392405063291139
+  },
+  "ALGO": {
+    "technology": 0.0,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.0,
+    "scalability": 0.0,
+    "interoperability": 0.0,
+    "privacy": 0.0,
+    "consensus": 1.0
+  },
+  "AR": {
+    "technology": 0.627906976744186,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.046511627906976744,
+    "scalability": 0.046511627906976744,
+    "interoperability": 0.20930232558139536,
+    "privacy": 0.0,
+    "consensus": 0.06976744186046512
+  },
+  "ARB": {
+    "technology": 0.6712328767123288,
+    "governance": 0.0136986301369863,
+    "tokenomics": 0.0,
+    "security": 0.1506849315068493,
+    "scalability": 0.0684931506849315,
+    "interoperability": 0.0684931506849315,
+    "privacy": 0.0,
+    "consensus": 0.0273972602739726
+  },
+  "ATOM": {
+    "technology": 0.4418604651162791,
+    "governance": 0.046511627906976744,
+    "tokenomics": 0.0,
+    "security": 0.16279069767441862,
+    "scalability": 0.023255813953488372,
+    "interoperability": 0.20930232558139536,
+    "privacy": 0.0,
+    "consensus": 0.11627906976744186
+  },
+  "AVAX": {
+    "technology": 0.41304347826086957,
+    "governance": 0.08695652173913043,
+    "tokenomics": 0.0,
+    "security": 0.08695652173913043,
+    "scalability": 0.15217391304347827,
+    "interoperability": 0.06521739130434782,
+    "privacy": 0.0,
+    "consensus": 0.1956521739130435
+  },
+  "BTC": {
+    "technology": 0.34782608695652173,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.34782608695652173,
+    "scalability": 0.08695652173913043,
+    "interoperability": 0.08695652173913043,
+    "privacy": 0.08695652173913043,
+    "consensus": 0.043478260869565216
+  },
+  "COMP": {
+    "technology": 0.47619047619047616,
+    "governance": 0.14285714285714285,
+    "tokenomics": 0.0,
+    "security": 0.09523809523809523,
+    "scalability": 0.0,
+    "interoperability": 0.23809523809523808,
+    "privacy": 0.0,
+    "consensus": 0.047619047619047616
+  },
+  "DOT": {
+    "technology": 1.0,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.0,
+    "scalability": 0.0,
+    "interoperability": 0.0,
+    "privacy": 0.0,
+    "consensus": 0.0
+  },
+  "ENS": {
+    "technology": 1.0,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.0,
+    "scalability": 0.0,
+    "interoperability": 0.0,
+    "privacy": 0.0,
+    "consensus": 0.0
+  },
+  "ETH": {
+    "technology": 0.6526315789473685,
+    "governance": 0.031578947368421054,
+    "tokenomics": 0.0,
+    "security": 0.15789473684210525,
+    "scalability": 0.031578947368421054,
+    "interoperability": 0.07368421052631578,
+    "privacy": 0.021052631578947368,
+    "consensus": 0.031578947368421054
+  },
+  "FIL": {
+    "technology": 0.4897959183673469,
+    "governance": 0.030612244897959183,
+    "tokenomics": 0.0,
+    "security": 0.17346938775510204,
+    "scalability": 0.0,
+    "interoperability": 0.19387755102040816,
+    "privacy": 0.01020408163265306,
+    "consensus": 0.10204081632653061
+  },
+  "GRT": {
+    "technology": 0.0,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.0196078431372549,
+    "scalability": 0.0,
+    "interoperability": 0.6470588235294118,
+    "privacy": 0.0,
+    "consensus": 0.3333333333333333
+  },
+  "ICP": {
+    "technology": 0.3181818181818182,
+    "governance": 0.045454545454545456,
+    "tokenomics": 0.0,
+    "security": 0.21212121212121213,
+    "scalability": 0.03787878787878788,
+    "interoperability": 0.09848484848484848,
+    "privacy": 0.0,
+    "consensus": 0.2878787878787879
+  },
+  "LINK": {
+    "technology": 0.5212765957446809,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.3191489361702128,
+    "scalability": 0.010638297872340425,
+    "interoperability": 0.11702127659574468,
+    "privacy": 0.0,
+    "consensus": 0.031914893617021274
+  },
+  "MKR": {
+    "technology": 0.475,
+    "governance": 0.175,
+    "tokenomics": 0.0,
+    "security": 0.2,
+    "scalability": 0.0,
+    "interoperability": 0.1,
+    "privacy": 0.0,
+    "consensus": 0.05
+  },
+  "NEAR": {
+    "technology": 0.21052631578947367,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.25,
+    "scalability": 0.09210526315789473,
+    "interoperability": 0.3026315789473684,
+    "privacy": 0.02631578947368421,
+    "consensus": 0.11842105263157894
+  },
+  "SC": {
+    "technology": 0.6153846153846154,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.23076923076923078,
+    "scalability": 0.0,
+    "interoperability": 0.15384615384615385,
+    "privacy": 0.0,
+    "consensus": 0.0
+  },
+  "SOL": {
+    "technology": 0.24,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.4,
+    "scalability": 0.06,
+    "interoperability": 0.12,
+    "privacy": 0.0,
+    "consensus": 0.18
+  },
+  "STORJ": {
+    "technology": 0.6509433962264151,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.14150943396226415,
+    "scalability": 0.06132075471698113,
+    "interoperability": 0.04245283018867924,
+    "privacy": 0.014150943396226415,
+    "consensus": 0.08962264150943396
+  },
+  "XMR": {
+    "technology": 0.38,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.42,
+    "scalability": 0.04,
+    "interoperability": 0.08,
+    "privacy": 0.06,
+    "consensus": 0.02
+  },
+  "ZEC": {
+    "technology": 0.23680456490727533,
+    "governance": 0.0042796005706134095,
+    "tokenomics": 0.0,
+    "security": 0.3238231098430813,
+    "scalability": 0.06276747503566334,
+    "interoperability": 0.19971469329529243,
+    "privacy": 0.03281027104136947,
+    "consensus": 0.1398002853067047
+  },
+  "UNI": {
+    "technology": 0.6,
+    "governance": 0.0,
+    "tokenomics": 0.0,
+    "security": 0.0,
+    "scalability": 0.2,
+    "interoperability": 0.2,
+    "privacy": 0.0,
+    "consensus": 0.0
+  }
+}

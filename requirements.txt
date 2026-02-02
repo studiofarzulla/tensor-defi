@@ -1,0 +1,36 @@
+# TENSOR-DEFI: Unified Narrative-Market Alignment Framework
+# Python 3.13+
+
+# NLP Pipeline
+transformers>=4.35.0
+torch>=2.0.0
+PyMuPDF>=1.23.0
+nltk>=3.8.0
+
+# Tensor Operations
+tensorly>=0.8.1
+numpy>=1.26.0
+scipy>=1.11.0
+
+# Data Collection
+ccxt>=4.4.0
+pandas>=2.1.0
+requests>=2.31.0
+aiohttp>=3.9.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# Analysis
+scikit-learn>=1.3.0
+statsmodels>=0.14.0
+
+# Utilities
+tqdm>=4.66.0
+pyyaml>=6.0.0
+
+# Note: Ensemble NLP requires additional models to be downloaded:
+# - microsoft/deberta-v3-large-mnli (~1.5GB)
+# - roberta-large-mnli (~1.4GB)
+# These will be auto-downloaded on first use via HuggingFace

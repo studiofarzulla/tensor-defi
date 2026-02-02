@@ -1,0 +1,25 @@
+{
+  "sample_size": 200,
+  "agreement_rate": 0.32,
+  "cohens_kappa": 0.14184755174154473,
+  "interpretation": "slight/poor",
+  "bart_distribution": {
+    "consensus": 19,
+    "interoperability": 35,
+    "technology": 80,
+    "scalability": 14,
+    "security": 47,
+    "privacy": 3,
+    "governance": 2
+  },
+  "deberta_distribution": {
+    "consensus": 27,
+    "tokenomics": 31,
+    "technology": 63,
+    "security": 40,
+    "interoperability": 21,
+    "scalability": 8,
+    "governance": 6,
+    "privacy": 4
+  }
+}

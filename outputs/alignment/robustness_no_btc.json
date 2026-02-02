@@ -1,0 +1,31 @@
+{
+  "excluded": "BTC",
+  "n_entities": 22,
+  "claims_factors": {
+    "phi": 0.0809962648649773,
+    "ci": [
+      0.06959958054096178,
+      0.1755204216895955
+    ],
+    "p_value": 0.7235,
+    "interpretation": "weak"
+  },
+  "stats_factors": {
+    "phi": 0.17315011985273726,
+    "ci": [
+      0.14989017242629596,
+      0.23089951608161688
+    ],
+    "p_value": 0.008,
+    "interpretation": "weak"
+  },
+  "claims_stats": {
+    "phi": 0.3547058491635141,
+    "ci": [
+      0.3304917079886524,
+      0.5701449280878798
+    ],
+    "p_value": 0.307,
+    "interpretation": "weak"
+  }
+}

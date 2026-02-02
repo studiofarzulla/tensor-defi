@@ -1,0 +1,52 @@
+{
+  "n_assets": 37,
+  "original_dims": {
+    "claims": 10,
+    "stats": 7,
+    "factors": 2
+  },
+  "comparisons": [
+    {
+      "name": "claims_vs_factors",
+      "original_dims": [
+        10,
+        2
+      ],
+      "matched_dim": 2,
+      "phi": 0.15709933999357903,
+      "ci_lower": 0.08941864249534895,
+      "ci_upper": 0.5303298396460552,
+      "se": 0.13184730314428444,
+      "p_value": 0.473,
+      "significant": false
+    },
+    {
+      "name": "claims_vs_stats",
+      "original_dims": [
+        10,
+        7
+      ],
+      "matched_dim": 7,
+      "phi": 0.30397569994450785,
+      "ci_lower": 0.33187018229280785,
+      "ci_upper": 0.5078776404327586,
+      "se": 0.04528935676986876,
+      "p_value": 0.532,
+      "significant": false
+    },
+    {
+      "name": "stats_vs_factors",
+      "original_dims": [
+        7,
+        2
+      ],
+      "matched_dim": 2,
+      "phi": 0.42253909083043895,
+      "ci_lower": 0.25992785211999747,
+      "ci_upper": 0.633416015020568,
+      "se": 0.09908832156933468,
+      "p_value": 0.0,
+      "significant": true
+    }
+  ]
+}

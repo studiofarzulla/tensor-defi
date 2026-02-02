@@ -1,0 +1,29 @@
+{
+  "cp": {
+    "rank": 2,
+    "explained_variance": 0.9245111518582052,
+    "alignment_phi": 0.05827130009836432,
+    "factor_shape": [
+      49,
+      2
+    ]
+  },
+  "tucker": {
+    "ranks": [
+      5,
+      2,
+      2
+    ],
+    "explained_variance": 0.9246352830967969,
+    "alignment_phi": 0.059890480431803464,
+    "factor_shape": [
+      49,
+      2
+    ],
+    "core_shape": [
+      5,
+      2,
+      2
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+symbol,name,category,binance_symbol,has_whitepaper
+BTC,Bitcoin,Layer 1,BTC/USDT,true
+ETH,Ethereum,Layer 1,ETH/USDT,true
+SOL,Solana,Layer 1,SOL/USDT,true
+ADA,Cardano,Layer 1,ADA/USDT,true
+AVAX,Avalanche,Layer 1,AVAX/USDT,true
+DOT,Polkadot,Layer 1,DOT/USDT,true
+NEAR,NEAR Protocol,Layer 1,NEAR/USDT,true
+ATOM,Cosmos,Layer 1,ATOM/USDT,true
+FTM,Fantom,Layer 1,FTM/USDT,true
+EGLD,MultiversX,Layer 1,EGLD/USDT,true
+HBAR,Hedera,Layer 1,HBAR/USDT,true
+ICP,Internet Computer,Layer 1,ICP/USDT,true
+APT,Aptos,Layer 1,APT/USDT,true
+SUI,Sui,Layer 1,SUI/USDT,true
+ALGO,Algorand,Layer 1,ALGO/USDT,true
+FIL,Filecoin,Infrastructure,FIL/USDT,true
+LINK,Chainlink,Oracle,LINK/USDT,true
+GRT,The Graph,Infrastructure,GRT/USDT,true
+AR,Arweave,Storage,AR/USDT,true
+RENDER,Render,Infrastructure,RENDER/USDT,true
+LPT,Livepeer,Infrastructure,LPT/USDT,true
+OCEAN,Ocean Protocol,Infrastructure,OCEAN/USDT,true
+UNI,Uniswap,DeFi,UNI/USDT,true
+AAVE,Aave,DeFi,AAVE/USDT,true
+MKR,Maker,DeFi,MKR/USDT,true
+CRV,Curve,DeFi,CRV/USDT,true
+SNX,Synthetix,DeFi,SNX/USDT,true
+COMP,Compound,DeFi,COMP/USDT,true
+SUSHI,SushiSwap,DeFi,SUSHI/USDT,true
+YFI,yearn.finance,DeFi,YFI/USDT,true
+XMR,Monero,Privacy,XMR/USDT,true
+ZEC,Zcash,Privacy,ZEC/USDT,true
+BAND,Band Protocol,Oracle,BAND/USDT,true
+API3,API3,Oracle,API3/USDT,true
+TRB,Tellor,Oracle,TRB/USDT,true
+AXS,Axie Infinity,Gaming,AXS/USDT,true
+SAND,The Sandbox,Gaming,SAND/USDT,true
+MANA,Decentraland,Gaming,MANA/USDT,true
+ENJ,Enjin,Gaming,ENJ/USDT,true
+GALA,Gala,Gaming,GALA/USDT,true
+SC,Siacoin,Storage,SC/USDT,true
+STORJ,Storj,Storage,STORJ/USDT,true
+ENS,ENS,Identity,ENS/USDT,true
+LIT,Litentry,Identity,LIT/USDT,true
+IMX,Immutable,Layer 2,IMX/USDT,true
+OP,Optimism,Layer 2,OP/USDT,true
+ARB,Arbitrum,Layer 2,ARB/USDT,true
+POL,Polygon,Layer 2,POL/USDT,true
+LDO,Lido,Staking,LDO/USDT,true
+RPL,Rocket Pool,Staking,RPL/USDT,true

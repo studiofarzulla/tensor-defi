@@ -1,0 +1,74 @@
+{
+  "subsample_stability": {
+    "n_iterations": 100,
+    "subsample_frac": 0.8,
+    "mean_phi": 0.26547082254332277,
+    "std_phi": 0.01693869126116813,
+    "ci_lower": 0.23518409746710991,
+    "ci_upper": 0.29756139763806394
+  },
+  "feature_importance": {
+    "phi_full": 0.24573765481201018,
+    "claims_importance": [
+      {
+        "feature": "medium_of_exchange",
+        "phi_without": 0.2250543964778136,
+        "importance": 0.02068325833419657
+      },
+      {
+        "feature": "interoperability",
+        "phi_without": 0.22829571648440736,
+        "importance": 0.017441938327602824
+      },
+      {
+        "feature": "privacy",
+        "phi_without": 0.22840361459762967,
+        "importance": 0.01733404021438051
+      },
+      {
+        "feature": "smart_contracts",
+        "phi_without": 0.23266376025253327,
+        "importance": 0.013073894559476912
+      },
+      {
+        "feature": "oracle",
+        "phi_without": 0.2372659076445241,
+        "importance": 0.008471747167486082
+      },
+      {
+        "feature": "governance",
+        "phi_without": 0.24068615216513667,
+        "importance": 0.0050515026468735125
+      },
+      {
+        "feature": "defi",
+        "phi_without": 0.24413453021276635,
+        "importance": 0.0016031245992438325
+      },
+      {
+        "feature": "store_of_value",
+        "phi_without": 0.24529231626908238,
+        "importance": 0.0004453385429278034
+      },
+      {
+        "feature": "scalability",
+        "phi_without": 0.2453534381696807,
+        "importance": 0.00038421664232948793
+      },
+      {
+        "feature": "data_storage",
+        "phi_without": 0.24674513756560587,
+        "importance": -0.0010074827535956898
+      }
+    ],
+    "most_important": [
+      "medium_of_exchange",
+      "interoperability",
+      "privacy"
+    ]
+  },
+  "rank_sensitivity": {
+    "rank_sensitivity": [],
+    "note": "Run via run_expansion.py for rank sensitivity"
+  }
+}

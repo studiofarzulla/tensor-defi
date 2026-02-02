@@ -1,0 +1,107 @@
+{
+  "claims_stats": {
+    "mean_phi": 0.24573765481201018,
+    "interpretation": "weak",
+    "column_phis": [
+      0.24079564442420942,
+      0.37015987900699904,
+      0.18141445283932495,
+      0.39994212920234545,
+      0.5772565598272468,
+      0.44532468976387746,
+      0.2424831930560987,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "bootstrap_ci": [
+      0.24743720210161968,
+      0.37608419367905366
+    ],
+    "p_value": 0.339,
+    "significant": false
+  },
+  "claims_factors": {
+    "mean_phi": 0.05827130009836432,
+    "interpretation": "weak",
+    "column_phis": [
+      0.34853276355961205,
+      0.2341802374240311,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "bootstrap_ci": [
+      0.05152030769574525,
+      0.1486682080130391
+    ],
+    "p_value": 0.751,
+    "significant": false
+  },
+  "stats_factors": {
+    "mean_phi": 0.17395879914677354,
+    "interpretation": "weak",
+    "column_phis": [
+      0.6368972522562899,
+      0.5808143417711249,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "bootstrap_ci": [
+      0.1435939500261122,
+      0.22179330427370433
+    ],
+    "p_value": 0.0,
+    "significant": true
+  },
+  "metadata": {
+    "n_entities": 37,
+    "symbols": [
+      "AAVE",
+      "ADA",
+      "ALGO",
+      "API3",
+      "APT",
+      "ARB",
+      "ATOM",
+      "AVAX",
+      "AXS",
+      "BAND",
+      "BTC",
+      "COMP",
+      "CRV",
+      "DOT",
+      "EGLD",
+      "ETH",
+      "FIL",
+      "GRT",
+      "HBAR",
+      "ICP",
+      "LDO",
+      "LINK",
+      "MANA",
+      "MKR",
+      "NEAR",
+      "OCEAN",
+      "RPL",
+      "SAND",
+      "SC",
+      "SOL",
+      "STORJ",
+      "SUI",
+      "SUSHI",
+      "UNI",
+      "XMR",
+      "YFI",
+      "ZEC"
+    ]
+  }
+}

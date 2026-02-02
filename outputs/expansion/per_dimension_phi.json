@@ -1,0 +1,46 @@
+{
+  "claims_stats": {
+    "column_phis": [
+      0.24079564442420942,
+      0.37015987900699904,
+      0.18141445283932495,
+      0.39994212920234545,
+      0.5772565598272468,
+      0.44532468976387746,
+      0.2424831930560987,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mean_phi": 0.24573765481201018,
+    "dimensions": 10
+  },
+  "claims_factors": {
+    "column_phis": [
+      0.34853276355961205,
+      0.2341802374240311,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mean_phi": 0.05827130009836432,
+    "dimensions": 10
+  },
+  "categories": [
+    "store_of_value",
+    "medium_of_exchange",
+    "smart_contracts",
+    "defi",
+    "governance",
+    "scalability",
+    "privacy",
+    "interoperability",
+    "data_storage",
+    "oracle"
+  ]
+}

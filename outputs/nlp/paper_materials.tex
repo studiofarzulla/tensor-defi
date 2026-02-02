@@ -1,0 +1,102 @@
+% ============================================================================
+% NLP ANALYSIS MATERIALS FOR WHITEPAPER CLAIMS PAPER
+% Generated: $(date)
+% ============================================================================
+
+% === METHODOLOGY SUBSECTION ===
+
+\subsection{Whitepaper Claim Extraction}
+
+To categorize the semantic content of cryptocurrency whitepapers, we employ
+zero-shot natural language inference (NLI) using the BART-large model
+fine-tuned on the Multi-Genre NLI corpus \citep{williams2018broad}. Each
+whitepaper is segmented into 500-word chunks (n=2,056 across 24 entities),
+and each chunk is classified against eight domain-relevant categories:
+\textit{technology}, \textit{governance}, \textit{tokenomics},
+\textit{security}, \textit{scalability}, \textit{interoperability},
+\textit{privacy}, and \textit{consensus}.
+
+Following \citet{yin2019benchmarking}, we use hypothesis templates of the
+form ``This text is about [CATEGORY]'' and extract softmax probabilities
+for each category. Rather than using argmax classification, we compute
+probability-weighted category profiles for each entity, which provides
+smoother estimates and accounts for semantic ambiguity in technical prose.
+
+\paragraph{Validation.} We assess classification reliability through
+inter-model agreement using DeBERTa-v3 \citep{he2021deberta} as an
+alternative classifier. On a random sample of 200 chunks, exact top-1
+agreement is 32\% (Cohen's $\kappa = 0.14$), reflecting known sensitivity
+of zero-shot NLI to model-specific category boundaries. However, relaxed
+agreement---where the alternative model's top prediction appears in the
+primary model's top-3---reaches 67\%, suggesting models capture similar
+semantic neighborhoods with different decision boundaries.
+
+Bootstrap 95\% confidence intervals on aggregate category proportions
+(1,000 resamples) yield tight bounds: technology 34.5--38.6\%, security
+21.7--25.3\%, interoperability 15.9--19.3\%, indicating stable estimates
+at the corpus level despite chunk-level uncertainty.
+
+
+% === TABLE: CLAIM PROFILES ===
+
+\begin{table}[htbp]
+\centering
+\caption{Whitepaper Claim Category Profiles (Probability-Weighted \%)}
+\label{tab:claim-profiles}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Entity & Tech & Gov & Token & Sec & Scale & Interop & Priv & Cons & n \\
+\midrule
+ZEC & 23 & 1 & 0 & \textbf{30} & 6 & 19 & 5 & 16 & 701 \\
+STORJ & \textbf{46} & 2 & 0 & 16 & 10 & 11 & 1 & 13 & 212 \\
+ADA & 9 & 6 & -- & 18 & 20 & \textbf{26} & 4 & 16 & 158 \\
+ICP & \textbf{31} & 5 & -- & 20 & 5 & 14 & 1 & 25 & 132 \\
+FIL & \textbf{40} & 3 & 0 & 21 & 1 & 20 & 2 & 13 & 98 \\
+ETH & \textbf{49} & 6 & 1 & 16 & 6 & 15 & 2 & 6 & 95 \\
+LINK & \textbf{41} & 2 & -- & 34 & 3 & 14 & 1 & 6 & 94 \\
+NEAR & 16 & 0 & -- & 24 & 17 & \textbf{26} & 3 & 14 & 76 \\
+ARB & \textbf{49} & 2 & 0 & 17 & 5 & 20 & 0 & 6 & 73 \\
+GRT & 4 & 1 & -- & 11 & 1 & \textbf{45} & 6 & 32 & 51 \\
+SOL & \textbf{29} & 3 & -- & 25 & 13 & 16 & 0 & 14 & 50 \\
+XMR & 31 & 2 & -- & \textbf{33} & 6 & 13 & 11 & 4 & 50 \\
+AVAX & \textbf{34} & 8 & 0 & 13 & 12 & 12 & -- & 20 & 46 \\
+AR & \textbf{45} & 3 & -- & 7 & 7 & 24 & -- & 15 & 43 \\
+ATOM & \textbf{38} & 7 & 0 & 15 & 3 & 24 & -- & 12 & 43 \\
+MKR & \textbf{39} & 17 & -- & 18 & 1 & 13 & 0 & 11 & 40 \\
+SC & \textbf{44} & 0 & -- & 27 & 4 & 18 & 0 & 7 & 26 \\
+BTC & \textbf{33} & 4 & -- & 29 & 7 & 18 & 7 & 3 & 23 \\
+COMP & \textbf{41} & 10 & -- & 11 & 0 & 24 & -- & 14 & 21 \\
+AAVE & \textbf{28} & 16 & 1 & 4 & 8 & 24 & 2 & 16 & 11 \\
+UNI & \textbf{43} & 2 & -- & 14 & 10 & 23 & -- & 8 & 10 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\footnotesize
+\textit{Note:} Values are probability-weighted percentages. Bold = dominant category.
+Inter-model validation: exact agreement 32\%, relaxed (top-3) agreement 67\%.
+\end{table}
+
+
+% === BIBTEX ENTRIES (if not already in references.bib) ===
+% 
+% @inproceedings{williams2018broad,
+%   title={A Broad-Coverage Challenge Corpus for Sentence Understanding through Inference},
+%   author={Williams, Adina and Nangia, Nikita and Bowman, Samuel},
+%   booktitle={NAACL-HLT},
+%   year={2018}
+% }
+% 
+% @inproceedings{yin2019benchmarking,
+%   title={Benchmarking Zero-shot Text Classification: Datasets, Evaluation and Entailment Approach},
+%   author={Yin, Wenpeng and Hay, Jamaal and Roth, Dan},
+%   booktitle={EMNLP-IJCNLP},
+%   year={2019}
+% }
+%
+% @article{he2021deberta,
+%   title={DeBERTa: Decoding-enhanced BERT with Disentangled Attention},
+%   author={He, Pengcheng and Liu, Xiaodong and Gao, Jianfeng and Chen, Weizhu},
+%   journal={ICLR},
+%   year={2021}
+% }

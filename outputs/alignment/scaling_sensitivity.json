@@ -1,0 +1,28 @@
+{
+  "tensor_shape": [
+    17543,
+    49,
+    5
+  ],
+  "rank": 2,
+  "comparisons": [
+    {
+      "tensor_a": "original",
+      "tensor_b": "returns",
+      "phi": 0.14489918310591746,
+      "interpretation": "weak"
+    },
+    {
+      "tensor_a": "original",
+      "tensor_b": "zscore",
+      "phi": 0.19346264230569546,
+      "interpretation": "weak"
+    },
+    {
+      "tensor_a": "returns",
+      "tensor_b": "zscore",
+      "phi": 0.10506945981097933,
+      "interpretation": "weak"
+    }
+  ]
+}

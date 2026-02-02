@@ -1,0 +1,67 @@
+{
+  "disattenuation": {
+    "claims_reliability": 0.3024217699807437,
+    "market_reliability": 0.95,
+    "disattenuated_estimates": [
+      {
+        "comparison": "claims_vs_factors",
+        "phi_observed": 0.051859787801562716,
+        "phi_disattenuated": 0.09675254716362357,
+        "reliability_x": 0.3024217699807437,
+        "reliability_y": 0.95,
+        "attenuation_factor": 0.5360043670360406
+      },
+      {
+        "comparison": "claims_vs_stats",
+        "phi_observed": 0.10610348004816023,
+        "phi_disattenuated": 0.19795264101090038,
+        "reliability_x": 0.3024217699807437,
+        "reliability_y": 0.95,
+        "attenuation_factor": 0.5360043670360406
+      },
+      {
+        "comparison": "stats_vs_factors",
+        "phi_observed": 0.25307234367670767,
+        "phi_disattenuated": 0.26639194071232386,
+        "reliability_x": 0.95,
+        "reliability_y": 0.95,
+        "attenuation_factor": 0.95
+      }
+    ]
+  },
+  "split_sample": {
+    "h1_timestamps": 8771,
+    "h2_timestamps": 8772,
+    "phi_split_sample": 0.44892050431051767,
+    "p_value": 0.051,
+    "phi_same_sample": 0.25307234367670767,
+    "significant": false
+  },
+  "partial_correlations": {
+    "n_assets": 37,
+    "control_variable": "avg_volume (market cap proxy)",
+    "comparisons": [
+      {
+        "comparison": "claims_vs_factors",
+        "phi_raw": 0.29135650049182155,
+        "phi_partial": 0.37053305389138574,
+        "change": 0.0791765533995642,
+        "change_pct": 27.17514565102746
+      },
+      {
+        "comparison": "claims_vs_stats",
+        "phi_raw": 0.35105379258858604,
+        "phi_partial": 0.29068255898505685,
+        "change": -0.060371233603529195,
+        "change_pct": -17.19714609580746
+      },
+      {
+        "comparison": "stats_vs_factors",
+        "phi_raw": 0.6088557970137074,
+        "phi_partial": 0.476472989249086,
+        "change": -0.1323828077646214,
+        "change_pct": -21.742883683161867
+      }
+    ]
+  }
+}

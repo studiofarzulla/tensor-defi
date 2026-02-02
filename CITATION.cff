@@ -1,0 +1,53 @@
+# This CITATION.cff file was generated for Zenodo indexing
+# See: https://citation-file-format.github.io/
+
+cff-version: 1.2.0
+title: "Do Whitepaper Claims Predict Market Behavior? Evidence from Cryptocurrency Factor Analysis"
+message: "If you use this research, please cite it using the metadata from this file."
+type: dataset
+authors:
+  - family-names: Farzulla
+    given-names: Murad
+    orcid: "https://orcid.org/0009-0002-7164-8704"
+    affiliation: "Farzulla Research"
+repository-code: "https://github.com/studiofarzulla/whitepaper-claims"
+url: "https://farzulla.org"
+abstract: >-
+  This paper investigates whether the functional claims made in cryptocurrency
+  whitepapers exhibit measurable alignment with subsequent market behavior patterns.
+  Using zero-shot NLP classification and tensor decomposition, we analyze 13 major
+  cryptocurrency whitepapers against market data for 49 assets over 17,543 daily
+  observations. Our CP tensor decomposition achieves 92.45% variance explained with
+  rank-2 factors, revealing a "BTC dominance" factor (loading: 28.5) and a
+  "diversified altcoin" factor. The primary claims-statistics alignment yields
+  Tucker's φ = 0.331 (moderate alignment, p < 0.001), with "smart contracts" and
+  "interoperability" categories showing strongest correspondence to market patterns.
+  We contribute novel methodology combining NLP-extracted semantic features with
+  tensor factor analysis for financial prediction.
+keywords:
+  - cryptocurrency
+  - tensor decomposition
+  - natural language processing
+  - factor analysis
+  - whitepaper analysis
+  - market behavior
+  - PARAFAC
+  - Tucker congruence
+license: CC-BY-4.0
+version: "3.0.0"
+date-released: "2025-12-12"
+doi: "10.5281/zenodo.17917922"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.17917922"
+    description: "Zenodo archive of research materials"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Farzulla
+      given-names: Murad
+      orcid: "https://orcid.org/0009-0002-7164-8704"
+  title: "Do Whitepaper Claims Predict Market Behavior? Evidence from Cryptocurrency Factor Analysis"
+  year: 2025
+  journal: "Zenodo"
+  doi: "10.5281/zenodo.17917922"

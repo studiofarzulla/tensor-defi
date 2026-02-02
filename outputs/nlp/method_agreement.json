@@ -1,0 +1,92 @@
+{
+  "methods": [
+    "bart_nli",
+    "embedding",
+    "ministral3"
+  ],
+  "pairwise_correlations": {
+    "bart_nli_vs_embedding": {
+      "pearson": {
+        "r": 0.10269425239351965,
+        "p": 0.04543805314043782
+      },
+      "spearman": {
+        "rho": 0.11073046503821102,
+        "p": 0.030922907875543748
+      }
+    },
+    "bart_nli_vs_ministral3": {
+      "pearson": {
+        "r": 0.4128201727795277,
+        "p": 4.528081278004039e-17
+      },
+      "spearman": {
+        "rho": 0.4574644031664664,
+        "p": 4.73460746836789e-21
+      }
+    },
+    "embedding_vs_ministral3": {
+      "pearson": {
+        "r": 0.39175088476918374,
+        "p": 2.1793702148945992e-15
+      },
+      "spearman": {
+        "rho": 0.3840527665750607,
+        "p": 8.38912829344721e-15
+      }
+    }
+  },
+  "category_agreement": {
+    "store_of_value": {
+      "mean_correlation": 0.3759477337776332,
+      "std_correlation": 0.14117277436705838,
+      "n_pairs": 3.0
+    },
+    "medium_of_exchange": {
+      "mean_correlation": 0.6520323635334173,
+      "std_correlation": 0.05962088142836912,
+      "n_pairs": 3.0
+    },
+    "smart_contracts": {
+      "mean_correlation": 0.23874165415442036,
+      "std_correlation": 0.31208524954489797,
+      "n_pairs": 3.0
+    },
+    "defi": {
+      "mean_correlation": 0.6282296050316356,
+      "std_correlation": 0.12706502117908022,
+      "n_pairs": 3.0
+    },
+    "governance": {
+      "mean_correlation": 0.4726517209446231,
+      "std_correlation": 0.2664759555070637,
+      "n_pairs": 3.0
+    },
+    "scalability": {
+      "mean_correlation": 0.5232118680563359,
+      "std_correlation": 0.05362536737144175,
+      "n_pairs": 3.0
+    },
+    "privacy": {
+      "mean_correlation": 0.5399513276833567,
+      "std_correlation": 0.005267778740820925,
+      "n_pairs": 3.0
+    },
+    "interoperability": {
+      "mean_correlation": 0.4409705842231359,
+      "std_correlation": 0.11946819063990945,
+      "n_pairs": 3.0
+    },
+    "data_storage": {
+      "mean_correlation": 0.42677596495702214,
+      "std_correlation": 0.18191387429592998,
+      "n_pairs": 3.0
+    },
+    "oracle": {
+      "mean_correlation": 0.5083168509973891,
+      "std_correlation": 0.08970129164931,
+      "n_pairs": 3.0
+    }
+  },
+  "fleiss_kappa": 0.04482944866841039
+}

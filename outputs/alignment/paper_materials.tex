@@ -1,0 +1,108 @@
+% ============================================================================
+% ALIGNMENT ANALYSIS MATERIALS FOR WHITEPAPER CLAIMS PAPER
+% Generated: 2025-01-19
+% ============================================================================
+
+% === METHODOLOGY SUBSECTION ===
+
+\subsection{Alignment Testing}
+
+To quantify the relationship between whitepaper narratives and market behavior,
+we compute Tucker's congruence coefficient ($\phi$) between three representation
+spaces: (i) claim profiles derived from NLP classification, (ii) summary
+statistics computed from OHLCV data, and (iii) latent factor loadings extracted
+via CP tensor decomposition.
+
+Tucker's $\phi$ measures the cosine similarity between paired factor loadings
+after Procrustes rotation \citep{tucker1951method, lorenzo2006tucker}:
+\begin{equation}
+\phi = \frac{\sum_i x_i y_i}{\sqrt{\sum_i x_i^2 \sum_i y_i^2}}
+\end{equation}
+where $x$ and $y$ are corresponding factor loading vectors. Following
+\citet{lorenzo2006tucker}, we interpret $|\phi| \geq 0.95$ as factor equivalence,
+$|\phi| \geq 0.85$ as fair similarity, $|\phi| \geq 0.65$ as moderate similarity,
+and lower values as weak or negligible correspondence.
+
+To accommodate dimension mismatch between representations (8 claim categories,
+7 summary statistics, 2 latent factors), we apply orthogonal Procrustes rotation
+with zero-padding to the smaller matrix. Statistical significance is assessed
+via permutation testing (2,000 permutations), and 95\% confidence intervals are
+computed via bootstrapping (2,000 resamples).
+
+
+% === RESULTS SUBSECTION ===
+
+\subsection{Alignment Results}
+
+Table~\ref{tab:alignment-results} presents congruence coefficients for all
+pairwise comparisons across the 23 entities with both
+whitepaper claims and market data.
+
+\begin{table}[htbp]
+\centering
+\caption{Tucker's Congruence Coefficient ($\phi$) Between Representation Spaces}
+\label{tab:alignment-results}
+\begin{tabular}{lccc}
+\toprule
+Comparison & $\phi$ & 95\% CI & $p$-value \\
+\midrule
+Claims $\leftrightarrow$ Statistics & 0.341 & [0.34, 0.55] & 0.332 \\
+Claims $\leftrightarrow$ Factors & 0.077 & [0.07, 0.16] & 0.747 \\
+Statistics $\leftrightarrow$ Factors & 0.197 & [0.16, 0.24] & $<$0.001*** \\
+\bottomrule
+\end{tabular}
+\footnotesize
+
+\textit{Note:} $n=23$ entities. Significance: *** $p < 0.001$.
+All $\phi$ values fall below the 0.65 threshold for moderate similarity.
+\end{table}
+
+The key finding is the absence of significant alignment between whitepaper
+claims and either market statistics ($\phi = 0.341$, $p = 0.33$)
+or latent market factors ($\phi = 0.077$, $p = 0.75$).
+In contrast, the statistics--factors comparison achieves statistical significance
+($p < 0.001$) despite weak magnitude ($\phi = 0.197$), reflecting the
+expected correspondence between summary measures and decomposed factors that
+both derive from market price data.
+
+The statistical significance without substantive magnitude in the
+statistics--factors comparison illustrates why $\phi$ magnitude matters beyond
+$p$-values: both representations capture market dynamics, so non-zero coupling
+is expected, but the coupling is too weak ($\phi \ll 0.65$) to support
+meaningful inference. For claims, even this weak coupling is absent---whitepaper
+narratives occupy a representational space that is orthogonal to revealed market
+dynamics.
+
+
+% === ROBUSTNESS: BTC EXCLUDED ===
+
+\paragraph{Robustness: Bitcoin Excluded.}
+Bitcoin's dominant market position could drive the tensor factor structure.
+Excluding BTC ($n=22$) yields $\phi = 0.081$ for claims--factors
+(vs.\ $\phi = 0.077$ with full sample), confirming that the null
+alignment is not an artifact of Bitcoin's outlier behavior. The statistics--factors
+alignment weakens modestly ($\phi = 0.173$ vs.\ $0.197$) but
+remains significant ($p = 0.008$), suggesting Bitcoin contributes to but does
+not solely determine the latent factor structure.
+
+
+% === BIBTEX ENTRIES ===
+% 
+% @article{tucker1951method,
+%   title={A Method for Synthesis of Factor Analysis Studies},
+%   author={Tucker, Ledyard R},
+%   journal={Personnel Research Section Report},
+%   number={984},
+%   year={1951}
+% }
+%
+% @article{lorenzo2006tucker,
+%   title={Tucker's Congruence Coefficient as a Meaningful Index of Factor Similarity},
+%   author={Lorenzo-Seva, Urbano and ten Berge, Jos MF},
+%   journal={Methodology},
+%   volume={2},
+%   number={2},
+%   pages={57--64},
+%   year={2006},
+%   doi={10.1027/1614-2241.2.2.57}
+% }
