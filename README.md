@@ -66,8 +66,8 @@ whitepaper-claims/
 
 ```bash
 # Clone repository
-git clone https://github.com/studiofarzulla/whitepaper-claims.git
-cd whitepaper-claims
+git clone https://github.com/studiofarzulla/tensor-defi.git
+cd tensor-defi
 
 # Create virtual environment
 python -m venv venv
