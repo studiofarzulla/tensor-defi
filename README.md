@@ -1,104 +1,66 @@
-# TENSOR-DEFI: Whitepaper Claims vs Market Behavior
+# Do Whitepaper Claims Predict Market Behavior?
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17917922.svg)](https://doi.org/10.5281/zenodo.17917922)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+**Evidence from Cryptocurrency Factor Analysis**
 
-**Do Whitepaper Claims Predict Market Behavior? Evidence from Cryptocurrency Factor Analysis**
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17917922-blue.svg)](https://doi.org/10.5281/zenodo.17917922)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Status](https://img.shields.io/badge/Status-With_Editor-yellow.svg)](https://doi.org/10.5281/zenodo.17917922)
+[![arXiv](https://img.shields.io/badge/arXiv-2601.20336-b31b1b.svg)](https://arxiv.org/abs/2601.20336)
 
-*Murad Farzulla • [Farzulla Research](https://farzulla.org) • December 2025*
+**Working Paper DAI-2508** | [Dissensus AI](https://dissensus.ai)
 
----
+## Abstract
 
-## Overview
+This study investigates whether cryptocurrency whitepaper narratives align with empirically observed market factor structure. We construct a pipeline combining zero-shot NLP classification of 38 whitepapers across 10 semantic categories with CP tensor decomposition of hourly market data (49 assets, 17,543 timestamps). Using Procrustes rotation and Tucker's congruence coefficient, we find weak alignment between claims and market statistics (phi = 0.246, p = 0.339) and between claims and latent factors (phi = 0.058, p = 0.751). A methodological validation comparison---statistics versus factors, both derived from market data---achieves significance (p < 0.001), confirming the pipeline detects real structure. The null result indicates whitepaper narratives do not meaningfully predict market factor structure, with implications for narrative economics and investor decision-making. Entity-level analysis reveals specialized tokens (XMR, CRV, YFI) show stronger narrative--market correspondence than broad infrastructure tokens.
 
-This research investigates whether functional claims in cryptocurrency whitepapers exhibit measurable alignment with subsequent market behavior patterns. We combine:
+## Key Findings
 
-- **Zero-shot NLP classification** (BART-MNLI) to extract semantic features from whitepapers
-- **CP tensor decomposition** to identify latent market factors
-- **Procrustes analysis** with Tucker's congruence coefficient (φ) to measure alignment
+| Finding | Result |
+|---------|--------|
+| Claims-Statistics alignment | phi = 0.246 (weak, p = 0.339) |
+| Claims-Factors alignment | phi = 0.058 (negligible, p = 0.751) |
+| Pipeline validation (Stats vs Factors) | Significant (p < 0.001) |
+| Variance explained by CP decomposition | 92.45% (rank-2) |
+| Assets analyzed | 49 cryptocurrencies, 17,543 timestamps |
 
-### Key Findings
+## Keywords
 
-| Metric | Value |
-|--------|-------|
-| Claims-Statistics φ | **0.331** (moderate, p < 0.001) |
-| Variance Explained | **92.45%** (rank-2 CP) |
-| BTC Factor Loading | **28.5** (dominant outlier) |
-| Assets Analyzed | 49 cryptocurrencies |
-| Daily Observations | 17,543 (2020-2024) |
+cryptocurrency, tensor decomposition, NLP, factor analysis, Procrustes rotation, Tucker's congruence coefficient, zero-shot classification
 
 ## Repository Structure
 
 ```
-whitepaper-claims/
+tensor-defi/
 ├── src/                      # Python modules
-│   ├── alignment/           # Procrustes alignment methods
-│   ├── nlp/                 # NLP classification pipeline
-│   ├── tensor_ops/          # CP decomposition operations
-│   ├── market/              # Market data processing
-│   ├── visualization/       # Plotting utilities
-│   └── stats/               # Statistical tests
-├── scripts/                  # Analysis pipeline scripts
-│   ├── run_full_pipeline.py # Complete end-to-end pipeline
-│   ├── run_nlp.py           # NLP classification
-│   ├── run_tensor.py        # Tensor construction
-│   ├── run_alignment.py     # Factor alignment
-│   └── run_figures.py       # Figure generation
-├── paper/                    # LaTeX source
-│   ├── main.tex             # Paper source
-│   ├── references.bib       # Bibliography
-│   └── figures/             # Paper figures
-├── data/                     # Input data (included)
-│   ├── whitepapers/         # PDF corpus
-│   └── market/              # Parquet market data
-├── outputs/                  # Pipeline outputs
-│   ├── nlp/                 # NLP results (CSV)
-│   ├── tensor/              # Tensor arrays (gitignored)
-│   └── alignment/           # Alignment results (JSON)
-├── figures/                  # Generated figures
-├── CITATION.cff             # Citation metadata
-├── requirements.txt         # Python dependencies
-└── README.md                # This file
+│   ├── alignment/            # Procrustes alignment methods
+│   ├── nlp/                  # NLP classification pipeline
+│   ├── tensor_ops/           # CP decomposition operations
+│   ├── market/               # Market data processing
+│   ├── visualization/        # Plotting utilities
+│   └── stats/                # Statistical tests
+├── scripts/                   # Analysis pipeline scripts
+│   ├── run_full_pipeline.py  # Complete end-to-end pipeline
+│   ├── run_nlp.py            # NLP classification
+│   ├── run_tensor.py         # Tensor construction
+│   ├── run_alignment.py      # Factor alignment
+│   └── run_figures.py        # Figure generation
+├── paper/                     # LaTeX source
+│   ├── main-arxiv.tex        # Paper source
+│   ├── references.bib        # Bibliography
+│   └── figures/              # Paper figures
+├── data/                      # Input data (included)
+│   ├── whitepapers/          # PDF corpus
+│   └── market/               # Parquet market data
+├── outputs/                   # Pipeline outputs
+├── figures/                   # Generated figures
+├── CITATION.cff
+├── requirements.txt
+└── LICENSE
 ```
-
-## Installation
-
-```bash
-# Clone repository
-git clone https://github.com/studiofarzulla/tensor-defi.git
-cd tensor-defi
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or: venv\Scripts\activate  # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Hardware Requirements
-
-- **RAM:** 16GB minimum (32GB recommended for full tensor operations)
-- **GPU:** Optional but recommended for NLP inference (CUDA/ROCm supported)
-- **Storage:** ~200MB for full repository with data
-
-## Data
-
-This repository includes all data required for full reproducibility:
-
-- **`data/whitepapers/`** - Cryptocurrency whitepaper PDFs (62MB)
-- **`data/market/`** - Historical market data in Parquet format (24MB)
-- **`outputs/nlp/`** - Pre-computed NLP classification results
-
-Tensor outputs (`outputs/tensor/*.npy`) are gitignored but regenerated by the pipeline.
 
 ## Usage
 
 ### Full Pipeline
-
-Run the complete analysis pipeline:
 
 ```bash
 python scripts/run_full_pipeline.py
@@ -107,72 +69,35 @@ python scripts/run_full_pipeline.py
 ### Individual Steps
 
 ```bash
-# 1. NLP classification of whitepapers
-python scripts/run_nlp.py
-
-# 2. Build market tensor
-python scripts/run_tensor.py
-
-# 3. Compute factor alignment
-python scripts/run_alignment.py
-
-# 4. Generate figures
-python scripts/run_figures.py
+python scripts/run_nlp.py          # NLP classification of whitepapers
+python scripts/run_tensor.py       # Build market tensor
+python scripts/run_alignment.py    # Compute factor alignment
+python scripts/run_figures.py      # Generate figures
 ```
 
-### Pipeline Options
+### Hardware Requirements
 
-```bash
-# Run with specific GPU device
-CUDA_VISIBLE_DEVICES=0 python scripts/run_full_pipeline.py
-
-# CPU-only mode
-python scripts/run_full_pipeline.py --cpu
-```
-
-## Methodology
-
-### 1. NLP Feature Extraction
-Whitepapers are chunked and classified into 10 functional categories using zero-shot classification:
-- Decentralization, Smart Contracts, DeFi, NFT/Gaming
-- Medium of Exchange, Store of Value, Scalability
-- Privacy, Interoperability, Governance
-
-### 2. Tensor Construction
-Market data forms a 4-way tensor: **(Time × Assets × Features × Statistics)**
-- 17,543 daily observations
-- 49 cryptocurrency assets
-- 5 market features (price, volume, market cap, returns, volatility)
-
-### 3. CP Decomposition
-CANDECOMP/PARAFAC decomposition extracts rank-2 factors explaining 92.45% variance.
-
-### 4. Alignment Measurement
-Procrustes rotation aligns NLP-derived and market-derived factor spaces. Tucker's φ measures congruence.
+- **RAM:** 16GB minimum (32GB recommended for full tensor operations)
+- **GPU:** Optional but recommended for NLP inference (CUDA/ROCm supported)
 
 ## Citation
 
 ```bibtex
-@article{farzulla2025tensor,
-  title={Do Whitepaper Claims Predict Market Behavior? Evidence from Cryptocurrency Factor Analysis},
-  author={Farzulla, Murad},
-  journal={Zenodo},
-  year={2025},
-  doi={10.5281/zenodo.17917922}
+@article{farzulla2026whitepaper,
+  author  = {Farzulla, Murad},
+  title   = {Do Whitepaper Claims Predict Market Behavior? Evidence from Cryptocurrency Factor Analysis},
+  year    = {2026},
+  journal = {arXiv preprint arXiv:2601.20336},
+  doi     = {10.5281/zenodo.17917922}
 }
 ```
 
+## Authors
+
+- **Murad Farzulla** -- [Dissensus AI](https://dissensus.ai) & King's College London
+  - ORCID: [0009-0002-7164-8704](https://orcid.org/0009-0002-7164-8704)
+  - Email: murad@dissensus.ai
+
 ## License
 
-This work is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-
-## Contact
-
-- **Author:** Murad Farzulla
-- **ORCID:** [0009-0002-7164-8704](https://orcid.org/0009-0002-7164-8704)
-- **Website:** [farzulla.org](https://farzulla.org)
-- **GitHub:** [@studiofarzulla](https://github.com/studiofarzulla)
-
----
-
-*Part of the [Farzulla Research](https://farzulla.org) initiative exploring computational methods in finance.*
+Paper content: [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
